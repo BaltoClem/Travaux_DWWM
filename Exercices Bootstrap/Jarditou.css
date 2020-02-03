@@ -1,0 +1,75 @@
+nav, footer {
+    background-color:black;
+    color: white;
+    border: 20px red;
+   }
+   
+li {
+   display :inline;
+}
+a {
+   color: white;
+}
+
+header {
+    display: flex;
+    font-size:30px;
+    flex-wrap : wrap;
+    align-items : center;
+    justify-content:space-between;
+}
+
+.Toutlejardin {
+   
+      font-size: 30px;
+      display: flex;
+      margin-right : 400px;
+}
+
+.logo{
+      width : 300px;
+}
+
+.Promotion{
+   width :100%;
+   height :auto;
+}
+
+
+/*La div accueille regroupe les deux blocks qu'ils faut mettre côte à côte, ne SURTOUT PAS mettre de position car le code va suivre l'ordre du HTML*/
+.Accueil {
+display: flex;
+}
+
+.Texte {
+   
+   left :10px;
+   width:800px;
+
+}
+aside {
+  
+   background-color: rgb(214, 212, 212);
+   right: 7px;
+   width:430px;
+   height:auto;
+}
+
+   @media screen and (max-width: 575px){
+
+
+   li {
+
+      display :block;
+   }
+
+   html {
+      font-size : 10pt;
+   }
+
+   .Toutlejardin {
+
+      margin-right : 0px;
+   }
+   
+}

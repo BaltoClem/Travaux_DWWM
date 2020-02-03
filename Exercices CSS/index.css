@@ -1,0 +1,47 @@
+nav, footer {
+    background-color: black;
+    color: white;
+    border: 20px solid black;
+   }
+   /*Vérifier si le a est en blanc ou non plus tard*/
+   a {
+      color: white;
+      }
+   header {
+    display: flex;
+    justify-content: left;
+    align-items : center;
+   }
+   .Toutlejardin {
+
+      font-size: 30px;
+      display: flex;
+      flex-direction : center;
+      justify-content : center;
+      align-items : flex-end;
+      padding-left: 400px;
+   }
+
+.logo{
+   width : 300px;
+}
+
+img {
+   width :100%;
+}
+/*La div accueil regroupe les deux blocks qu'ils faut mettre côte à côte, ne SURTOUT PAS mettre de position car le code va suivre l'ordre du HTML*/
+.accueil {
+display: flex;
+}
+.texte {
+   
+   left :10px;
+}
+aside {
+  display : flex;
+   background-color: rgb(214, 212, 212);
+   right: 7px;
+   width:500px;
+   height:485px;
+}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice Expressions régulières</title>
+</head>
+<body>
+    <p>Saisissez un texte puis pressez le bouton "Contrôler"</p>
+    <input type="text" name = "Prénom" id="prenom">
+    <input type="submit" name="Contrôler" value="Contrôler" id="control">
+    <script>
+    
+    var r = new RegExp ("^[a-z]+$");
+    var resultat = r.test ("prenom");
+    console.log (resultat);
+    var control = document.getElementById("control");
+    control.addEventListener("click", function()
+    {
+        alert ("Vous avez saisi : " + document.getElementById("prenom").value);
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<?php
+
+////////////////////////////////////////////EXEMPLES A TESTER///////////////////////////////////////////////////////
+echo time();
+echo"<br>";
+
+$date = date("d/m/Y");
+echo"Nous sommes le ".$date;
+ 
+echo"<br>";
+
+// Ou directement :
+echo"Nous sommes le ".date("d/m/Y");
+
+echo"<br>";
+
+echo date("H:i:s");
+
+echo"<br>";
+
+$oDate = new DateTime();
+echo "<pre>";
+var_dump($oDate);
+
+echo"<pre>";
+
+$date = "01/10/2019";
+ 
+var_dump(checkdate(154,91,3456));
+
+echo"<pre>";
+
+function validateDate($date, $format = 'Y-m-d H:i:s')
+{
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
+}
+
+//////////////////////////////////////////////////////////////////EXERCICES//////////////////////////////////////////////////////////////////////////////////
+
+echo"<br>";
+
+//////////////////////////////////////////////////////////////////EXERCICE 1//////////////////////////////////////////////////////////////////////////////////
+
+setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+echo (strftime("%A %d %B %Y"));
+echo"<br>";
+
+//////////////////////////////////////////////////////////////////EXERCICE 2//////////////////////////////////////////////////////////////////////////////////
+
+$date_test = "2019-07-14";
+$semaine=strtotime ($date_test);
+echo "Le"." ".$date_test." "."se trouve en semaine"." ". date('W',$semaine);
+echo"<br>";
+//////////////////////////////////////////////////////////////////EXERCICE 3//////////////////////////////////////////////////////////////////////////////////
+
+$echeance = '2020/06/02'; // La date de référence, qui provient de où-tu-veux
+echo 'Nb de jours restants avant la fin de la formation : '. floor((strtotime($echeance) - time())/86400);
+
+//////////////////////////////////////////////////////////////////EXERCICE 4//////////////////////////////////////////////////////////////////////////////////
+
+//Non réussi...
+
+$echeance = mktime(0, 0, 0, 06, 02, 2020);
+
+$datediff = mktime(0, 0, 0, 01, 14, 2020);
+  
+$timediff = $datediff - $echeance ;
+ 
+$days=intval($timediff/86400);
+ 
+echo ''.$days.' '.'jours séparent les deux dates';
+
+echo"<br>";
+//////////////////////////////////////////////////////////////////EXERCICE 5//////////////////////////////////////////////////////////////////////////////////
+
+//Cette fonction permet de savoir si une année est bissextile ou non, mais ne définit pas la prochaine année bissextile
+function est_bissextile($annee)
+    {
+        return date("m-d", strtotime("$annee-02-29")) == "02-29";
+    }
+echo est_bissextile('2016');
+echo"<br>";
+
+function IsLeapYear($Year) {
+    return ((($Year & 3) == 0) && (($Year % 100 != 0) || ($Year % 400 == 0)));
+}
+
+   for($I=2019;$I<=2039;$I++) {
+    if(IsLeapYear($I)) echo strval($I)." est une année bissextile<BR>";
+}
+echo"<br>";
+//////////////////////////////////////////////////////////////////EXERCICE 6//////////////////////////////////////////////////////////////////////////////////
+
+if (checkdate(17,17,2019)==false){
+    echo "La date est erronnée";
+}
+else{
+    echo "La date est correct";
+}
+echo"<br>";
+//////////////////////////////////////////////////////////////////EXERCICE 7//////////////////////////////////////////////////////////////////////////////////
+
+date_default_timezone_set('Europe/Paris');
+echo date("H")."h".date("i");
+echo"<br>";
+//////////////////////////////////////////////////////////////////EXERCICE 8//////////////////////////////////////////////////////////////////////////////////
+
+$date = new DateTime();
+$interval = new DateInterval('P1M');
+
+$date->add($interval);
+echo $date->format('d-m-Y');
+
+?>

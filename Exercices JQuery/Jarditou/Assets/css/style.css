@@ -1,0 +1,73 @@
+nav, footer {
+   background-color: black;
+   color: white;
+   }
+   
+li {
+   display :inline;
+}
+
+ul {
+
+   margin-top : 3px;
+}
+a {
+   color: white;
+   
+}
+
+#jardin {
+
+   width : 100%;
+   font-size : 100px;
+}
+
+h3{
+
+   text-align :center;
+   
+}
+
+.logo{
+      width : 100%;
+}
+
+.promotion{
+   width :100%;
+   
+
+}
+
+.col-12{
+   padding :0;
+}
+/*La div accueil regroupe les deux blocks qu'ils faut mettre côte à côte, ne SURTOUT PAS mettre de position*/
+.Accueil {
+display: flex;
+}
+
+.Texte {
+   
+   left :10px;
+   width:1000px;
+
+}
+aside {
+  
+   background-color: rgb(214, 212, 212);
+   
+   width:400px;
+   height:600px;
+}
+
+.lien
+{
+   color :black;
+}
+
+.error-message{
+   background:url(Assets\img\croix.jpg) 10px center no-repeat;
+   padding: 0 0 0 30px;
+   display : inline;
+   color:#ff5b5b;
+}
