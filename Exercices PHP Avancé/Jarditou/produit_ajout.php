@@ -12,7 +12,7 @@ $result = $db->query("SELECT * FROM categories ORDER BY cat_id");//Une requête 
 $categories = $result->fetchAll(PDO::FETCH_OBJ);//FetchAll prendra toutes les données de la requête initiée précédemment
 ?>
 
-<form action="produit_ajout_script.php" method="POST" class="col-12">
+<form action="produit_ajout_script.php" method="POST" class="col-12" enctype="multipart/form-data">
                 <div class="form-group">
 
 <!------------------------------------------------------------REFERENCE----------------------------------------------------------------->
@@ -151,6 +151,11 @@ $categories = $result->fetchAll(PDO::FETCH_OBJ);//FetchAll prendra toutes les do
                             }
                         ?>
                         </div>
+                        <br>
+<!------------------------------------------------------------PHOTO----------------------------------------------------------------->
+
+        <div><label for="photo">Photo du produit :</label><input type="hidden" name="MAX_FILE_SIZE" value="104857600" />
+                        <p><input type="file" name="fichier" id="fichier"></p></div>
 
   <!------------------------------------------------------------PRODUIT BLOQUE----------------------------------------------------------------->
 
@@ -182,6 +187,8 @@ $categories = $result->fetchAll(PDO::FETCH_OBJ);//FetchAll prendra toutes les do
 
                 <p><input type="submit" name="envoyer" value="Envoyer" id="bouton_envoi2" class="btn btn-dark">
                     <input type="reset" name="Annuler" value="Annuler"class="btn btn-danger"></p>
+
+</form>
 <?php
                 include("pieddepage.php")
                 ?>

@@ -83,11 +83,11 @@ if ($taille_fichier > $taille_max){
 
 /////////////////////////////////////////////////CONDITION DE TELECHARGEMENT///////////////////////////////////////////////
 
-$cheminEtNomTemporaire = $_FILES ["fichier"]["tmp_name"];
+$cheminEtNomTemporaire = $_FILES["fichier"]["tmp_name"];
 
 // Récupération de l'extension du fichier
 
-$cheminEtNomDefinitif = 'C:/laragon/www/Clement/Exercices PHP Avancé/JarditouPHPAvancé/Assets/img/jarditou_photos/'.$nouveauNom;// Le dossier avec le nouveau nom sera repertorié dans upload
+$cheminEtNomDefinitif = 'C:/laragon/www/Clement/Exercices PHP Avancé/Jarditou/Assets/img/jarditou_photos/'.$nouveauNom;// Le dossier avec le nouveau nom sera repertorié dans upload
 
 $moveIsOk = move_uploaded_file($cheminEtNomTemporaire,$cheminEtNomDefinitif);//On remplace le nom temporaire par le nom définitif
 

@@ -1,50 +1,4 @@
 <?php
-require "connexion_bdd.php";// Inclusion de notre bibliothèque de fonctions
-$db = connexionBase();// Appel de la fonction de connexion
-date_default_timezone_set('Europe/Paris');//Permet de préciser exactement les horaires souhaités
-$date = date("Y-m-d H:i:s");//Définition de la date
-
-$pdoStat = $db->prepare("INSERT INTO produits(pro_ref, pro_cat_id, pro_libelle,pro_description, pro_prix, pro_stock, pro_couleur, pro_bloque, pro_d_ajout)
-VALUES(:pro_ref,:pro_cat_id,:pro_libelle,:pro_description,:pro_prix,:pro_stock,:pro_couleur,:pro_bloque, '".$date."')");
-
-//les ":" devant les noms de colonne sont la nomenclature officielle de la fonction, cela sert à déterminer les coloones concernées plus tard dans le script
-//bindValue associe une valeur à un paramètre
-
-$pdoStat->bindValue(':pro_ref', $_POST['reference'], PDO::PARAM_STR);//":" sera défini par le $_POST que l'utilisateur aura choisi
-$pdoStat->bindValue(':pro_cat_id', $_POST['pro_cat_id'], PDO::PARAM_STR);
-$pdoStat->bindValue(':pro_libelle', $_POST['libelle'], PDO::PARAM_STR);
-$pdoStat->bindValue(':pro_description', $_POST['description'], PDO::PARAM_STR);
-$pdoStat->bindValue(':pro_prix', $_POST['prix'], PDO::PARAM_STR);
-$pdoStat->bindValue(':pro_stock', $_POST['stock'], PDO::PARAM_STR);
-$pdoStat->bindValue(':pro_couleur', $_POST['couleur'], PDO::PARAM_STR);
-
-//Pour le produit bloqué, une condition est nécessaire
-
-if ($_POST['prod']==0)//Si le produit est définit comme 0
- {
-    $bloque = NULL;//alors la variable $bloque sera considéré comme nulle
-} 
-else if ($_POST['prod']==1) //Si le produit est définit à 1
-{
-    $bloque = 1;//alors la variable sera définit par 1
-}
-$pdoStat->bindValue(':pro_bloque', $bloque/*dans le tableau et dans la base de données, la valeur correspondante définit précédemment par la condition sera affiché*/, PDO::PARAM_STR);
-
-$InsertIsOk = $pdoStat->execute();//la variable $InsertIsOk stocke l'exécution, si toutes les bindValue sont opérationnelles et sans erreurs, alors l'exécution pourra avoir lieu
-
-if($InsertIsOk)//Si l'exécution dans la variable est sans erreur
-{
-    
-    $message= "Insertion réussie";//alors une redirection sera effectué vers le tableau des produits
-
-}
-else{
-
-    $message = "Echec de l'insertion";//Sinon une page apparaîtra pour signaler l'échec de l'insertion
-}
-
-
-//----------------------------------------------------------------------------------------------------
 
 //Initialisation d'un tableau d'erreurs
 
@@ -162,10 +116,71 @@ else
     echo "Bloquant =".$_POST["prod"]."<br>";
 }
 
+if (!empty($aErreur)) //Si le tableau n'est pas vide
+{
+    $sUrl = implode("&", $aErreur);//Alors on regroupe toutes les erreurs
+    header("Location:produit_ajout.php?".$sUrl);//et on affiche les erreurs dans le formulaire produit_ajout.php
+exit;//arrêt de la condition
+}
+
+require "connexion_bdd.php";// Inclusion de notre bibliothèque de fonctions
+$db = connexionBase();// Appel de la fonction de connexion
+date_default_timezone_set('Europe/Paris');//Permet de préciser exactement les horaires souhaités
+$date = date("Y-m-d H:i:s");//Définition de la date
+
+$pdoStat = $db->prepare("INSERT INTO produits(pro_ref, pro_cat_id, pro_libelle,pro_description, pro_prix, pro_stock, pro_couleur, pro_bloque, pro_d_ajout)
+VALUES(:pro_ref,:pro_cat_id,:pro_libelle,:pro_description,:pro_prix,:pro_stock,:pro_couleur,:pro_bloque, '".$date."')");
+
+//les ":" devant les noms de colonne sont la nomenclature officielle de la fonction, cela sert à déterminer les coloones concernées plus tard dans le script
+//bindValue associe une valeur à un paramètre
+
+$pdoStat->bindValue(':pro_ref', $_POST['reference'], PDO::PARAM_STR);//":" sera défini par le $_POST que l'utilisateur aura choisi
+$pdoStat->bindValue(':pro_cat_id', $_POST['pro_cat_id'], PDO::PARAM_STR);
+$pdoStat->bindValue(':pro_libelle', $_POST['libelle'], PDO::PARAM_STR);
+$pdoStat->bindValue(':pro_description', $_POST['description'], PDO::PARAM_STR);
+$pdoStat->bindValue(':pro_prix', $_POST['prix'], PDO::PARAM_STR);
+$pdoStat->bindValue(':pro_stock', $_POST['stock'], PDO::PARAM_STR);
+$pdoStat->bindValue(':pro_couleur', $_POST['couleur'], PDO::PARAM_STR);
+
+//Pour le produit bloqué, une condition est nécessaire
+
+if ($_POST['prod']==0)//Si le produit est définit comme 0
+ {
+    $bloque = NULL;//alors la variable $bloque sera considéré comme nulle
+} 
+else if ($_POST['prod']==1) //Si le produit est définit à 1
+{
+    $bloque = 1;//alors la variable sera définit par 1
+}
+$pdoStat->bindValue(':pro_bloque', $bloque/*dans le tableau et dans la base de données, la valeur correspondante définit précédemment par la condition sera affiché*/, PDO::PARAM_STR);
+
+$InsertIsOk = $pdoStat->execute();//la variable $InsertIsOk stocke l'exécution, si toutes les bindValue sont opérationnelles et sans erreurs, alors l'exécution pourra avoir lieu
+
+if($InsertIsOk)//Si l'exécution dans la variable est sans erreur
+{
+    $new_id = $db->lastInsertId();// Récupération de l'ID du produit en cours de création
+    $message= "Insertion réussie";//alors une redirection sera effectué vers le tableau des produits
+
+}
+else{
+    $message = "Echec de l'insertion";//Sinon une page apparaîtra pour signaler l'échec de l'insertion
+}
+
+
 //-----------------------------------------------------------------------------------------//
 //PHOTO
 
-$aMimeTypes = array("image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/x-png", "image/tiff","application/pdf");
+$extension=substr(strrchr($_FILES['fichier']['name'],"."), 1);//Récupération de l'extension de l'image
+$nouveauNom = $new_id.'.'.$extension;
+
+$requete2 = $db -> prepare("UPDATE produits
+                            SET pro_photo=:pro_photo
+                            WHERE pro_id=:pro_id");
+
+$requete2->bindValue(':pro_photo', $nouveauNom, PDO::PARAM_STR);
+$requete2->bindValue(':pro_id', $new_id, PDO::PARAM_INT);
+
+$aMimeTypes = array("image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/x-png", "image/tiff","application/pdf", "image/jpg");
  
 // On ouvre l'extension FILE_INFO
 $finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -202,21 +217,11 @@ if ($taille_fichier > $taille_max){
 
 /////////////////////////////////////////////////CONDITION DE TELECHARGEMENT///////////////////////////////////////////////
 
-$cheminEtNomTemporaire = $_FILES ['fichier']['tmp_name'];
+$cheminEtNomTemporaire = $_FILES['fichier']['tmp_name'];
 
-// Récupération de l'extension du fichier
-$new_id = $db -> lastInsertId();// Récupération de l'ID du produit en cours de création
-$extension=substr (strrchr($_FILES['fichier']['name'],"."), 1);//Récupération de l'extension de l'image
-$nouveauNom = $new_id.'.'.$extension;
+$cheminEtNomDefinitif = 'C:/laragon/www/Clement/Exercices PHP Avancé/Jarditou/Assets/img/jarditou_photos/'.$nouveauNom;
 
-$requete2 = $db -> prepare("UPDATE produits
-                            SET pro_photo=:pro_photo
-                            WHERE pro_id=:pro_id");
-
-$requete2->bindValue(':pro_photo', $nouveauNom, PDO::PARAM_STR);
-$requete2->bindValue(':pro_id', $new_id, PDO::PARAM_STR);
-
-$cheminEtNomDefinitif = 'C:/laragon/www/Clement/Exercices PHP Avancé/JarditouPHPAvancé/Assets/img/jarditou_photos/'.$nouveauNom;// Le dossier avec le nouveau nom sera repertorié dans upload
+// Le dossier avec le nouveau nom sera repertorié dans upload
 
 $moveIsOk = move_uploaded_file($cheminEtNomTemporaire,$cheminEtNomDefinitif);//On remplace le nom temporaire par le nom définitif
 
@@ -243,14 +248,6 @@ else{
 }
 
 /////////////////////////////////////////////////TABLEAU ERREUR///////////////////////////////////////////////
-
-
-if (!empty($aErreur)) //Si le tableau n'est pas vide
-{
-    $sUrl = implode("&", $aErreur);//Alors on regroupe toutes les erreurs
-    header("Location:produit_ajout.php?".$sUrl);//et on affiche les erreurs dans le formulaire produit_ajout.php
-exit;//arrêt de la condition
-}
 
 ?>
 

@@ -15,11 +15,11 @@ include("entete.php");
 
 <!-------------------------------------------NOM------------------------------------------------------->
 
-                <label for="Nom"> Votre Nom* :</label> <input type="text" name="nom" id="nom" class="form-control"required>
-                <span id="nom_manquant"></span><div id="alertnom"></div>
+<label for="Nom"> Votre Nom* :</label> <input type="text" name="nom" id="nom" class="form-control"required>
+<span id="nom_manquant"></span><div id="alertnom"></div>
                 
 
-            <!--PHP Pour le message d'erreur du nom-->
+<!--PHP Pour le message d'erreur du nom-->
             <?php 
                             if (isset($_GET["erreur1"]))
                             {
