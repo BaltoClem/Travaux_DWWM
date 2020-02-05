@@ -1,6 +1,6 @@
 <?php
 
-class Form extends CI_Controller {
+class Form_ajout extends CI_Controller {
 
         public function index()
         {
@@ -8,9 +8,9 @@ class Form extends CI_Controller {
 
                 $this->load->library('form_validation');
 
-
-                
-
+                $this->form_validation->set_rules('pro_libelle', 'Libellé', 'required');
+                $this->form_validation->set_rules('pro_ref', 'Référence', 'required');
+               
                 if ($this->form_validation->run() == FALSE)
                 {
                         $this->load->view('ajout');
@@ -21,4 +21,3 @@ class Form extends CI_Controller {
                 }
         }
 }
-?>
