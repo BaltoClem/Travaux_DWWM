@@ -6,7 +6,7 @@
 
 <h3>Votre produit a bien été ajouté !</h3>
 
-<p><?php echo anchor('form', 'Try it again!'); ?></p>
+<p><?php echo anchor('produits/ajout', 'Try it again!'); ?></p>
 
 </body>
 </html>
