@@ -47,4 +47,23 @@ class Produits extends CI_Controller
     // Appel de la vue avec transmission du tableau  
     $this->load->view('liste', $aView);
 }
+//---------------------------------------------------------------AJOUT-----------------------------------------------------------
+
+public function ajout()
+{
+   if ($this->input->post()) { // 2ème appel de la page: traitement du formulaire
+ 
+        $data = $this->input->post();
+ 
+        $this->db->insert('produits', $data);
+ 
+        redirect("produits/liste");
+   } 
+   else 
+   { // 1er appel de la page: affichage du formulaire
+       $this->load->view('produit_ajout');
+   }
 }
+
+}
+
