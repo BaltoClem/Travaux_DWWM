@@ -50,20 +50,167 @@ class Produits extends CI_Controller
 //---------------------------------------------------------------AJOUT-----------------------------------------------------------
 
 public function ajout()
+{       
+   // Chargement de l'assistant form       
+   $this->load->helper('form');
+ 
+   // Chargement des librairies 'form_validation' et 'upload'
+   $this->load->library('form_validation', 'upload');
+ 
+    if ($this->input->post()) 
+   { // Si le formulaire est posté            
+ 
+         /*
+         * Ici, mettre vos set_rules() et exécuter la validation 
+         */
+ 
+         // Si validation OK : 
+ 
+         /* 
+         * Avant d'enregistrer en base de données, il nous faut 
+         * récupérer l'extension du fichier 
+         */  
+ 
+         // On extrait l'extension du nom du fichier,
+         // on utilise la variable PHP superglobale $_FILES    
+         if ($_FILES) 
+         {
+            // On extrait l'extension du nom du fichier 
+            // Dans $_FILES["pro_photo"], pro_photo est la valeur donnée à l'attribut name du champ de type 'file'  
+            $extension = substr(strrchr($_FILES["pro_photo"]["name"], "."), 1);
+         }
+ 
+         /*
+         * On a l'extension du fichier donc on peut enregistrer
+         * en base de données 
+         */
+ 
+         /*
+         * Pour créer le nom du fichier : il faut récupérer la clé primaire (pro_id) : 
+         * - dans le cas du formulaire d'ajout : il faut récupérer avec la méthode $this-db->InsertId();
+         * - dans le cas du formulaire de modification : on récupère le pro_id passé dans un champ de type hidden     
+         */
+ 
+         // On créé un tableau de configuration pour l'upload
+         $config['upload_path'] = 'assets\img\jarditou_photos'; // chemin où sera stocké le fichier
+ 
+         // nom du fichier final
+         $config['file_name'] = $id.'.'.$extension; 
+ 
+         // On indique les types autorisés (ici pour des images)
+         $config['allowed_types'] = 'gif|jpg|jpeg|png'; 
+ 
+         // On charge la librairie 'upload'
+         $this->load->library('upload');
+ 
+         // On initialise la config 
+         $this->upload->initialize($config);
+ 
+         // La méthode do_upload() effectue les validations sur l'attribut HTML 'name' ('fichier' dans notre formulaire) et si OK renomme et déplace le fichier tel que configuré
+         if ( ! $this->upload->do_upload('pimg')) 
 {
-   if ($this->input->post()) { // 2ème appel de la page: traitement du formulaire
+     // Echec : on récupère les erreurs dans une variable (une chaîne)
+     $errors = $this->upload->display_errors();    
  
-        $data = $this->input->post();
+     // on réaffiche la vue du formulaire en passant les erreurs 
+     $aView["errors"] = $errors;
  
-        $this->db->insert('produits', $data);
- 
-        redirect("produits/liste");
-   } 
-   else 
-   { // 1er appel de la page: affichage du formulaire
-       $this->load->view('produit_ajout');
+     $this->load->view('ajout', $aView);
+}
+else
+{ // Succès 
+    redirect('produits/liste');
+} 
    }
 }
+//----------------------------------------------------------------UPLOAD-------------------------------------------------------------//
 
+
+    public function __construct()
+{
+    parent:: __construct();
+
+    $this->load->helper('url');//Appel de la fonction url définit plus tôt dans l'autoload et chargée dans addp.php
+    $this->load->database();//Appel de la base de données
+    $this->load->model('Productmod');//Appel du modèle Productmod où la requête a été définit plus tôt
 }
 
+    public function addproduct(){
+$this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
+    }
+
+    public function insert(){
+
+
+        $this->load->helper(array('form', 'url'));
+
+                $this->load->library('form_validation');
+
+                $this->form_validation->set_rules('reference', 'Référence', 'required');
+                $this->form_validation->set_rules('pro_cat_id', 'Catégorie', 'required');
+                $this->form_validation->set_rules('libelle', 'Libellé', 'required');
+                $this->form_validation->set_rules('description', 'Description', 'required');
+                $this->form_validation->set_rules('prix', 'Prix', 'required');
+                $this->form_validation->set_rules('stock', 'Stock', 'required');
+                $this->form_validation->set_rules('couleur', 'Couleur', 'required');
+                $this->form_validation->set_rules('prod', 'Produit bloqué', 'required');
+         
+                if ($this->form_validation->run() == TRUE)
+                {
+                    echo "Formulaire validé";
+                }
+    $config['upload_path']='assets\img\jarditou_photos';//La destination du téléchargement de l'image
+    $config['allowed_types']='png|jpg|jpeg';//Extensions autorisées
+    $config['max_size']=104857600;//Limite de la taille de l'image autorisée
+    $this->load->library('upload',$config);//Initilisation du chargement grâce à la librairie
+
+    if(!$this->upload->do_upload('pimg'))//Condition si le téléchargement échoue ou non
+    {
+        $errors = $this->upload->display_errors();    
+ 
+     // on réaffiche la vue du formulaire en passant les erreurs 
+     $aView["errors"] = $errors;
+ 
+     $this->load->view('addp', $aView);//Si échec, error sera affiché
+    }
+    else{
+        $fd=$this->upload->data();//Télechargement des données
+
+        $fn=$fd['file_name'];//Initialisation du nom de l'image
+
+        $this->Productmod->ins($fn);//Insertion de l'image grâce à la requête définit dans ProductMod
+
+        header("Location:http://localhost/Jarditou_CI/");
+
+    }
+    }
+}
+    /*public function form_ajout()
+        {
+                $this->load->helper(array('form', 'url'));
+
+                $this->load->library('form_validation');
+
+                $this->form_validation->set_rules('reference', 'Référence', 'required');
+                $this->form_validation->set_rules('pro_cat_id', 'Catégorie', 'required');
+                $this->form_validation->set_rules('libelle', 'Libellé', 'required');
+                $this->form_validation->set_rules('description', 'Description', 'required');
+                $this->form_validation->set_rules('prix', 'Prix', 'required');
+                $this->form_validation->set_rules('stock', 'Stock', 'required');
+                $this->form_validation->set_rules('couleur', 'Couleur', 'required');
+                $this->form_validation->set_rules('prod', 'Produit bloqué ?', 'required');
+         
+                if ($this->form_validation->run() == FALSE)
+                {
+                        $this->load->view('addp');
+                }
+                else
+                {
+                        echo "Formulaire validé";
+                }
+        }
+
+}*/
+
+
+?>

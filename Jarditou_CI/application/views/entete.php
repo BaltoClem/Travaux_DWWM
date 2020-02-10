@@ -44,7 +44,7 @@ if(isset($_SESSION['User']))
                 <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/">Tableau</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="inscription.php">Inscription</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/form_produits_ajout">Ajouter un produit</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a></li>
                 <li class="nav-item"><a class="nav-link" href="connexion_index.php">Se connecter</a></li>
         </div>
     </nav>
