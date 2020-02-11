@@ -149,10 +149,6 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
                 $this->form_validation->set_rules('couleur', 'Couleur', 'alpha|required');
                 $this->form_validation->set_rules('prod', 'Produit bloqué', 'required',['required' => 'Vous devez indiquer si le produit est bloqué ou non']);
          
-                if ($this->form_validation->run() == TRUE)
-                {
-                    echo "Formulaire validé";
-                }
     $config['upload_path']='assets\img\jarditou_photos';//La destination du téléchargement de l'image
     $config['allowed_types']='png|jpg|jpeg';//Extensions autorisées
     $config['max_size']=104857600;//Limite de la taille de l'image autorisée
@@ -174,7 +170,7 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
 
         $this->Productmod->ins($fn);//Insertion de l'image grâce à la requête définit dans ProductMod
 
-        header("Location:http://localhost/Jarditou_CI/index.php/produits/liste");
+        $this->load->view('ajoutsuccess');
 
     }
     }
