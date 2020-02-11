@@ -40,12 +40,37 @@ if(isset($_SESSION['User']))
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
             <ul class="navbar-nav ml-0">
-                <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/">Tableau</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="inscription.php">Inscription</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a></li>
-                <li class="nav-item"><a class="nav-link" href="connexion_index.php">Se connecter</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/index">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/liste">Tableau</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/contact">Contact</a></li>
+                <?php
+                if(empty($_SESSION["User"]))
+                {
+                    ?>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/inscription">Inscription</a></li>
+        </ul>
+        <?php
+                }
+                ?>
+                <?php
+                if(isset($_SESSION["Admin"]))
+                {
+                    ?>
+                    <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a></li>
+                    <?php
+                }
+                ?>
+                                <?php
+                if(empty($_SESSION["User"]))
+                {
+                    ?>
+                     <ul class="navbar-nav mr-0">
+                                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/connexion">Se connecter</a></li>
+                                
+                                <?php
+                }
+                ?>
+            </ul>
         </div>
     </nav>
 <!--La banderole sur les promotions avec du web responsive en BootStrap-->

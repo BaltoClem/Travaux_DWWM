@@ -32,14 +32,9 @@ class Produits extends CI_Controller
  //-----------------------------------------------------------LISTE-------------------------------------------------
     public function liste()
 {
-    // Charge la librairie 'database'
-    $this->load->database();
- 
-    // Exécute la requête 
-    $results = $this->db->query("SELECT * FROM produits");  
- 
-    // Récupération des résultats    
-    $aListe = $results->result();   
+    $this->load->model('listeprod');//Chargement du modèle
+   
+    $aListe = $this->listeprod->liste(); //Appel de la fonction dans la classe detailprod
  
     // Ajoute des résultats de la requête au tableau des variables à transmettre à la vue   
     $aView["liste_produits"] = $aListe;
@@ -47,9 +42,9 @@ class Produits extends CI_Controller
     // Appel de la vue avec transmission du tableau  
     $this->load->view('liste', $aView);
 }
-//---------------------------------------------------------------AJOUT-----------------------------------------------------------
+//---------------------------------------------------------------AJOUT (COURS)-----------------------------------------------------------
 
-public function ajout()
+/*public function ajout()
 {       
    // Chargement de l'assistant form       
    $this->load->helper('form');
@@ -60,16 +55,16 @@ public function ajout()
     if ($this->input->post()) 
    { // Si le formulaire est posté            
  
-         /*
-         * Ici, mettre vos set_rules() et exécuter la validation 
-         */
+         
+         //Ici, mettre vos set_rules() et exécuter la validation 
+         
  
          // Si validation OK : 
  
-         /* 
-         * Avant d'enregistrer en base de données, il nous faut 
-         * récupérer l'extension du fichier 
-         */  
+         
+         //Avant d'enregistrer en base de données, il nous faut 
+         // récupérer l'extension du fichier 
+          
  
          // On extrait l'extension du nom du fichier,
          // on utilise la variable PHP superglobale $_FILES    
@@ -80,16 +75,16 @@ public function ajout()
             $extension = substr(strrchr($_FILES["pro_photo"]["name"], "."), 1);
          }
  
-         /*
-         * On a l'extension du fichier donc on peut enregistrer
-         * en base de données 
-         */
+         
+         // On a l'extension du fichier donc on peut enregistrer
+         // en base de données 
+         
  
-         /*
-         * Pour créer le nom du fichier : il faut récupérer la clé primaire (pro_id) : 
-         * - dans le cas du formulaire d'ajout : il faut récupérer avec la méthode $this-db->InsertId();
-         * - dans le cas du formulaire de modification : on récupère le pro_id passé dans un champ de type hidden     
-         */
+         
+         // Pour créer le nom du fichier : il faut récupérer la clé primaire (pro_id) : 
+         //- dans le cas du formulaire d'ajout : il faut récupérer avec la méthode $this-db->InsertId();
+         //- dans le cas du formulaire de modification : on récupère le pro_id passé dans un champ de type hidden     
+         
  
          // On créé un tableau de configuration pour l'upload
          $config['upload_path'] = 'assets\img\jarditou_photos'; // chemin où sera stocké le fichier
@@ -122,15 +117,14 @@ else
     redirect('produits/liste');
 } 
    }
-}
-//----------------------------------------------------------------UPLOAD-------------------------------------------------------------//
+}*/
+//----------------------------------------------------------------UPLOAD IMAGE-------------------------------------------------------------//
 
 
     public function __construct()
 {
     parent:: __construct();
 
-    $this->load->helper('url');//Appel de la fonction url définit plus tôt dans l'autoload et chargée dans addp.php
     $this->load->database();//Appel de la base de données
     $this->load->model('Productmod');//Appel du modèle Productmod où la requête a été définit plus tôt
 }
@@ -150,10 +144,10 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
                 $this->form_validation->set_rules('pro_cat_id', 'Catégorie', 'required');
                 $this->form_validation->set_rules('libelle', 'Libellé', 'required');
                 $this->form_validation->set_rules('description', 'Description', 'required');
-                $this->form_validation->set_rules('prix', 'Prix', 'required');
-                $this->form_validation->set_rules('stock', 'Stock', 'required');
-                $this->form_validation->set_rules('couleur', 'Couleur', 'required');
-                $this->form_validation->set_rules('prod', 'Produit bloqué', 'required');
+                $this->form_validation->set_rules('prix', 'Prix', 'decimal|required');
+                $this->form_validation->set_rules('stock', 'Stock', 'integer|required');
+                $this->form_validation->set_rules('couleur', 'Couleur', 'alpha|required');
+                $this->form_validation->set_rules('prod', 'Produit bloqué', 'required',['required' => 'Vous devez indiquer si le produit est bloqué ou non']);
          
                 if ($this->form_validation->run() == TRUE)
                 {
@@ -180,37 +174,48 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
 
         $this->Productmod->ins($fn);//Insertion de l'image grâce à la requête définit dans ProductMod
 
-        header("Location:http://localhost/Jarditou_CI/");
+        header("Location:http://localhost/Jarditou_CI/index.php/produits/liste");
 
     }
     }
-}
-    /*public function form_ajout()
-        {
-                $this->load->helper(array('form', 'url'));
+//----------------------------------------------PAGE D'ACCUEIL-----------------------------------//
+    public function index(){
+        $this->load->view('index');
+            }
 
-                $this->load->library('form_validation');
 
-                $this->form_validation->set_rules('reference', 'Référence', 'required');
-                $this->form_validation->set_rules('pro_cat_id', 'Catégorie', 'required');
-                $this->form_validation->set_rules('libelle', 'Libellé', 'required');
-                $this->form_validation->set_rules('description', 'Description', 'required');
-                $this->form_validation->set_rules('prix', 'Prix', 'required');
-                $this->form_validation->set_rules('stock', 'Stock', 'required');
-                $this->form_validation->set_rules('couleur', 'Couleur', 'required');
-                $this->form_validation->set_rules('prod', 'Produit bloqué ?', 'required');
-         
-                if ($this->form_validation->run() == FALSE)
-                {
-                        $this->load->view('addp');
-                }
-                else
-                {
-                        echo "Formulaire validé";
-                }
+//----------------------------------------------CONTACT-----------------------------------------//
+
+public function contact(){
+    $this->load->view('contact');
         }
 
-}*/
+//----------------------------------------------INSCRIPTION-----------------------------------------//
 
+public function inscription(){
+    $this->load->view('inscription');
+        }
+
+//----------------------------------------------CONNEXION-----------------------------------------//
+
+public function connexion(){
+    $this->load->view('connexion_index');
+        }
+
+//----------------------------------------------DETAIL-----------------------------------------//
+
+public function detail(){
+     // On charge le modèle 
+     $this->load->model('detailprod');//Chargement du modèle
+   
+     $aListe = $this->detailprod->detail(); //Appel de la fonction dans la classe detailprod
+  
+     $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+  
+     $this->load->view('detail', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+        }
+
+}
+    
 
 ?>

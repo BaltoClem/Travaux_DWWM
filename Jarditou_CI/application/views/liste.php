@@ -16,10 +16,7 @@
         </thead>
 
         <tbody>
-
-            <!--Création de la connexion entre la base de donnéers et le site-->
 <?php 
-
 
 foreach ($liste_produits as $row) 
 {          
@@ -35,7 +32,7 @@ foreach ($liste_produits as $row)
     <td><img src = "http://localhost/Jarditou_CI/assets\img\jarditou_photos/<?=$image_src?>" alt='photo' title='photo' width= "100" height= "auto" class="text-center align-middle"></td>
     <td class="text-center align-middle"><?=$row->pro_id ?></td>
     <td class="text-center align-middle"><?=$row->pro_ref?></td>
-    <td class="text-center align-middle"><a href='detail.php?id=<?=$row->pro_id?>' class="lien" style="color:#0000FF; text-decoration:underline"><?= $row->pro_libelle ?></a></td>
+    <td class="text-center align-middle"><a href='http://localhost/Jarditou_CI/index.php/produits/detail?id=<?=$row->pro_id?>' class="lien" style="color:#0000FF; text-decoration:underline"><?= $row->pro_libelle ?></a></td>
     <td class="text-center align-middle"><?= $row->pro_prix."€"?></td>
     <td class="text-center align-middle"><?= $row->pro_stock?></td>
     <td class="text-center align-middle"><?= $row->pro_couleur?></td>

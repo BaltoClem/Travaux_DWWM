@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Productmod extends CI_Model
 {
     public function ins($x)//Définition et préparation des données à insérer dans la base de données
