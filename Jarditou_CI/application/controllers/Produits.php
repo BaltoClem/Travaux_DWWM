@@ -161,7 +161,7 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
      // on réaffiche la vue du formulaire en passant les erreurs 
      $aView["errors"] = $errors;
  
-     $this->load->view('addp', $aView);//Si échec, error sera affiché
+     $this->load->view('addp', $aView);
     }
     else{
         $fd=$this->upload->data();//Télechargement des données
@@ -210,6 +210,26 @@ public function detail(){
   
      $this->load->view('detail', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
         }
+
+//----------------------------------------------SUPPRESSION-----------------------------------------//
+
+public function suppr(){
+    // On charge le modèle 
+
+    $this->load->model('supprprod');//Chargement du modèle
+  
+    $aListe = $this->supprprod->suppr(); //Appel de la fonction dans la classe detailprod
+ 
+    $aView["liste_produits"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+ 
+    $this->load->view('index', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+       }
+
+//---------------------------------------------SUCCES SUPPRESSION------------------------------------------
+
+public function suppr_success(){
+$this->load->view('suppr_success');
+            }
 
 }
     

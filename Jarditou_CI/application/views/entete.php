@@ -19,6 +19,7 @@ if(isset($_SESSION['User']))
 <!--Mettre le lien pour BootStrap AVANT le lien CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/Jarditou_CI/assets\css\style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Jarditou</title>
 </head>
 <!--Consigne : un seul conteneur-->

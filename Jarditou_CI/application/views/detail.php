@@ -83,19 +83,13 @@
 
       <!--Bouton d'envoi-->
       <p>
-      <?php
-      if(isset($_SESSION["Admin"]))
-                {
-                    ?>
-        <a href='produit_modif.php?id=<?=$pro_id?>' class="btn btn-warning"> Modifier </a>
-        <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionner-->
-        <a href="produit_suppr.php?pro_id=<?= $row->pro_id?>" class="btn btn-danger"
-          onclick="return confirm('Etes-vous sûr de vouloir supprimer le produit ?')">Supprimer<a>
-        <?php
-        }
       
-        ?>
-        
+    
+                    
+        <a href='produit_modif.php?id=<?=$row->$pro_id?>' class="btn btn-warning"> Modifier </a>
+        <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionner-->
+        <a href="http://localhost/Jarditou_CI/index.php/produits/suppr?id=<?= $row->pro_id?>" class="btn btn-danger"
+          onclick="return confirm('Etes-vous sûr de vouloir supprimer le produit ?')">Supprimer<a>
             <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
       </p>
       <?php

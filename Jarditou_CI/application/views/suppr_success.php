@@ -6,32 +6,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/Jarditou_CI/assets\css\style.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Ajout de produit</title>
+    <title>Suppression de produit</title>
 </head>
 <body>
     
 <script> 
 
 swal({
-  title: "Good job!",
-  text: "Votre produit a été ajouté !",
-  icon: "success",
-  button: false,
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your imaginary file has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
 });
-window.setTimeout("location=('http://localhost/Jarditou_CI/index.php/produits/liste');",2000);
-</script>
-<style>
-.swal-overlay {
-  background-color: rgba(63, 191, 63, 0.45);
-}
-</style>
+
     
 </body>
 </html>
-
-
-
-
-
-
-
