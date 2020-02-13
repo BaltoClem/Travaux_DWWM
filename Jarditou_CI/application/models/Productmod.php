@@ -32,7 +32,14 @@ class Productmod extends CI_Model
         );
 
         $this->db->insert('produits',$w);//Exécution
+    }
 
+    public function categ()
+    
+    {
+        $this->load->database();
+        $this->db->get('categories');
+        
 
     }
 }

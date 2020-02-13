@@ -2,7 +2,7 @@
 include ("entete.php");
 date_default_timezone_set('Europe/Paris');//Définition de la date
 $date = date("Y-m-d");
-$query=$this->db->query("SELECT * FROM categories ORDER BY cat_id");
+//$query=$this->db->query("SELECT * FROM categories ORDER BY cat_id");
 ?>
 <br>
 
@@ -41,17 +41,17 @@ echo form_open_multipart("produits/insert",  array('class' => 'col-12'));
                 <div><label for="categorie">Catégorie</label>
                 <select class="custom-select" name="pro_cat_id" id="pro_cat_id">
                 <option value="">-- Sélectionner une catégorie--</option>
-                    <?php
-                    foreach($query->result() as $row)
-                    //foreach permettra de parourir dans le tableau de la base de données et affichera ici toutes les catégories du tableau sous forme de liste déroulante
-                    {
-                    ?>
+                    
+                    
+                    
+                    
+                    
                         <option value = "<?= $row->cat_id//Recherche de cat_id dans le tableau catégories grâce à la requête?>"><?=$row->cat_id."-".$row->cat_nom?></option>
-                    <?php
-                    }
-                    ?>
+                    
+                    
+                    
                 </select>
-                <?php 
+                <?php
                     if (isset($_GET["erreur2"]))
                     {
                         ?>

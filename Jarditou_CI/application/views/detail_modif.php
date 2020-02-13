@@ -22,42 +22,41 @@
       <br>
 
       <!--Référence-->
-      <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control" value="<?=$row->pro_ref?>"
-        readonly>
-
-      <br>
+      <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control" value="<?=$row->pro_ref?>">
 
       <!--Catégorie-->
-      <label for="categorie"> Catégorie :</label><input name="categorie" class="form-control" value="<?=$row->cat_nom?>" readonly>
-      <br>
+      <p></p><label for="categorie">Catégorie</label>
+                <select class="custom-select" name="pro_cat_id" id="pro_cat_id">
+                <option value="">-- Sélectionner une catégorie--</option>
+                <option value = "<?= $row->cat_id?>"><?=$row->cat_id."-".$row->cat_nom?></option>
+                </select></p>
+      
 
       <!--Libellé-->
-      <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control" value="<?=$row->pro_libelle?>"
-        readonly>
+      <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control" value="<?=$row->pro_libelle?>">
 
       <br>
 
       <!--Description-->
-      <label for="description"> Description :</label> <textarea class="form-control" name="description" value
-        placeholder="<?=$row->pro_description?>" readonly></textarea>
+      <label for="description"> Description :</label> <textarea class="form-control" name="description"></textarea>
 
       <br>
 
       <!--Prix-->
       <label for="prix"> Prix :</label> <input type="text" name="prix" id="prix" class="form-control"
-        value="<?=$row->pro_prix?>" readonly>
+        value="<?=$row->pro_prix?>">
 
       <br>
 
       <!--Stock-->
       <label for="stock"> Stock :</label> <input type="stock" name="stock" id="stock" class="form-control"
-        value="<?= $row->pro_stock?>" readonly>
+        value="<?= $row->pro_stock?>">
 
       <br>
 
       <!--Couleur-->
       <label for="couleur"> Couleur :</label> <input type="couleur" name="couleur" id="couleur" class="form-control"
-        value="<?= $row->pro_couleur?>" readonly>
+        value="<?= $row->pro_couleur?>">
 
       <br>
 
@@ -67,14 +66,14 @@
       <br>
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" value="<?=$row->pro_bloque?>" id="bloque_oui" name="bloque"
-          disabled
+          
           <?php if ($row->pro_bloque == 1) { echo "checked"; }//"Si le produit est égal à 1, alors le bouton sera coché" ?>>
         <label class="form-check-label" for="bloque">Oui</label>
       </div>
 
       <div class="form-check form-check-inline">
         <input type="radio" class="form-check-input" value="<?=$row->pro_bloque?>" id="bloque_non" name="bloque"
-          disabled
+         
           <?php if (is_null($row->pro_bloque)) { echo "checked"; }//"Si le produit est égal à 0, alors le bouton sera coché" ?>>
         <label class="form-check-label" for="bloque">Non</label>
       </div>
@@ -83,14 +82,8 @@
 
       <!--Bouton d'envoi-->
       <p>
-      
-    
-                    
-        <a href="http://localhost/Jarditou_CI/index.php/produits/detail_modif?id=<?=$row->pro_id?>" class="btn btn-warning"> Modifier </a>
-        <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionner-->
-        <a href="http://localhost/Jarditou_CI/index.php/produits/suppr?id=<?= $row->pro_id?>" class="btn btn-danger"
-          onclick="return confirm('Etes-vous sûr de vouloir supprimer le produit ?')">Supprimer<a>
-            <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
+            <button href="http://localhost/Jarditou_CI/index.php/produits/modif?id=<?=$row->pro_id?>" class="btn btn-success">Valider</button>
+            <button href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-info">Retour</button>
       </p>
       <?php
   include("pieddepage.php")

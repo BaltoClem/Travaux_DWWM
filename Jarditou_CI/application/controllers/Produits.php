@@ -125,12 +125,21 @@ else
 {
     parent:: __construct();
 
+    $this->load->helper('url');
     $this->load->database();//Appel de la base de données
     $this->load->model('Productmod');//Appel du modèle Productmod où la requête a été définit plus tôt
 }
 
     public function addproduct(){
-$this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
+
+        $this->load->model('productmod');//Chargement du modèle
+   
+     $aListe = $this->productmod->categ(); //Appel de la fonction dans la classe detailprod
+  
+     $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+  
+     $this->load->view('addp', $aView);
+
     }
 
     public function insert(){
@@ -144,8 +153,8 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
                 $this->form_validation->set_rules('pro_cat_id', 'Catégorie', 'required');
                 $this->form_validation->set_rules('libelle', 'Libellé', 'required');
                 $this->form_validation->set_rules('description', 'Description', 'required');
-                $this->form_validation->set_rules('prix', 'Prix', 'decimal|required');
-                $this->form_validation->set_rules('stock', 'Stock', 'integer|required');
+                $this->form_validation->set_rules('prix', 'Prix', 'numeric|required');
+                $this->form_validation->set_rules('stock', 'Stock', 'numeric|required');
                 $this->form_validation->set_rules('couleur', 'Couleur', 'alpha|required');
                 $this->form_validation->set_rules('prod', 'Produit bloqué', 'required',['required' => 'Vous devez indiquer si le produit est bloqué ou non']);
          
@@ -154,25 +163,25 @@ $this->load->view('addp');//Nécessaire pour la view du formulaire d'ajout
     $config['max_size']=104857600;//Limite de la taille de l'image autorisée
     $this->load->library('upload',$config);//Initilisation du chargement grâce à la librairie
 
-    if(!$this->upload->do_upload('pimg'))//Condition si le téléchargement échoue ou non
+    if ($this->form_validation->run() == FALSE)
     {
-        $errors = $this->upload->display_errors();    
- 
-     // on réaffiche la vue du formulaire en passant les erreurs 
-     $aView["errors"] = $errors;
- 
-     $this->load->view('addp', $aView);
+            $this->load->view('addp');
     }
+
+    else if (!$this->upload->do_upload('pimg'))
+    {
+        echo"error";
+    }
+     
     else{
         $fd=$this->upload->data();//Télechargement des données
 
         $fn=$fd['file_name'];//Initialisation du nom de l'image
 
         $this->Productmod->ins($fn);//Insertion de l'image grâce à la requête définit dans ProductMod
-
         $this->load->view('ajoutsuccess');
-
     }
+    
     }
 //----------------------------------------------PAGE D'ACCUEIL-----------------------------------//
     public function index(){
@@ -209,6 +218,7 @@ public function detail(){
      $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
   
      $this->load->view('detail', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+     
         }
 
 //----------------------------------------------SUPPRESSION-----------------------------------------//
@@ -230,6 +240,43 @@ public function suppr(){
 public function suppr_success(){
 $this->load->view('suppr_success');
             }
+
+//----------------------------------------------SUPPRESSION-----------------------------------------//
+
+public function modif(){
+    // On charge le modèle 
+
+    $this->load->model('modifprod');//Chargement du modèle
+  
+    $aListe = $this->modifprod->modif(); //Appel de la fonction dans la classe detailprod
+ 
+    $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+ 
+    $this->load->view('liste', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+       }
+
+//----------------------------------------------DETAIL-----------------------------------------//
+
+public function detail_modif(){
+    // On charge le modèle 
+    $this->load->model('detailprod');//Chargement du modèle
+  
+    $aListe = $this->detailprod->detail(); //Appel de la fonction dans la classe detailprod
+ 
+    $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+ 
+    $this->load->view('detail_modif', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+
+    $this->load->model('listeprod');//Chargement du modèle
+   
+    $aListe2 = $this->listeprod->liste(); //Appel de la fonction dans la classe detailprod
+ 
+    // Ajoute des résultats de la requête au tableau des variables à transmettre à la vue   
+    $aView2["categories"] = $aListe2;
+ 
+    // Appel de la vue avec transmission du tableau  
+    $this->load->view('liste', $aView2);
+       }
 
 }
     
