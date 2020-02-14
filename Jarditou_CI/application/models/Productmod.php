@@ -33,14 +33,18 @@ class Productmod extends CI_Model
 
         $this->db->insert('produits',$w);//Exécution
     }
-
     public function categ()
     
     {
         $this->load->database();
-        $this->db->get('categories');
-        
-
+        $requete = $this->db->get('categories');
+        if($requete->num_rows() > 0) {
+            $results = $requete->result();
+        }
+        else{
+            echo "Erreur";
+        }
+        return $results;
     }
 }
 

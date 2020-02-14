@@ -118,7 +118,7 @@ else
 } 
    }
 }*/
-//----------------------------------------------------------------UPLOAD IMAGE-------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------------------------//
 
 
     public function __construct()
@@ -129,16 +129,16 @@ else
     $this->load->database();//Appel de la base de données
     $this->load->model('Productmod');//Appel du modèle Productmod où la requête a été définit plus tôt
 }
-
+//----------------------------------------------------------------AJOUT PRODUIT-------------------------------------------------------------//
     public function addproduct(){
 
-        $this->load->model('productmod');//Chargement du modèle
+    $this->load->model('productmod');//Chargement du modèle
    
      $aListe = $this->productmod->categ(); //Appel de la fonction dans la classe detailprod
   
-     $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+     $aView["liste_cat"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
   
-     $this->load->view('addp', $aView);
+     $this->load->view('addp', $aView);//Chargement de la vue + chargement de la requête
 
     }
 
@@ -213,11 +213,11 @@ public function detail(){
      // On charge le modèle 
      $this->load->model('detailprod');//Chargement du modèle
    
-     $aListe = $this->detailprod->detail(); //Appel de la fonction dans la classe detailprod
+     $aListe = $this->detailprod->detail_prod(); //Appel de la fonction dans la classe detailprod
   
      $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
   
-     $this->load->view('detail', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+     $this->load->view('detail', $aView);//Chargement de la vue et de la variable définit à la ligne précédente
      
         }
 
@@ -232,7 +232,7 @@ public function suppr(){
  
     $aView["liste_produits"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
  
-    $this->load->view('index', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+    $this->load->view('index', $aView);//Chargement de la vue et de la variable définit à la ligne précédente
        }
 
 //---------------------------------------------SUCCES SUPPRESSION------------------------------------------
@@ -241,42 +241,52 @@ public function suppr_success(){
 $this->load->view('suppr_success');
             }
 
-//----------------------------------------------SUPPRESSION-----------------------------------------//
+
+//----------------------------------------------DETAIL MODIF-----------------------------------------//
+
+public function detail_modif(){
+    // On charge le modèle 
+    $this->load->model('detailprod');//Chargement du modèle
+  
+    $aListe = $this->detailprod->detail_prod(); //Appel de la fonction dans la classe detailprod
+ 
+    $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+ 
+    $this->load->view('detail_modif', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+    
+
+       }
+
+//----------------------------------------------DETAIL MODIF CATEGORIES-----------------------------------------//
+
+public function detail_modif_cat(){
+    // On charge le modèle 
+    $this->load->model('detailprod');//Chargement du modèle
+   
+     $aListe = $this->detailprod->categ(); //Appel de la fonction dans la classe detailprod
+  
+     $aView["liste_cat"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+  
+     $this->load->view('detail_modif', $aView);//Chargement de la vue + chargement de la requête
+
+
+       }
+
+//----------------------------------------------MODIFICATION-----------------------------------------//
 
 public function modif(){
     // On charge le modèle 
 
     $this->load->model('modifprod');//Chargement du modèle
   
-    $aListe = $this->modifprod->modif(); //Appel de la fonction dans la classe detailprod
+    $aListe = $this->modifprod->modif(); //Appel de la fonction dans la classe 
  
     $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
  
-    $this->load->view('liste', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
+    $this->load->view('detail', $aView);//Chargement de la vue et de la variable définit à la ligne précédente
        }
 
-//----------------------------------------------DETAIL-----------------------------------------//
 
-public function detail_modif(){
-    // On charge le modèle 
-    $this->load->model('detailprod');//Chargement du modèle
-  
-    $aListe = $this->detailprod->detail(); //Appel de la fonction dans la classe detailprod
- 
-    $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
- 
-    $this->load->view('detail_modif', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
-
-    $this->load->model('listeprod');//Chargement du modèle
-   
-    $aListe2 = $this->listeprod->liste(); //Appel de la fonction dans la classe detailprod
- 
-    // Ajoute des résultats de la requête au tableau des variables à transmettre à la vue   
-    $aView2["categories"] = $aListe2;
- 
-    // Appel de la vue avec transmission du tableau  
-    $this->load->view('liste', $aView2);
-       }
 
 }
     

@@ -10,7 +10,6 @@
   <form class="col-12">
     <div class="form">
 
-
       <div class="text-center">
         <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300>
       </div>
@@ -23,15 +22,26 @@
 
       <!--Référence-->
       <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control" value="<?=$row->pro_ref?>">
-
+<br>
       <!--Catégorie-->
-      <p></p><label for="categorie">Catégorie</label>
-                <select class="custom-select" name="pro_cat_id" id="pro_cat_id">
+      <p><label for="categorie">Catégorie</label>
+      <select class="custom-select" name="pro_cat_id" id="pro_cat_id">
                 <option value="">-- Sélectionner une catégorie--</option>
-                <option value = "<?= $row->cat_id?>"><?=$row->cat_id."-".$row->cat_nom?></option>
-                </select></p>
-      
-
+                    
+                    <?php
+                   
+                    foreach($liste_cat as $row)
+                    
+                    {
+                        ?>
+                        <option value = "<?= $row->cat_id//Recherche de cat_id dans le tableau catégories grâce à la requête?>"><?=$row->cat_id."-".$row->cat_nom?></option>
+                        <?php
+                    }
+                    ?>
+                    
+                    
+                </select>
+                </p>
       <!--Libellé-->
       <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control" value="<?=$row->pro_libelle?>">
 

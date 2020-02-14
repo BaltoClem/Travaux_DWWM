@@ -42,12 +42,15 @@ echo form_open_multipart("produits/insert",  array('class' => 'col-12'));
                 <select class="custom-select" name="pro_cat_id" id="pro_cat_id">
                 <option value="">-- Sélectionner une catégorie--</option>
                     
+                    <?php
+                    foreach($liste_cat as $row)
                     
-                    
-                    
-                    
+                    {
+                        ?>
                         <option value = "<?= $row->cat_id//Recherche de cat_id dans le tableau catégories grâce à la requête?>"><?=$row->cat_id."-".$row->cat_nom?></option>
-                    
+                        <?php
+                    }
+                    ?>
                     
                     
                 </select>
