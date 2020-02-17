@@ -2,7 +2,7 @@
 include ("entete.php");
 date_default_timezone_set('Europe/Paris');//Définition de la date
 $date = date("Y-m-d");
-//$query=$this->db->query("SELECT * FROM categories ORDER BY cat_id");
+
 ?>
 <br>
 

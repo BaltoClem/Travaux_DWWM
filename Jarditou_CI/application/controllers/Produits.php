@@ -261,35 +261,36 @@ public function detail_modif(){
 
 //----------------------------------------------MODIFICATION-----------------------------------------//
 
-public function modif($id){
-    // On charge le modèle 
-
+public function modif($id)
+{
+    // Chargement de la librairie database 
     $this->load->database();
+ 
+    // Chargement des assistants url et form        
     $this->load->helper('url', 'form');
+ 
     if ($this->input->post()) 
     {
         // On récupère
         $data = $this->input->post();
  
-        $id = $this->input->post("id");
-
+        $id = $this->input->post("pro_id");
+ 
         $this->db->where('pro_id', $id);
         $this->db->update('produits', $data);
  
-        redirect('produits/detail');
+        redirect('produits/liste');
     } 
-    else{
-    $liste = $this->db->query("SELECT * FROM produits WHERE id= ?", $id);
-    if ( ! $liste->row()) 
-        {
-            echo"<p>L'id ".$id." n'existe pas dans la base de données.</p>";    
-            exit;             
-        }            
-    $model["produits"] = $liste->row(); // première ligne du résultat
-    $this->load->view('modif', $model);
+    else 
+    {
+        $aListe = $this->db->query("SELECT * FROM produits WHERE id= ?", array($id));
+        $aView["produits"] = $aListe->row(); // première ligne du résultat
+        $this->load->view('modif', $aView);
+    }
 }
-       }
+
+
+
 }
-    
 
 ?>
