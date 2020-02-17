@@ -248,46 +248,47 @@ public function detail_modif(){
     // On charge le modèle 
     $this->load->model('detailprod');//Chargement du modèle
   
-    $aListe = $this->detailprod->detail_prod(); //Appel de la fonction dans la classe detailprod
+    $aListe = $this->detailprod->detail_prod(); //Appel de la fonction dans la classe detailprod pour afficher le détail du produit
+    $aListe2 = $this->detailprod->categ();
  
     $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+    $aView["liste_cat"] = $aListe2;
  
     $this->load->view('detail_modif', $aView);//Chargement de la vue est de la variable définit à la ligne précédente
     
 
        }
 
-//----------------------------------------------DETAIL MODIF CATEGORIES-----------------------------------------//
-
-public function detail_modif_cat(){
-    // On charge le modèle 
-    $this->load->model('detailprod');//Chargement du modèle
-   
-     $aListe = $this->detailprod->categ(); //Appel de la fonction dans la classe detailprod
-  
-     $aView["liste_cat"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
-  
-     $this->load->view('detail_modif', $aView);//Chargement de la vue + chargement de la requête
-
-
-       }
-
 //----------------------------------------------MODIFICATION-----------------------------------------//
 
-public function modif(){
+public function modif($id){
     // On charge le modèle 
 
-    $this->load->model('modifprod');//Chargement du modèle
-  
-    $aListe = $this->modifprod->modif(); //Appel de la fonction dans la classe 
+    $this->load->database();
+    $this->load->helper('url', 'form');
+    if ($this->input->post()) 
+    {
+        // On récupère
+        $data = $this->input->post();
  
-    $aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+        $id = $this->input->post("id");
+
+        $this->db->where('pro_id', $id);
+        $this->db->update('produits', $data);
  
-    $this->load->view('detail', $aView);//Chargement de la vue et de la variable définit à la ligne précédente
+        redirect('produits/detail');
+    } 
+    else{
+    $liste = $this->db->query("SELECT * FROM produits WHERE id= ?", $id);
+    if ( ! $liste->row()) 
+        {
+            echo"<p>L'id ".$id." n'existe pas dans la base de données.</p>";    
+            exit;             
+        }            
+    $model["produits"] = $liste->row(); // première ligne du résultat
+    $this->load->view('modif', $model);
+}
        }
-
-
-
 }
     
 

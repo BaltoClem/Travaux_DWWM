@@ -8,7 +8,9 @@
 
 <body>
   <form class="col-12">
-    <div class="form">
+  <?php 
+echo form_open_multipart("produits/modif",  array('class' => 'col-12')); 
+?>
 
       <div class="text-center">
         <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300>
@@ -20,23 +22,32 @@
 
       <br>
 
-      <!--Référence-->
+      <!---------------------------------------------------------------Référence-------------------------------------------------------------------------------->
       <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control" value="<?=$row->pro_ref?>">
 <br>
       <!--Catégorie-->
       <p><label for="categorie">Catégorie</label>
       <select class="custom-select" name="pro_cat_id" id="pro_cat_id">
-                <option value="">-- Sélectionner une catégorie--</option>
+                <option value="">--Sélectionner une catégorie--</option>
                     
                     <?php
                    
-                    foreach($liste_cat as $row)
-                    
-                    {
-                        ?>
-                        <option value = "<?= $row->cat_id//Recherche de cat_id dans le tableau catégories grâce à la requête?>"><?=$row->cat_id."-".$row->cat_nom?></option>
-                        <?php
-                    }
+                   foreach($liste_cat as $row2) // Permet l'affichage du menu déroulant pour obtenir la liste des catégories
+                   {
+                       ?>
+                       <option value = "<?= $row2->cat_id?>"
+                       <?php
+               
+                       if ($row2->cat_id == $row->pro_cat_id)
+                       {
+                           echo "selected";
+                       }
+                       ?>
+                       >
+                       <?=$row2->cat_id."-".$row2->cat_nom?></option>
+               
+                       <?php
+                   }
                     ?>
                     
                     
@@ -92,8 +103,8 @@
 
       <!--Bouton d'envoi-->
       <p>
-            <button href="http://localhost/Jarditou_CI/index.php/produits/modif?id=<?=$row->pro_id?>" class="btn btn-success">Valider</button>
-            <button href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-info">Retour</button>
+            <a href="http://localhost/Jarditou_CI/index.php/produits/modif?id=<?=$row->pro_id?>" class="btn btn-success" value="update">Valider</a>
+            <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-info">Retour</a>
       </p>
       <?php
   include("pieddepage.php")
