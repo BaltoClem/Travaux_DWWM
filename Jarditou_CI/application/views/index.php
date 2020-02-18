@@ -2,7 +2,7 @@
 include("entete.php");
 ?>
                  <!--Le texte principal avec Bootstrap, à partir de LG le texte prendra 8 colonnes-->
-                 <div class = "col-8 col-lg-8">
+                 <div class = "col-6 col-lg-8">
                      <h1>Accueil</h1>
                      <hr>
                      
@@ -25,7 +25,7 @@ include("entete.php");
                     
                     <!--La colonne droite (devra disparaître en dessous de lg)-->
                     
-                    <aside class="col-4 col-lg-4">
+                    <aside class="col-6 col-lg-4">
                         [COLONNE DROITE]
                     </aside>                   
                     

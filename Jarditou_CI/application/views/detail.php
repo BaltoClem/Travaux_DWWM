@@ -1,15 +1,9 @@
 <?php include("entete.php")?>
-<?php     
-     
-      //On demande ici d'aller chercher l'id du produit correspondant au produit sélectionné par l'utilisateur
- 
-      ?>
+
 </head>
 
 <body>
-  <form class="col-12">
-    <div class="form">
-
+<?php echo form_open_multipart("produits/suppr?id=$row->pro_id",  array('class' => 'col-12', 'name' => 'detail'));?>
 
       <div class="text-center">
         <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300>
@@ -88,9 +82,31 @@
                     
         <a href="http://localhost/Jarditou_CI/index.php/produits/detail_modif?id=<?=$row->pro_id?>" class="btn btn-warning"> Modifier </a>
         <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionner-->
-        <a href="http://localhost/Jarditou_CI/index.php/produits/suppr?id=<?= $row->pro_id?>" class="btn btn-danger"
-          onclick="return confirm('Etes-vous sûr de vouloir supprimer le produit ?')">Supprimer<a>
-            <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
+        <input type="button" class="btn btn-danger" name="suppr" value="Supprimer" onclick="validateForm()"></input>
+
+<script>
+        function validateForm() {
+         event.preventDefault(); // prevent form submit
+         var form = document.forms["detail"]; // storing the form
+         swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+             .then((willDelete) => {
+                  if (willDelete) {
+                        form.submit();
+                  } else {
+                         swal("Your imaginary file is safe!");
+              }
+           });
+}
+</script>
+<a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
+
+</form>
       </p>
       <?php
   include("pieddepage.php")

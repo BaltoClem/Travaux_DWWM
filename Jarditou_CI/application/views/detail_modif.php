@@ -1,12 +1,5 @@
 <?php include("entete.php")?>
-<?php     
-     
-      //On demande ici d'aller chercher l'id du produit correspondant au produit sélectionné par l'utilisateur
- 
-      ?>
 </head>
-
-<body>
  <!-- <form class="col-12">-->
   <?php 
 echo form_open_multipart("produits/modif/$row->pro_id",  array('class' => 'col-12')); 
@@ -80,7 +73,7 @@ echo form_open_multipart("produits/modif/$row->pro_id",  array('class' => 'col-1
         value="<?= $row->pro_couleur?>">
 
       <br>
-
+      <div><label for="photo">Photo du produit</label> <p><input type="file" name="pro_photo"></p></div>
       <!--Produit bloqué-->
       <label for="bloque">Produit bloqué ?</label>
       <!--Pour des boutons radio différents, l'id doit être différent mais le name doit être le même-->

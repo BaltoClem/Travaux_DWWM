@@ -230,9 +230,9 @@ public function suppr(){
   
     $aListe = $this->supprprod->suppr(); //Appel de la fonction dans la classe detailprod
  
-    $aView["liste_produits"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+    /*$aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
  
-    $this->load->view('index', $aView);//Chargement de la vue et de la variable définit à la ligne précédente
+    $this->load->view('detail', $aView);//Chargement de la vue et de la variable définit à la ligne précédente*/
        }
 
 //---------------------------------------------SUCCES SUPPRESSION------------------------------------------
@@ -272,14 +272,28 @@ public function modif($id)
     if ($this->input->post()) 
     {
         // On récupère
+        
+        $config['upload_path']='assets\img\jarditou_photos';
+        $config['allowed_types']='png|jpg|jpeg';
+        $config['max_size']= 104857600;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('pro_photo'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                $this->load->view('detail_modif', $error);
+        }
+        else
+        {
         $data = $this->input->post();
- 
         $id = $this->input->post("pro_id");
- 
         $this->db->where('pro_id', $id);
         $this->db->update('produits', $data);
  
-        redirect('produits/liste');
+        $this->load->view('modifsuccess');
+        }
     } 
     else 
     {
