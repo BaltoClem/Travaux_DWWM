@@ -89,21 +89,29 @@
          event.preventDefault(); // prevent form submit
          var form = document.forms["detail"]; // storing the form
          swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
+                title: "Etes-vous sûr ?",
+                text: "Une fois supprimé, vous ne pourrez pas récupérer le produit!",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
               })
              .then((willDelete) => {
                   if (willDelete) {
+                    
+                    swal("Votre produit a été supprimé !");
                         form.submit();
                   } else {
-                         swal("Your imaginary file is safe!");
+                         swal("Votre produit n'a pas été supprimé !");
               }
            });
 }
 </script>
+<style>
+.swal-overlay {
+  background-color: rgba(243, 156, 18, 0.45);
+}
+
+</style>
 <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
 
 </form>

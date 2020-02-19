@@ -156,6 +156,7 @@ else
                 $this->form_validation->set_rules('prix', 'Prix', 'numeric|required');
                 $this->form_validation->set_rules('stock', 'Stock', 'numeric|required');
                 $this->form_validation->set_rules('couleur', 'Couleur', 'alpha|required');
+                //$this->form_validation->set_rules('pimg', 'photo','required');
                 $this->form_validation->set_rules('prod', 'Produit bloqué', 'required',['required' => 'Vous devez indiquer si le produit est bloqué ou non']);
          
     $config['upload_path']='assets\img\jarditou_photos';//La destination du téléchargement de l'image
@@ -165,7 +166,10 @@ else
 
     if ($this->form_validation->run() == FALSE)
     {
-            $this->load->view('addp');
+        $this->load->model('detailprod');
+        $aListe2 = $this->detailprod->categ();
+        $aView["liste_cat"] = $aListe2;
+        $this->load->view('addp', $aView);
     }
 
     else if (!$this->upload->do_upload('pimg'))
@@ -189,17 +193,63 @@ else
             }
 
 
-//----------------------------------------------CONTACT-----------------------------------------//
+//----------------------------------------------PAGE CONTACT-----------------------------------------//
 
 public function contact(){
     $this->load->view('contact');
         }
+//----------------------------------------------CONTROLE CONTACT-----------------------------------------//
 
+public function form_contact(){
+
+    $this->load->helper(array('form', 'url'));
+
+    $this->load->library('form_validation');
+
+    $this->form_validation->set_rules('nom', 'Nom', 'alpha|required');
+    $this->form_validation->set_rules('prenom', 'Prénom', 'alpha|required');
+    $this->form_validation->set_rules('sexe', 'Sexe', 'required');
+    $this->form_validation->set_rules('date', 'Date de Naissance', 'required');
+    $this->form_validation->set_rules('adresse', 'Adresse', 'required');
+    $this->form_validation->set_rules('codepostal', 'Code Postal', 'integer|exact_length[5]|required',['integer' => 'Veuillez rentrer des chiffres.']);
+    $this->form_validation->set_rules('ville', 'Ville', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'valid_email|required',['valid_email' => 'Veuillez rentrer une adresse e-mail valide.']);
+    $this->form_validation->set_rules('sujet', 'Sujet', 'required',['required' => 'Veuillez choisir le sujet de votre question.']);
+    $this->form_validation->set_rules('question', 'Question', 'required');
+    $this->form_validation->set_rules('accord', 'Bouton accord', 'required',['required' => 'Veuillez accepter le traitement informatique.']);
+    
+    if ($this->form_validation->run() == FALSE)
+    {
+        
+        $this->load->view('contact');
+    }
+}
 //----------------------------------------------INSCRIPTION-----------------------------------------//
 
 public function inscription(){
     $this->load->view('inscription');
         }
+
+//----------------------------------------------CONTROLE NSCRIPTION-----------------------------------------//
+
+public function form_inscr(){
+
+    $this->load->helper(array('form', 'url'));
+
+    $this->load->library('form_validation');
+
+    $this->form_validation->set_rules('nom', 'Nom', 'alpha|required');
+    $this->form_validation->set_rules('prenom', 'Prénom', 'alpha|required');
+    $this->form_validation->set_rules('email', 'Email', 'valid_email|required',['valid_email' => 'Veuillez rentrer une adresse e-mail valide.']);
+    $this->form_validation->set_rules('psswrd', 'Mot de passe', 'regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/]|required',['regex_match' => 'Veuillez respecter la condition de création de mot de passe']);
+    $this->form_validation->set_rules('psswrd2', 'Confirmation de mot de passe', 'matches[psswrd]|required',['matches' => 'Vos mots de passe doivent être identiques']);
+    
+    if ($this->form_validation->run() == FALSE)
+    {
+        
+        $this->load->view('inscription');
+    }
+}
 
 //----------------------------------------------CONNEXION-----------------------------------------//
 
@@ -230,9 +280,9 @@ public function suppr(){
   
     $aListe = $this->supprprod->suppr(); //Appel de la fonction dans la classe detailprod
  
-    /*$aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
+    //$aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
  
-    $this->load->view('detail', $aView);//Chargement de la vue et de la variable définit à la ligne précédente*/
+    $this->load->view('index');//Chargement de la vue et de la variable définit à la ligne précédente
        }
 
 //---------------------------------------------SUCCES SUPPRESSION------------------------------------------
@@ -271,22 +321,7 @@ public function modif($id)
  
     if ($this->input->post()) 
     {
-        // On récupère
         
-        $config['upload_path']='assets\img\jarditou_photos';
-        $config['allowed_types']='png|jpg|jpeg';
-        $config['max_size']= 104857600;
-
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload('pro_photo'))
-        {
-                $error = array('error' => $this->upload->display_errors());
-
-                $this->load->view('detail_modif', $error);
-        }
-        else
-        {
         $data = $this->input->post();
         $id = $this->input->post("pro_id");
         $this->db->where('pro_id', $id);
@@ -294,7 +329,7 @@ public function modif($id)
  
         $this->load->view('modifsuccess');
         }
-    } 
+    
     else 
     {
         $aListe = $this->db->query("SELECT * FROM produits WHERE id= ?", array($id));
