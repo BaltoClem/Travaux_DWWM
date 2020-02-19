@@ -98,10 +98,10 @@
              .then((willDelete) => {
                   if (willDelete) {
                     
-                    swal("Votre produit a été supprimé !");
+                    swal("Votre produit a été supprimé !",{button:false, icon: "error",});
                         form.submit();
                   } else {
-                         swal("Votre produit n'a pas été supprimé !");
+                         swal("Votre produit n'a pas été supprimé !",{button: "Ouf !", icon: "success"});
               }
            });
 }

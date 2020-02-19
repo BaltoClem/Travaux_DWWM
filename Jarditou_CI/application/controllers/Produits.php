@@ -283,6 +283,8 @@ public function suppr(){
     //$aView["row"] = $aListe; //Ce qui est entre crochets est une définition de variable que l'on utilisera dans la view
  
     $this->load->view('index');//Chargement de la vue et de la variable définit à la ligne précédente
+
+    sleep(3);
        }
 
 //---------------------------------------------SUCCES SUPPRESSION------------------------------------------
