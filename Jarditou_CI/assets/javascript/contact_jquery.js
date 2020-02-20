@@ -56,7 +56,7 @@ function verif()
     }              
     else{
 
-        var html ="<div class='alert alert-danger col-6'role='alert'>"+"Vous n'avez pas introduit le sexe dans le trou !"+"</div>";
+        var html ="<div class='alert alert-danger col-6'role='alert'>"+"Vous n'avez pas introduit votre sexe !"+"</div>";
         $("#alertsexe").append(html);
     }  
 
@@ -222,7 +222,7 @@ function verif()
         } 
 
         /////////////////////////////////////////ACCEPTATION/////////////////////////////////////////////////
-     if($('#customCheck1').is(':checked'))    // Vérification à l'envoie du bouton radio "validation du formulaire" 
+     if($('#customCheck1').is(':checked'))    // Vérification à l'envoi du bouton radio "validation du formulaire" 
         {
             result = true;
         }              
@@ -235,7 +235,7 @@ function verif()
     document.forms[0].submit();         
 }
 
-$("#bouton_envoi").click(function(event) 
+$("#btnenv").click(function(event) 
 {
     /* On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire -
     * avec l'instruction preventDefault() 

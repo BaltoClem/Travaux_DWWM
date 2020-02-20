@@ -81,7 +81,7 @@
     
                     
         <a href="http://localhost/Jarditou_CI/index.php/produits/detail_modif?id=<?=$row->pro_id?>" class="btn btn-warning"> Modifier </a>
-        <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionner-->
+        <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionné-->
         <input type="button" class="btn btn-danger" name="suppr" value="Supprimer" onclick="validateForm()"></input>
 
 <script>
@@ -98,7 +98,7 @@
              .then((willDelete) => {
                   if (willDelete) {
                     
-                    swal("Votre produit a été supprimé !",{button:false, icon: "error",});
+                    swal("Votre produit a été supprimé !",{button:false, icon: "error"});
                         form.submit();
                   } else {
                          swal("Votre produit n'a pas été supprimé !",{button: "Ouf !", icon: "success"});

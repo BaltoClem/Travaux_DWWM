@@ -206,8 +206,8 @@ public function form_contact(){
 
     $this->load->library('form_validation');
 
-    $this->form_validation->set_rules('nom', 'Nom', 'alpha|required');
-    $this->form_validation->set_rules('prenom', 'Prénom', 'alpha|required');
+    $this->form_validation->set_rules('nom', 'Nom', 'regex_match[/^[a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+([-\'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+)?$/]|required',['regex_match' => 'Format incorrect']);
+    $this->form_validation->set_rules('prenom', 'Prénom', 'regex_match[/^[a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+([-\'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+)?$/]|required',['regex_match' => 'Format incorrect']);
     $this->form_validation->set_rules('sexe', 'Sexe', 'required');
     $this->form_validation->set_rules('date', 'Date de Naissance', 'required');
     $this->form_validation->set_rules('adresse', 'Adresse', 'required');
@@ -223,33 +223,48 @@ public function form_contact(){
         
         $this->load->view('contact');
     }
+    else{
+        
+        echo "NOM = ".$_POST["nom"]."<br>";
+        echo "PRENOM = ".$_POST["prenom"]."<br>";
+        echo "SEXE = ".$_POST["sexe"]."<br>";
+        echo "DATE = ".$_POST["date"]."<br>";
+        echo "ADRESSE = ".$_POST["adresse"]."<br>";
+        echo "CODE POSTAL = ".$_POST["codepostal"]."<br>";
+        echo "VILLE = ".$_POST["ville"]."<br>";
+        echo "EMAIL = ".$_POST["email"]."<br>";
+        echo "SUJET = ".$_POST["sujet"]."<br>";
+        echo "QUESTION = ".$_POST["question"]."<br>";
+    }
 }
 //----------------------------------------------INSCRIPTION-----------------------------------------//
 
 public function inscription(){
-    $this->load->view('inscription');
-        }
 
-//----------------------------------------------CONTROLE NSCRIPTION-----------------------------------------//
+if ($this->input->post()){
 
-public function form_inscr(){
-
-    $this->load->helper(array('form', 'url'));
-
-    $this->load->library('form_validation');
-
-    $this->form_validation->set_rules('nom', 'Nom', 'alpha|required');
-    $this->form_validation->set_rules('prenom', 'Prénom', 'alpha|required');
+    $this->form_validation->set_rules('nom', 'Nom', 'regex_match[/^[a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+([-\'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+)?$/]|required',['regex_match' => 'Format incorrect']);
+    $this->form_validation->set_rules('prenom', 'Prénom', 'regex_match[/^[a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+([-\'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+)?$/]|required',['regex_match' => 'Format incorrect']);
     $this->form_validation->set_rules('email', 'Email', 'valid_email|required',['valid_email' => 'Veuillez rentrer une adresse e-mail valide.']);
     $this->form_validation->set_rules('psswrd', 'Mot de passe', 'regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/]|required',['regex_match' => 'Veuillez respecter la condition de création de mot de passe']);
     $this->form_validation->set_rules('psswrd2', 'Confirmation de mot de passe', 'matches[psswrd]|required',['matches' => 'Vos mots de passe doivent être identiques']);
     
     if ($this->form_validation->run() == FALSE)
     {
-        
+       
+        $this->load->view('inscription');
+    }
+    else{
+        $this->load->model('inscrimod');
+        $this->inscrimod->inscr();
+        $this->load->view('inscr_success');
+    }
+}
+    else{
         $this->load->view('inscription');
     }
 }
+
 
 //----------------------------------------------CONNEXION-----------------------------------------//
 

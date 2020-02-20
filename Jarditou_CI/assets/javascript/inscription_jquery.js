@@ -12,7 +12,7 @@ function verif()
      else
      {
         $("#lgn").css("border-color", "#008000");
-        var html ="<div class='alert alert-success'role='alert'>"+"Quel joli nom !"+"</div>";
+        var html ="<div class='alert alert-success'role='alert'>"+"Original !"+"</div>";
         $("#alertlog").append(html);
         
      }   
@@ -135,6 +135,7 @@ function verif()
          var html ="<div class='alert alert-warning col-6'role='alert'>"+"Mauvaise correspondance"+"</div>";
          $("#alertemdp2").append(html);
          return false;
+         
         
         }
         else
@@ -142,12 +143,15 @@ function verif()
            $("#psswrd2").css("border-color", "#008000");
            var html ="<div class='alert alert-success col-6'role='alert'>"+"Ok !!!"+"</div>";
            $("#alertemdp2").append(html);
+           
+          
+           
         }    
         
         document.forms[0].submit();         
     }
 
-$("#bouton_envoi2").click(function(event) 
+$("#btnenv2").click(function(event) 
 {
     /* On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire -
     * avec l'instruction preventDefault() 
