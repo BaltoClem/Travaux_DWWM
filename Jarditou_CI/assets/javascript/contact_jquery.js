@@ -7,19 +7,19 @@ function verif()
      if (lenom === "") 
      {            
          $("#nom").css("border-color", "#FF0000");
-         var html ="<div class='alert alert-danger'role='alert'>"+"Vous n'avez pas renseigné le nom !"+"</div>";
+         var html ="<div class='alert alert-danger col-11'role='alert'>"+"Vous n'avez pas renseigné le nom !"+"</div>";
          $("#alertnom").append(html);
      }
      else if (reg1.test(nom.value) == false) {
 
       $("#nom").css("border-color", "#FFA500");
-      var html ="<div class='alert alert-warning'role='alert'>"+"Format incorrect !"+"</div>";
+      var html ="<div class='alert alert-warning col-11'role='alert'>"+"Format incorrect !"+"</div>";
       $("#alertnom").append(html);
      }
      else
      {
         $("#nom").css("border-color", "#008000");
-        var html ="<div class='alert alert-success'role='alert'>"+"Quel joli nom !"+"</div>";
+        var html ="<div class='alert alert-success col-11'role='alert'>"+"Quel joli nom !"+"</div>";
         $("#alertnom").append(html);
         
      }   
@@ -29,19 +29,19 @@ function verif()
       if (leprenom === "") 
       {            
         $("#prenom").css("border-color", "#FF0000");
-        var html ="<div class='alert alert-danger'role='alert'>"+"Vous n'avez pas renseigné le prénom !"+"</div>";
+        var html ="<div class='alert alert-danger col-11'role='alert'>"+"Vous n'avez pas renseigné le prénom !"+"</div>";
         $("#alertprenom").append(html);
     }
     else if (reg2.test(prenom.value) == false) {
 
       $("#prenom").css("border-color", "#FFA500");
-      var html ="<div class='alert alert-warning'role='alert'>"+"Format incorrect !"+"</div>";
+      var html ="<div class='alert alert-warning col-11'role='alert'>"+"Format incorrect !"+"</div>";
       $("#alertprenom").append(html);
      }
     else
     {
        $("#prenom").css("border-color", "#008000");
-       var html ="<div class='alert alert-success'role='alert'>"+"Ok ça passe !"+"</div>";
+       var html ="<div class='alert alert-success col-11'role='alert'>"+"Ok ça passe !"+"</div>";
        $("#alertprenom").append(html);
     }
 

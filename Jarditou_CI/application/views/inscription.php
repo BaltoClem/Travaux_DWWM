@@ -8,7 +8,7 @@ date_default_timezone_set('Europe/Paris');//Définition de la date
 <div class="col-12"><?php echo validation_errors('<div class="alert alert-danger">','</div>');?></div>
 
 <?php 
-echo form_open("produits/inscription",  array('class' => 'col-12')); 
+echo form_open("produits/inscription",  array('class' => 'col-12 ml-3')); 
 ?>
 <div class="form-group">
     <br>
@@ -19,22 +19,21 @@ echo form_open("produits/inscription",  array('class' => 'col-12'));
 
 
     <!-------------------------------------------LOGIN------------------------------------------------------->
-    <label for="login"> Login* :</label> <input type="text" name="lgn" id="lgn" class="form-control">
+    <label for="login"> Login* :</label> <input type="text" name="lgn" id="lgn" class="form-control col-10">
     <div id="alertlog"></div>
     <br>
     <!-------------------------------------------NOM------------------------------------------------------->
 
-    <div class="row">
+    <div class="form-row">
         <div class="col">
 
-            <label for="Nom"> Votre Nom* :</label> <input type="text" name="nom" id="nom" class="form-control">
+            <label for="Nom"> Votre Nom* :</label> <input type="text" name="nom" id="nom" class="form-control col-11">
             <div id="alertnom"></div>
         </div>
 
         <!-------------------------------------------PRENOM------------------------------------------------------->
 
-        <div class="col"> <label for="Prénom"> Votre Prénom* : </label><input type="text" name="prenom" id="prenom"
-                class="form-control">
+        <div class="col"> <label for="Prénom"> Votre Prénom* : </label><input type="text" name="prenom" id="prenom" class="form-control col-11">
             <div id="alertprenom"></div>
         </div>
     </div>
@@ -42,7 +41,7 @@ echo form_open("produits/inscription",  array('class' => 'col-12'));
 
     <!-------------------------------------------EMAIL------------------------------------------------------->
 
-    <div><label for="Email"> Email* :</label> <input type="email" name="email" placeholder="dave.loper@afpa.fr" id="email" class="form-control col-8"></div>
+    <div><label for="Email"> Email* :</label> <input type="email" name="email" placeholder="dave.loper@afpa.fr" id="email" class="form-control col-10"></div>
     <div id="alertemail"></div>
     <br>
     <!-------------------------------------------CREATION DE MOT DE PASSE------------------------------------------------------->
@@ -67,7 +66,7 @@ echo form_open("produits/inscription",  array('class' => 'col-12'));
         value="<?=$date?>">
     <br>
     <!-------------------------------------------VALIDER & ANNULER------------------------------------------------------->
-
+</form>
     <!--Afin de soumettre le formulaire lorsque l'utilisateur cliquera sur Envoyer, il faut définir l'input en type=submit-->
     <!--Afin de réinitialiser le formulaire lorsque l'utilisateur cliquera sur Annuler, il faudra définir l'input en type=reset-->
     <p><input type="submit" name="envoyer" value="Envoyer" id="btnenv2" class="btn btn-success">

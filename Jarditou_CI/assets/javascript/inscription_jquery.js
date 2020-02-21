@@ -6,13 +6,13 @@ function verif()
      if (lelog === "") 
      {            
          $("#lgn").css("border-color", "#FF0000");
-         var html ="<div class='alert alert-danger'role='alert'>"+"Vous n'avez pas renseigné de login !"+"</div>";
+         var html ="<div class='alert alert-danger col-10' role='alert'>"+"Vous n'avez pas renseigné de login !"+"</div>";
          $("#alertlog").append(html);
      }
      else
      {
         $("#lgn").css("border-color", "#008000");
-        var html ="<div class='alert alert-success'role='alert'>"+"Original !"+"</div>";
+        var html ="<div class='alert alert-success col-10'role='alert'>"+"Original !"+"</div>";
         $("#alertlog").append(html);
         
      }   
@@ -25,19 +25,19 @@ function verif()
      if (lenom === "") 
      {            
          $("#nom").css("border-color", "#FF0000");
-         var html ="<div class='alert alert-danger'role='alert'>"+"Vous n'avez pas renseigné le nom !"+"</div>";
+         var html ="<div class='alert alert-danger col-11'role='alert'>"+"Vous n'avez pas renseigné le nom !"+"</div>";
          $("#alertnom").append(html);
      }
      else if (reg1.test(nom.value) == false) {
 
       $("#nom").css("border-color", "#FFA500");
-      var html ="<div class='alert alert-warning'role='alert'>"+"Format incorrect !"+"</div>";
+      var html ="<div class='alert alert-warning col-11'role='alert'>"+"Format incorrect !"+"</div>";
       $("#alertnom").append(html);
      }
      else
      {
         $("#nom").css("border-color", "#008000");
-        var html ="<div class='alert alert-success'role='alert'>"+"Quel joli nom !"+"</div>";
+        var html ="<div class='alert alert-success col-11'role='alert'>"+"Quel joli nom !"+"</div>";
         $("#alertnom").append(html);
         
      }   
@@ -47,19 +47,19 @@ function verif()
       if (leprenom === "") 
       {            
         $("#prenom").css("border-color", "#FF0000");
-        var html ="<div class='alert alert-danger'role='alert'>"+"Vous n'avez pas renseigné le prénom !"+"</div>";
+        var html ="<div class='alert alert-danger col-11'role='alert'>"+"Vous n'avez pas renseigné le prénom !"+"</div>";
         $("#alertprenom").append(html);
     }
     else if (reg2.test(prenom.value) == false) {
 
       $("#prenom").css("border-color", "#FFA500");
-      var html ="<div class='alert alert-warning'role='alert'>"+"Format incorrect !"+"</div>";
+      var html ="<div class='alert alert-warning col-11'role='alert'>"+"Format incorrect !"+"</div>";
       $("#alertprenom").append(html);
      }
     else
     {
        $("#prenom").css("border-color", "#008000");
-       var html ="<div class='alert alert-success'role='alert'>"+"Ok ça passe !"+"</div>";
+       var html ="<div class='alert alert-success col-11'role='alert'>"+"Ok ça passe !"+"</div>";
        $("#alertprenom").append(html);
     }
 
@@ -73,20 +73,20 @@ function verif()
      if (lemail === "") 
      {
         $("#email").css("border-color", "#FF0000");
-            var html ="<div class='alert alert-danger col-8'role='alert'>"+"Veuillez renseigner votre adresse email"+"</div>";
+            var html ="<div class='alert alert-danger col-10'role='alert'>"+"Veuillez renseigner votre adresse email"+"</div>";
             $("#alertemail").append(html);
         }
         else if (reg3.test(email.value) == false) {
 
          $("#email").css("border-color", "#FFA500");
-         var html ="<div class='alert alert-warning col-8'role='alert'>"+"Format incorrect !"+"</div>";
+         var html ="<div class='alert alert-warning col-10'role='alert'>"+"Format incorrect !"+"</div>";
          $("#alertemail").append(html);
         
         }
         else
         {
            $("#email").css("border-color", "#008000");
-           var html ="<div class='alert alert-success col-8'role='alert'>"+"Ok !!!"+"</div>";
+           var html ="<div class='alert alert-success col-10'role='alert'>"+"Ok !!!"+"</div>";
            $("#alertemail").append(html);
         }         
        

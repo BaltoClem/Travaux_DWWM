@@ -23,8 +23,8 @@ if(isset($_SESSION['User']))
     <title>Jarditou</title>
 </head>
 <!--Consigne : un seul conteneur-->
-<body>
-        <div class="container">
+<body style="background-image:url('http://www.maison-conseil.org/wp-content/uploads/2018/01/le-gazon-en-rouleau-profiter-jardin.png'); background-repeat:no-repeat; background-size : cover;" >
+        <div class="container"style="background-color:white;">
         
 <!--Afin de mettre les colonnes en disposition "ligne" il faut rajouter une class row-->
                 <div class= "row">        
