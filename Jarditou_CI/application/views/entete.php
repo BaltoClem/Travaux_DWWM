@@ -1,12 +1,9 @@
-
 <?php
-session_start();
 
-if(isset($_SESSION['User']))
-
+if(isset($this->session->admin)||isset($this->session->user))
 {
-    echo "Bienvenue sur Jarditou ".$_SESSION['User'].'<br/>';
-    echo "<a style='color:#0000FF; text-decoration:underline' href='logout.php'>Se déconnecter</a>";
+    echo "Bienvenue sur Jarditou ".$this->session->prenom."<br/>";
+    echo "<a style='color:#0000FF; text-decoration:underline' href='http://localhost/Jarditou_CI/index.php/produits/deconnexion'>Se déconnecter</a>";
 }
 ?>
 
@@ -45,7 +42,7 @@ if(isset($_SESSION['User']))
                 <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/liste">Tableau</a></li>
                 <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/contact">Contact</a></li>
                 <?php
-                if(empty($_SESSION["User"]))
+                if(empty($this->session->user ||  $this->session->admin))
                 {
                     ?>
                 <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/inscription">Inscription</a></li>
@@ -54,7 +51,7 @@ if(isset($_SESSION['User']))
                 }
                 ?>
                 <?php
-                if(isset($_SESSION["Admin"]))
+               if(isset($this->session->admin))
                 {
                     ?>
                     <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a></li>
@@ -62,11 +59,11 @@ if(isset($_SESSION['User']))
                 }
                 ?>
                                 <?php
-                if(empty($_SESSION["User"]))
+                if(empty($this->session->user ||  $this->session->admin))
                 {
                     ?>
                      <ul class="navbar-nav mr-0">
-                                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/connexion">Se connecter</a></li>
+                                <li class="nav-item"><a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/form_connexion">Se connecter</a></li>
                                 
                                 <?php
                 }

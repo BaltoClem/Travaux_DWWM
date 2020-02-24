@@ -5,15 +5,15 @@ class Productmod extends CI_Model
 {
     public function ins($x)//Définition et préparation des données à insérer dans la base de données
     {
-        $ref=$this->input->post('reference');
-        $lib=$this->input->post('libelle');
-        $cat=$this->input->post('pro_cat_id');
-        $desc=$this->input->post('description');
-        $prix=$this->input->post('prix');
-        $stock=$this->input->post('stock');
-        $coul=$this->input->post('couleur');
-        $bloq=$this->input->post('prod');
-        $dajout=$this->input->post('dajout');
+        $ref=$this->input->post('reference', TRUE);
+        $lib=$this->input->post('libelle',TRUE);
+        $cat=$this->input->post('pro_cat_id',TRUE);
+        $desc=$this->input->post('description',TRUE);
+        $prix=$this->input->post('prix',TRUE);
+        $stock=$this->input->post('stock',TRUE);
+        $coul=$this->input->post('couleur',TRUE);
+        $bloq=$this->input->post('prod',TRUE);
+        $dajout=$this->input->post('dajout',TRUE);
 
 
         $w=array(//Définition des lignes où les données seront envoyées dans la base de données

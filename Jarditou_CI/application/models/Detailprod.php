@@ -20,7 +20,7 @@
     
     {
         $this->load->database();
-        $requete = $this->db->get('categories');
+        $requete = $this->db->get('categories');//Equivalent de SELECT * FROM categories
         if($requete->num_rows() > 0) {
             $results = $requete->result();
         }

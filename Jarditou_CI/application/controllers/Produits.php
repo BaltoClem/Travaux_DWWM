@@ -265,13 +265,6 @@ if ($this->input->post()){
     }
 }
 
-
-//----------------------------------------------CONNEXION-----------------------------------------//
-
-public function connexion(){
-    $this->load->view('connexion_index');
-        }
-
 //----------------------------------------------DETAIL-----------------------------------------//
 
 public function detail(){
@@ -354,8 +347,56 @@ public function modif($id)
         $this->load->view('modif', $aView);
     }
 }
+//----------------------------------------------CONNEXION-----------------------------------------//
 
+public function connexion()
+    {
+        $this->load->model('connexionmod'); //Chargement du model de connexion
+        $connex=$this->connexionmod->connexion();//Chargement de la fonction définit dans connexionmod
 
+        $password_bdd = $connex->psswrd;//Recherche du champ mot de passe dans la base de données
+        $password_form = $this->input->post('motdepasse');//Variable contenant ce que l'utilisateur aura saisi dans le formulaire de connexion
+        $password = password_verify($password_form, $password_bdd);//Comparaison du mot de passe saisi et celui de la base de données
+
+        $prenom = $connex->prenom;//Recherche du champ prénom dans la base de données
+
+        if($password)//Si le mot de passe a bien été vérifié et ok
+        {
+            $acces = $connex->role;//On va cherche le role dans la base de données
+            if($acces == "admin")//Si le rôle est "admin"
+            {
+                $this->session->set_userdata("admin", TRUE);//Création d'une session "admin
+                $this->session->set_userdata("prenom", $prenom);//Création de la variable $prenom avec le champ prénom de la base de données
+                $this->load->view('index');//Redirection vers la page d'accueil
+            }
+            else
+            {
+                $this->session->set_userdata("user", TRUE);//Création de la session user
+                $this->session->set_userdata("prenom", $prenom);//Création de la variable $prenom avec le champ prénom de la base de données
+                $this->load->view('index');//Redirection vers la page d'accueil
+            }
+        }
+        else
+        {
+            $this->load->view('connexion_index');
+        }
+
+    }
+
+public function form_connexion()
+{
+    $this->load->view('connexion_index');
+}
+
+public function deconnexion()
+
+{
+    if(isset($this->session->admin)||isset($this->session->user))
+    {
+        session_destroy();
+        redirect("produits/index");
+    }
+}
 
 }
 

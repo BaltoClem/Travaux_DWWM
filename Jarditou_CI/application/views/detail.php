@@ -77,9 +77,10 @@
 
       <!--Bouton d'envoi-->
       <p>
-      
-    
-                    
+      <?php
+      if(isset($this->session->admin))
+                {
+                    ?>
         <a href="http://localhost/Jarditou_CI/index.php/produits/detail_modif?id=<?=$row->pro_id?>" class="btn btn-warning"> Modifier </a>
         <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionné-->
         <input type="button" class="btn btn-danger" name="suppr" value="Supprimer" onclick="validateForm()"></input>
@@ -112,6 +113,9 @@
 }
 
 </style>
+<?php
+        }
+        ?>
 <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
 
 </form>

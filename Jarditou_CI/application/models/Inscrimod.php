@@ -10,11 +10,11 @@ class Inscrimod extends CI_Model
         date_default_timezone_set('Europe/Paris');//Permet de préciser exactement les horaires souhaités
         $date = date("Y-m-d");//Définition de la date
 
-        $nom=$this->input->post('nom');
-        $prenom=$this->input->post('prenom');
-        $mail=$this->input->post('email');
-        $lgn=$this->input->post('lgn');
-        $psswrd=$this->input->post('psswrd');
+        $nom=$this->input->post('nom',TRUE);
+        $prenom=$this->input->post('prenom',TRUE);
+        $mail=$this->input->post('email',TRUE);
+        $lgn=$this->input->post('lgn',TRUE);
+        $psswrd=$this->input->post('psswrd',TRUE);
         $password_hash = password_hash($psswrd, PASSWORD_DEFAULT);
         
 

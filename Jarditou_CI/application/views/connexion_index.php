@@ -1,5 +1,5 @@
 <?php
-include("entete.php");
+include ("entete.php");
 ?>
 
 <div class="container">
@@ -29,10 +29,12 @@ include("entete.php");
 
                 <div class="card-body">
 
-                    <form action="connexion_process.php" method="post">
+                    <?php 
+echo form_open("produits/connexion"); 
+?>
 
-                        <input type="text" name="mail" placeholder="Votre adresse email" class="form-control mb-3">
-                        <input type="password" name="motdepasse" placeholder="Mot de passe" class="form-control mb-3">
+                        <input type="text" name="mail" id="mail" placeholder="Votre adresse email" class="form-control mb-3">
+                        <input type="password" name="motdepasse" id="motdepasse" placeholder="Mot de passe" class="form-control mb-3">
                         <button class="btn btn-success mt-3" name="connexion">Se connecter</button>
                     </form>
                 </div>

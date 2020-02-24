@@ -1,5 +1,5 @@
 <?php
-include("entete.php");
+include ("entete.php");
 ?>
 
 <!--Début du formulaire-->
