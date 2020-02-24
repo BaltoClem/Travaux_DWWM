@@ -323,29 +323,17 @@ public function detail_modif(){
 
 public function modif($id)
 {
-    // Chargement de la librairie database 
-    $this->load->database();
- 
-    // Chargement des assistants url et form        
-    $this->load->helper('url', 'form');
- 
-    if ($this->input->post()) 
-    {
-        
-        $data = $this->input->post();
-        $id = $this->input->post("pro_id");
-        $this->db->where('pro_id', $id);
-        $this->db->update('produits', $data);
- 
+        $this->load->model('modifmod');
+        $this->modifmod->modif($id);
+
         $this->load->view('modifsuccess');
-        }
     
-    else 
+    /*else 
     {
         $aListe = $this->db->query("SELECT * FROM produits WHERE id= ?", array($id));
         $aView["produits"] = $aListe->row(); // première ligne du résultat
         $this->load->view('modif', $aView);
-    }
+    }*/
 }
 //----------------------------------------------CONNEXION-----------------------------------------//
 
