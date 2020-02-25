@@ -3,54 +3,54 @@
 </head>
 
 <body>
-<?php echo form_open_multipart("produits/suppr?id=$row->pro_id",  array('class' => 'col-12', 'name' => 'detail'));?>
+<?php echo form_open_multipart("produits/suppr?id=$row->pro_id",  array('class' => 'col-12 ml-5', 'name' => 'detail'));?>
 
       <div class="text-center">
-        <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300>
+        <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300 class="mr-5">
       </div>
 
 
       <!-------------------------------------------------------------------ID----------------------------------------------------------------------------------->
-      <label for="id"> ID :</label> <input type="text" class="form-control" name="id" value="<?=$row->pro_id?>" readonly><!-- "value" ici concerne le pro_id de $produit,cad le résultat de la recherche-->
+      <label for="id"> ID :</label> <input type="text" class="form-control col-11" name="id" value="<?=$row->pro_id?>" readonly><!-- "value" ici concerne le pro_id de $produit,cad le résultat de la recherche-->
 
       <br>
 
       <!--Référence-->
-      <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control" value="<?=$row->pro_ref?>"
+      <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control col-11" value="<?=$row->pro_ref?>"
         readonly>
 
       <br>
 
       <!--Catégorie-->
-      <label for="categorie"> Catégorie :</label><input name="categorie" class="form-control" value="<?=$row->cat_nom?>" readonly>
+      <label for="categorie"> Catégorie :</label><input name="categorie" class="form-control col-11" value="<?=$row->cat_nom?>" readonly>
       <br>
 
       <!--Libellé-->
-      <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control" value="<?=$row->pro_libelle?>"
+      <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control col-11" value="<?=$row->pro_libelle?>"
         readonly>
 
       <br>
 
       <!--Description-->
-      <label for="description"> Description :</label> <textarea class="form-control" name="description" value
+      <label for="description"> Description :</label> <textarea class="form-control col-11" name="description" value
         placeholder="<?=$row->pro_description?>" readonly></textarea>
 
       <br>
 
       <!--Prix-->
-      <label for="prix"> Prix :</label> <input type="text" name="prix" id="prix" class="form-control"
+      <label for="prix"> Prix :</label> <input type="text" name="prix" id="prix" class="form-control col-11"
         value="<?=$row->pro_prix?>" readonly>
 
       <br>
 
       <!--Stock-->
-      <label for="stock"> Stock :</label> <input type="stock" name="stock" id="stock" class="form-control"
+      <label for="stock"> Stock :</label> <input type="stock" name="stock" id="stock" class="form-control col-11"
         value="<?= $row->pro_stock?>" readonly>
 
       <br>
 
       <!--Couleur-->
-      <label for="couleur"> Couleur :</label> <input type="couleur" name="couleur" id="couleur" class="form-control"
+      <label for="couleur"> Couleur :</label> <input type="couleur" name="couleur" id="couleur" class="form-control col-11"
         value="<?= $row->pro_couleur?>" readonly>
 
       <br>

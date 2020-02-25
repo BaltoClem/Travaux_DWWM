@@ -40,7 +40,7 @@ class Produits extends CI_Controller
     $aView["liste_produits"] = $aListe;
  
     // Appel de la vue avec transmission du tableau  
-    $this->load->view('liste', $aView);
+    $this->load->view('tableaucard', $aView);
 }
 //---------------------------------------------------------------AJOUT (COURS)-----------------------------------------------------------
 
@@ -149,22 +149,22 @@ else
 
                 $this->load->library('form_validation');
 
-                $this->form_validation->set_rules('reference', 'Référence', 'required');
+                $this->form_validation->set_rules('reference', 'Référence', 'required');//Condition de validation -> required = ne doit pas être vide
                 $this->form_validation->set_rules('pro_cat_id', 'Catégorie', 'required');
                 $this->form_validation->set_rules('libelle', 'Libellé', 'required');
                 $this->form_validation->set_rules('description', 'Description', 'required');
-                $this->form_validation->set_rules('prix', 'Prix', 'numeric|required');
+                $this->form_validation->set_rules('prix', 'Prix', 'numeric|required');//Condition de validation -> numeric = ne doit contenir que des chiffres
                 $this->form_validation->set_rules('stock', 'Stock', 'numeric|required');
-                $this->form_validation->set_rules('couleur', 'Couleur', 'alpha|required');
+                $this->form_validation->set_rules('couleur', 'Couleur', 'alpha|required');//Condition de validation -> alpha = ne doit contenir que des lettres
                 //$this->form_validation->set_rules('pimg', 'photo','required');
-                $this->form_validation->set_rules('prod', 'Produit bloqué', 'required',['required' => 'Vous devez indiquer si le produit est bloqué ou non']);
+                $this->form_validation->set_rules('prod', 'Produit bloqué', 'required',['required' => 'Vous devez indiquer si le produit est bloqué ou non']);//Personnalisation du message d'erreur
          
     $config['upload_path']='assets\img\jarditou_photos';//La destination du téléchargement de l'image
     $config['allowed_types']='png|jpg|jpeg';//Extensions autorisées
     $config['max_size']=104857600;//Limite de la taille de l'image autorisée
     $this->load->library('upload',$config);//Initilisation du chargement grâce à la librairie
 
-    if ($this->form_validation->run() == FALSE)
+    if ($this->form_validation->run() == FALSE)//Si une condition de validation n'est pas respectée :
     {
         $this->load->model('detailprod');
         $aListe2 = $this->detailprod->categ();
@@ -385,7 +385,22 @@ public function deconnexion()
         redirect("produits/index");
     }
 }
+//------------------------------------------------------------------------AFFICHAGE PANIER------------------------------------------------//
 
+public function cart()
+{
+    $this->load->view('cart');
+}
+
+//------------------------------------------------------------------------INSERTION PANIER------------------------------------------------//
+
+public function addcart()
+{
+    $this->load->model('ajoutpaniermod');
+    $this->ajoutpaniermod->cart();
+
+    $this->load->view('cartsuccess');
+}
 }
 
 ?>

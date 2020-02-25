@@ -73,6 +73,7 @@ echo form_open("produits/inscription",  array('class' => 'col-12 ml-3'));
         <input type="reset" name="Annuler" value="Annuler" class="btn btn-danger"></p>
 
 </div>
+</div>
 <?php
 include ("pieddepage.php")
 ?>

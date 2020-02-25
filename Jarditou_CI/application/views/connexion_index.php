@@ -44,7 +44,7 @@ echo form_open("produits/connexion");
     </div>
 </div>
 
-
+</div>
 <?php
 include("pieddepage.php")
 ?>

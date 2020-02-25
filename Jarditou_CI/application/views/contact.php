@@ -120,6 +120,7 @@ echo form_open_multipart("produits/form_contact",  array('class' => 'col-12 ml-3
                         <input type="reset" name="Annuler" value="Annuler" class="btn btn-danger"></p>
                         </form>
                         </div>
+                        </div>
                     <?php
     include ("pieddepage.php")
 ?>

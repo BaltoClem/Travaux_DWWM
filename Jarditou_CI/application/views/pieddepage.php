@@ -1,5 +1,5 @@
  <!--Le bas de la page-->
- 
+ <div class = "row">
                         <footer class="col-12 p-1 mt-1">
                             <ul>
                                 <li>Mentions légales</li>
@@ -8,7 +8,7 @@
                             </ul>
 
                         </footer>
-                        
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
