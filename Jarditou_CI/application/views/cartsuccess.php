@@ -13,7 +13,7 @@
 <script> 
 
 swal({
-  title: "Produit ajouté au panier!",
+  title: "OK !",
   text: "Votre produit a bien ajouté à votre panier!",
   icon: "success",
   button: false,

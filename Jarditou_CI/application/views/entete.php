@@ -78,9 +78,7 @@ if(isset($this->session->admin)||isset($this->session->user))
                 {
                     ?>
                     <ul class="navbar-nav mr-0">
-                        <li class="nav-item">
-                        <a class="nav-link"href="http://localhost/Jarditou_CI/index.php/produits/cart">Panier <?php echo count($this->cart->contents());?></a>
-                        </li>
+                        
                         <li class="nav-item">
                         <a class="nav-link"href="http://localhost/Jarditou_CI/index.php/produits/form_connexion">Se connecter</a>
                         </li>
@@ -88,6 +86,9 @@ if(isset($this->session->admin)||isset($this->session->user))
                         <?php
                 }
                 ?>
+                <li class="nav-item">
+                        <a class="nav-link"href="http://localhost/Jarditou_CI/index.php/panier/afficherpanier">Panier</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

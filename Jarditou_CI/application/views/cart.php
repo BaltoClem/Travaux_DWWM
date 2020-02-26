@@ -3,7 +3,7 @@ include ("entete.php")?>
 
 <?php echo form_open('path/to/controller/update/method'); ?>
 </div>
-<table cellpadding="6" cellspacing="1" style="width:100%" border="0">
+<table cellpadding="6" cellspacing="1" style="width:100%; border=0;">
 
     <tr>
         <th>Quantité</th>

@@ -1,11 +1,13 @@
-<?php include ("entete.php");?>
+<?php include ("entete.php");
+ ?>
 
 <div class = "row d-flex justify-content-center">
 
 <?php 
 
 foreach ($liste_produits as $row) 
-{          
+{  
+  echo form_open("panier/ajouterPanier");        
 ?>
 
 <div class="card text-center mb-2 ml-2 mr-2" style="width: 17rem;">
@@ -18,11 +20,13 @@ foreach ($liste_produits as $row)
   <input type="hidden" name="pro_prix" value="<?= $row->pro_prix ?>">
    <input type="hidden" name="pro_id" value="<?= $row->pro_id ?>">
     <input type="hidden" name="pro_libelle" value="<?= $row->pro_libelle ?>">
-  <a href="<?=base_url("index.php/produits/addcart/".$row->pro_id);?>" class="btn btn-warning mt-3">Ajouter au panier</a>
-  <input class="form-control mt-3 text-center" name="pro_qte" id="pro_qte" placeholder="En stock : <?=$row->pro_stock ?>" >
+    <input type="submit" value="Ajouter au panier" class="btn btn-warning mt-3"> 
+  <input class="form-control mt-3 text-center" name="pro_stock" id="pro_stock" placeholder="En stock : <?=$row->pro_stock ?> " value="<?=$row->pro_stock ?>" >
+  <input type="hidden" class="form-control" name="pro_qte" id="pro_qte">
   <a href="http://localhost/Jarditou_CI/index.php/produits/detail?id=<?=$row->pro_id?>" class="btn btn-info mt-3">Plus d'infos</a>
   </div>
 </div>
+
   <!--<div class="col mb-4">
     <div class="card">
     <img src = "http://localhost/Jarditou_CI/assets\img\jarditou_photos/" class="card-img-top" alt="photo">
@@ -34,10 +38,11 @@ foreach ($liste_produits as $row)
     </div>
   </div>
 -->
+</form>
 <?php
 }
 ?>
-</form>
+
 </div>
 </div>
 <?php include ("pieddepage.php")?>

@@ -401,6 +401,15 @@ public function addcart()
 
     $this->load->view('cartsuccess');
 }
+
+//------------------------------------------------------------------------RECUPERATION MDP ------------------------------------------------//
+
+public function mdpoub()
+{
+    $this->load->view('recuperation_index');
+}
+
+
 }
 
 ?>
