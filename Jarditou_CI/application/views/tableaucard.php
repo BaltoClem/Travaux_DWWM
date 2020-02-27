@@ -21,8 +21,8 @@ foreach ($liste_produits as $row)
    <input type="hidden" name="pro_id" value="<?= $row->pro_id ?>">
     <input type="hidden" name="pro_libelle" value="<?= $row->pro_libelle ?>">
     <input type="submit" value="Ajouter au panier" class="btn btn-warning mt-3"> 
-  <input class="form-control mt-3 text-center" name="pro_stock" id="pro_stock" placeholder="En stock : <?=$row->pro_stock ?> " value="<?=$row->pro_stock ?>" >
-  <input type="hidden" class="form-control" name="pro_qte" id="pro_qte">
+    <input type="hidden" name="pro_stock" value="<?= $row->pro_stock ?>">
+  <input type="hidden" class="form-control" name="pro_qte" id="pro_qte" value=1>
   <a href="http://localhost/Jarditou_CI/index.php/produits/detail?id=<?=$row->pro_id?>" class="btn btn-info mt-3">Plus d'infos</a>
   </div>
 </div>

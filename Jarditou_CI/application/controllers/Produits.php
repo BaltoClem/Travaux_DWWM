@@ -375,7 +375,7 @@ public function form_connexion()
 {
     $this->load->view('connexion_index');
 }
-
+//------------------------------------------------------------------------DECONNEXION------------------------------------------------//
 public function deconnexion()
 
 {

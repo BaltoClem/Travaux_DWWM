@@ -59,35 +59,42 @@ if(isset($this->session->admin)||isset($this->session->user))
                     ?>
                         <li class="nav-item"><a class="nav-link"
                                 href="http://localhost/Jarditou_CI/index.php/produits/inscription">Inscription</a></li>
-                    </ul>
-                    <?php
+
+                        <?php
                 }
                 ?>
-                    <?php
+                        <?php
                if(isset($this->session->admin))
                 {
                     ?>
-                    <li class="nav-item"><a class="nav-link"
-                            href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a>
-                    </li>
-                    <?php
+                        <li class="nav-item"><a class="nav-link"
+                                href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a>
+                        </li>
+                        <?php
                 }
                 ?>
-                    <?php
+                    </ul>
+                    <ul class="navbar-nav mr-0">
+                        <?php
                 if(empty($this->session->user ||  $this->session->admin))
                 {
                     ?>
-                    <ul class="navbar-nav mr-0">
-                        
+
+
                         <li class="nav-item">
-                        <a class="nav-link"href="http://localhost/Jarditou_CI/index.php/produits/form_connexion">Se connecter</a>
+                            <a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/form_connexion">Se connecter</a>
                         </li>
 
                         <?php
                 }
                 ?>
-                <li class="nav-item">
-                        <a class="nav-link"href="http://localhost/Jarditou_CI/index.php/panier/afficherpanier">Panier</a>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="http://localhost/Jarditou_CI/index.php/panier/afficherpanier">
+                                <img src="http://localhost\Jarditou_CI\assets\img\jarditou_photos\Shopping_cart_icon.svg.png"
+                                    width="30" height="30" alt="Cart">
+                                <?php if($this->session->panier) echo count($this->session->panier); else echo "0"; ?></a>
+
                         </li>
                     </ul>
                 </div>
