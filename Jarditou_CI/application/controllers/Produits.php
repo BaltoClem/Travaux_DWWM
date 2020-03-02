@@ -402,14 +402,74 @@ public function addcart()
     $this->load->view('cartsuccess');
 }
 
-//------------------------------------------------------------------------RECUPERATION MDP ------------------------------------------------//
-
+//------------------------------------------------------------------------AFFICHAGE RECUPERATION MDP ------------------------------------------------//
 public function mdpoub()
 {
     $this->load->view('recuperation_index');
 }
+//------------------------------------------------------------------------RECUPERATION MDP ------------------------------------------------//
 
+public function valmdpoub()
+{
+    
+    if ($this->input->post())
+    {
 
+        $this->form_validation->set_rules('mail', 'Email', 'valid_email|required',['valid_email' => 'Veuillez rentrer une adresse e-mail valide.']);
+        if ($this->form_validation->run() == FALSE)
+    {
+       
+        $this->load->view('recuperation_index');
+    }
+    else
+    {
+        $this->load->library('email');
+        $this->email->set_newline("\r\n");
+        $this->email->from('me@gmail.com', 'Raju');
+        $this->email->to('me@gmail.com');
+        $this->email->subject('Email my');
+        $key = 12334455;
+        $message = "Please click this url to change your password ". base_url()."reset_now/".$key ;
+        $message .="<br/>Thank you very much";
+        $this->email->message($message);
+            if($this->email->send())
+            {
+            echo 'Please check your email to reset password.';
+            }
+            else
+            {
+            show_error($this->email->print_debugger());
+            }
+    }
+    }
+        //email check for forget password
+function reset_password($email)
+{
+$query = $this->db->get_where('members', array('email'=>$email));
+if(!$query->num_rows()>0)
+{
+$this->form_validation->set_message('forget_email_check', 'The %s does not exists in our database');
+return FALSE;
 }
+else
+{
+        //check database fields
+        /*
+        $this->db->where('email', $email);
+        $this->db->limit(1);
+        $Q = $this->db->get('members');
+        if($Q->num_rows()>0){
+        $data = $Q->result_array();
+        echo $data[0]['username'].'<br/>';
+        echo $data[0]['password'].'<br/>';
+        }
+        */
+echo '<br/>'. $email.'<br/>';
+}
+        //$query->free_result();
+        //return true;
+}
+    }
+    }
 
 ?>

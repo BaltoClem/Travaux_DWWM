@@ -11,46 +11,45 @@
 
 
       <!-------------------------------------------------------------------ID----------------------------------------------------------------------------------->
-      <label for="id"> ID :</label> <input type="text" class="form-control col-11" name="id" value="<?=$row->pro_id?>" readonly><!-- "value" ici concerne le pro_id de $produit,cad le résultat de la recherche-->
+      <label for="id"> ID :</label> <input type="text" class="form-control col-10" name="id" value="<?=$row->pro_id?>" readonly><!-- "value" ici concerne le pro_id de $produit,cad le résultat de la recherche-->
 
       <br>
 
       <!--Référence-->
-      <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control col-11" value="<?=$row->pro_ref?>"
+      <label for="reference"> Référence :</label> <input type="text" name="reference" class="form-control col-10" value="<?=$row->pro_ref?>"
         readonly>
 
       <br>
 
       <!--Catégorie-->
-      <label for="categorie"> Catégorie :</label><input name="categorie" class="form-control col-11" value="<?=$row->cat_nom?>" readonly>
+      <label for="categorie"> Catégorie :</label><input name="categorie" class="form-control col-10" value="<?=$row->cat_nom?>" readonly>
       <br>
 
       <!--Libellé-->
-      <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control col-11" value="<?=$row->pro_libelle?>"
+      <label for="libelle"> Libellé :</label> <input type="text" name="libelle" class="form-control col-10" value="<?=$row->pro_libelle?>"
         readonly>
 
       <br>
 
       <!--Description-->
-      <label for="description"> Description :</label> <textarea class="form-control col-11" name="description" value
-        placeholder="<?=$row->pro_description?>" readonly></textarea>
+      <label for="description"> Description :</label> <textarea class="form-control col-10" name="description" readonly><?=$row->pro_description?></textarea>
 
       <br>
 
       <!--Prix-->
-      <label for="prix"> Prix :</label> <input type="text" name="prix" id="prix" class="form-control col-11"
+      <label for="prix"> Prix :</label> <input type="text" name="prix" id="prix" class="form-control col-10"
         value="<?=$row->pro_prix?>" readonly>
 
       <br>
 
       <!--Stock-->
-      <label for="stock"> Stock :</label> <input type="stock" name="stock" id="stock" class="form-control col-11"
+      <label for="stock"> Stock :</label> <input type="stock" name="stock" id="stock" class="form-control col-10"
         value="<?= $row->pro_stock?>" readonly>
 
       <br>
 
       <!--Couleur-->
-      <label for="couleur"> Couleur :</label> <input type="couleur" name="couleur" id="couleur" class="form-control col-11"
+      <label for="couleur"> Couleur :</label> <input type="couleur" name="couleur" id="couleur" class="form-control col-10"
         value="<?= $row->pro_couleur?>" readonly>
 
       <br>
@@ -119,6 +118,7 @@
 <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
 
 </form>
+</div>
       </p>
       <?php
   include("pieddepage.php")

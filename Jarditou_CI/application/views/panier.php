@@ -36,7 +36,7 @@ if($article["pro_qte"]!=0)
         <tr>
                 <td id="libelle"><?=$article["pro_libelle"]?></td>
                 <td id="prix"value="<?=$article["pro_prix"]?>"><?=$article["pro_prix"]?> &euro;</td>
-                <td id="qte"><input type="number" onclick="modifQuant(value,<?=$article['pro_id']?>)" value="<?=$article['pro_qte']?>"></td>
+                <td id="qte"><input type="number" onchange="modifQuant(value,<?=$article['pro_id']?>)" value="<?=$article['pro_qte']?>"></td>
                 <td><?= number_format(($article["pro_qte"]*$article["pro_prix"]),2)?> &euro;</td>
                 <td>&nbsp;</td> 
             </tr>  
@@ -80,13 +80,10 @@ redirect("panier/supprimerProduit/".$article['pro_id']);
 include ("pieddepage.php");
 ?>
 
-
 <script>
 function modifQuant(value,id)
 {
-
-console.log("value : "+value+" "+id);
+if(value ==""){value=0;}
 window.location.replace("http://localhost/Jarditou_CI/index.php/panier/modifierQuantite/"+id+"/"+value);
-
 }
 </script>
