@@ -39,7 +39,7 @@ echo form_open("produits/connexion");
                     </form>
                 </div>
             </div>
-            <div class = "text-center"><a style='color:#28A728; text-decoration:underline' href="http://localhost/Jarditou_CI/index.php/produits/mdpoub">Mot de passe oublié ?</a></div>
+            <div class = "text-center"><a style='color:#28A728; text-decoration:underline' href="<?=site_url('produits/mdpoub')?>">Mot de passe oublié ?</a></div>
         </div>
     </div>
 </div>

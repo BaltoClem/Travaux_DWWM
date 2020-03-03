@@ -84,6 +84,6 @@ include ("pieddepage.php");
 function modifQuant(value,id)
 {
 if(value ==""){value=0;}
-window.location.replace("http://localhost/Jarditou_CI/index.php/panier/modifierQuantite/"+id+"/"+value);
+window.location.replace("<?=site_url('panier/modifierQuantite/')?>"+id+"/"+value);
 }
 </script>

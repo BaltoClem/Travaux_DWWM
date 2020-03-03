@@ -25,7 +25,7 @@ include("entete.php");
                     
                     <!--La colonne droite (devra disparaître en dessous de lg)-->
                     
-                    <aside class="col-6 col-lg-5 d-md-none d-lg-block ml-4">
+                    <aside class="col-6 col-lg-5 d-none d-lg-block ml-4">
                         [COLONNE DROITE]
                     </aside>                   
                     

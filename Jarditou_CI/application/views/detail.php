@@ -6,7 +6,7 @@
 <?php echo form_open_multipart("produits/suppr?id=$row->pro_id",  array('class' => 'col-12 ml-5', 'name' => 'detail'));?>
 
       <div class="text-center">
-        <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300 class="mr-5">
+        <img src="<?=base_url('assets\img\jarditou_photos/')?><?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300 class="mr-5">
       </div>
 
 
@@ -80,7 +80,7 @@
       if(isset($this->session->admin))
                 {
                     ?>
-        <a href="http://localhost/Jarditou_CI/index.php/produits/detail_modif?id=<?=$row->pro_id?>" class="btn btn-warning"> Modifier </a>
+        <a href="<?=site_url('produits/detail_modif?id=')?><?=$row->pro_id?>" class="btn btn-warning"> Modifier </a>
         <!--produit_modif.php?id= fait référence à l'id qui sera indiqué sur l'url, le php détermine ensuite quel id sélectionné-->
         <input type="button" class="btn btn-danger" name="suppr" value="Supprimer" onclick="validateForm()"></input>
 
@@ -115,7 +115,7 @@
 <?php
         }
         ?>
-<a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-success">Retour</a>
+<a href="<?=site_url('produits/liste')?>" class="btn btn-success">Retour</a>
 
 </form>
 </div>

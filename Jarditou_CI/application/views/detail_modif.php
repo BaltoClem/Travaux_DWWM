@@ -6,7 +6,7 @@ echo form_open_multipart("produits/modif/$row->pro_id",  array('class' => 'col-1
 ?>
 
       <div class="text-center">
-        <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos\<?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300>
+        <img src="<?= base_url('assets\img\jarditou_photos/')?><?=$row->pro_photo?>" alt="produit" name ="photo" width=300 height=300>
       </div>
 
 
@@ -20,7 +20,8 @@ echo form_open_multipart("produits/modif/$row->pro_id",  array('class' => 'col-1
 <br>
       <!--Catégorie-->
       <p><label for="categorie">Catégorie</label>
-      <select class="custom-select " name="pro_cat_id" id="pro_cat_id">
+      <br>
+      <select class="custom-select col-10" name="pro_cat_id" id="pro_cat_id" >
                 <option value="">--Sélectionner une catégorie--</option>
                     
                     <?php
@@ -97,8 +98,9 @@ echo form_open_multipart("produits/modif/$row->pro_id",  array('class' => 'col-1
       <!--Bouton d'envoi-->
       <p>
         <input type="submit" name="" value="Valider" class="btn btn-success">
-            <a href="http://localhost/Jarditou_CI/index.php/produits/liste" class="btn btn-info">Retour</a>
+            <a href="<?=site_url('produits/liste')?>" class="btn btn-info">Retour</a>
       </p>
+      </div>
       <?php
   include("pieddepage.php")
   ?>

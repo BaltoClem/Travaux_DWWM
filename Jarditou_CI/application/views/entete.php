@@ -3,7 +3,7 @@
 if(isset($this->session->admin)||isset($this->session->user))
 {
     echo "Bienvenue sur Jarditou ".$this->session->prenom."<br/>";
-    echo "<a style='color:#0000FF; text-decoration:underline' href='http://localhost/Jarditou_CI/index.php/produits/deconnexion'>Se déconnecter</a>";
+    echo "<a style='color:#0000FF; text-decoration:underline' href=".site_url('produits/deconnexion').">Se déconnecter</a>";
 }
 ?>
 
@@ -17,7 +17,7 @@ if(isset($this->session->admin)||isset($this->session->user))
     <!--Mettre le lien pour BootStrap AVANT le lien CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/Jarditou_CI/assets\css\style.css">
+    <link rel="stylesheet" href="<?= base_url('assets\css\style.css')?>">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Jarditou</title>
 </head>
@@ -30,7 +30,7 @@ if(isset($this->session->admin)||isset($this->session->user))
         <!--Afin de mettre les colonnes en disposition "ligne" il faut rajouter une class row-->
         <div class="row">
             <!--On trouve ici le haut de la page avec le logo-->
-            <div class="col-6 mt-5"><img src="http://localhost/Jarditou_CI/assets\img\jarditou_logo.jpg"
+            <div class="col-6 mt-5"><img src="<?= base_url('assets\img\jarditou_logo.jpg')?>"
                     alt="Logo Jarditou" id="logoJarditou" class="logo"></div>
             <div class="col-6 mt-5 pt-lg-5">
                 <h3 id="toutlejardin">Tout le jardin</h3>
@@ -48,17 +48,17 @@ if(isset($this->session->admin)||isset($this->session->user))
                 <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-0">
                         <li class="nav-item"><a class="nav-link"
-                                href="http://localhost/Jarditou_CI/index.php/produits/index">Accueil</a></li>
+                                href="<?=site_url('produits/index')?>">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link"
-                                href="http://localhost/Jarditou_CI/index.php/produits/liste">Tableau</a></li>
+                                href="<?=site_url('produits/liste')?>">Tableau</a></li>
                         <li class="nav-item"><a class="nav-link"
-                                href="http://localhost/Jarditou_CI/index.php/produits/contact">Contact</a></li>
+                        href="<?=site_url('produits/contact')?>">Contact</a></li>
                         <?php
                 if(empty($this->session->user ||  $this->session->admin))
                 {
                     ?>
                         <li class="nav-item"><a class="nav-link"
-                                href="http://localhost/Jarditou_CI/index.php/produits/inscription">Inscription</a></li>
+                                href="<?=site_url('produits/inscription')?>">Inscription</a></li>
 
                         <?php
                 }
@@ -68,7 +68,7 @@ if(isset($this->session->admin)||isset($this->session->user))
                 {
                     ?>
                         <li class="nav-item"><a class="nav-link"
-                                href="http://localhost/Jarditou_CI/index.php/produits/addproduct">Ajouter un produit</a>
+                                href="<?=site_url('produits/addproduct')?>">Ajouter un produit</a>
                         </li>
                         <?php
                 }
@@ -82,7 +82,7 @@ if(isset($this->session->admin)||isset($this->session->user))
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/Jarditou_CI/index.php/produits/form_connexion">Se connecter</a>
+                            <a class="nav-link" href="<?=site_url('produits/form_connexion')?>">Se connecter</a>
                         </li>
 
                         <?php
@@ -90,8 +90,8 @@ if(isset($this->session->admin)||isset($this->session->user))
                 ?>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="http://localhost/Jarditou_CI/index.php/panier/afficherpanier">
-                                <img src="http://localhost\Jarditou_CI\assets\img\jarditou_photos\Shopping_cart_icon.svg.png"
+                                href="<?= site_url('panier/afficherpanier')?>">
+                                <img src="<?= base_url('assets\img\jarditou_photos\Shopping_cart_icon.svg.png')?>"
                                     width="30" height="30" alt="Cart">
                                 <?php if($this->session->panier) echo count($this->session->panier); else echo "0"; ?></a>
 
@@ -100,5 +100,5 @@ if(isset($this->session->admin)||isset($this->session->user))
                 </div>
             </nav>
             <!--La banderole sur les promotions avec du web responsive en BootStrap-->
-            <div class="col-12 mb-2 mt-1"><img src="http://localhost/Jarditou_CI/assets\img\promotion.jpg"
+            <div class="col-12 mb-2 mt-1"><img src="<?=base_url('assets\img\promotion.jpg')?>"
                     alt="Promotion" class="promotion"></div>

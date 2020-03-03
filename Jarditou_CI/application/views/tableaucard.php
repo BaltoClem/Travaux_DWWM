@@ -11,7 +11,7 @@ foreach ($liste_produits as $row)
 ?>
 
 <div class="card text-center mb-2 ml-2 mr-2" style="width: 17rem;">
-  <img src="http://localhost/Jarditou_CI/assets\img\jarditou_photos/<?=$row->pro_photo?>" class="card-img-top" alt="Produit">
+  <img src="<?=base_url('assets\img\jarditou_photos/')?><?=$row->pro_photo?>" class="card-img-top" alt="Produit">
   <div class="card-body">
     <h5 class="card-title"><?=$row->pro_libelle?></h5>
     <p class="card-text text-truncate"><?=$row->pro_description?></p>
@@ -23,7 +23,7 @@ foreach ($liste_produits as $row)
     <input type="submit" value="Ajouter au panier" class="btn btn-warning mt-3"> 
     <input type="hidden" name="pro_stock" value="<?= $row->pro_stock ?>">
   <input type="hidden" class="form-control" name="pro_qte" id="pro_qte" value=1>
-  <a href="http://localhost/Jarditou_CI/index.php/produits/detail?id=<?=$row->pro_id?>" class="btn btn-info mt-3">Plus d'infos</a>
+  <a href="<?= site_url('produits/detail?id=')?><?=$row->pro_id?>" class="btn btn-info mt-3">Plus d'infos</a>
   </div>
 </div>
 
