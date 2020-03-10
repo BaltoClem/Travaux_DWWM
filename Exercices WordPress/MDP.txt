@@ -9,3 +9,7 @@ MDP : 931g8fPfrTOY5b4HCf
 WP ELEMENTOR
 ID : clem
 MDP : YS7MqmWkM$g8Jt$zU$
+
+WP JARDITOU
+ID : Clem
+MDP : kEw#%K@88d2lxYF9ss
