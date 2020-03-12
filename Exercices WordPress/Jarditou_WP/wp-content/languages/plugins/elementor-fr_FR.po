@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-03-04 18:48:13+0000\n"
+"PO-Revision-Date: 2020-03-12 08:31:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Elementor Page Builder - Stable (latest release)\n"
+
+#: modules/safe-mode/module.php:369
+msgid "If you are experiencing a loading issue, contact your site administrator to troubleshoot the problem using Safe Mode."
+msgstr "Si vous rencontrez un problème de chargement, contactez l’administrateur de votre site pour résoudre le problème en utilisant le mode sans échec."
 
 #: core/kits/documents/kit.php:78
 msgid "Available in Pro v2.9."
@@ -171,31 +175,31 @@ msgstr "Retour"
 msgid "Default Kit"
 msgstr "Kit par défaut"
 
-#: core/kits/documents/kit.php:615
+#: core/kits/documents/kit.php:631
 msgid "Focus"
 msgstr "Focus"
 
-#: core/kits/documents/kit.php:585
+#: core/kits/documents/kit.php:601
 msgid "Field"
 msgstr "Champ"
 
-#: core/kits/documents/kit.php:556
+#: core/kits/documents/kit.php:572
 msgid "Label"
 msgstr "Libellé"
 
-#: core/kits/documents/kit.php:545
+#: core/kits/documents/kit.php:561
 msgid "Form Fields"
 msgstr "Champs de formulaire"
 
-#: core/kits/documents/kit.php:401
+#: core/kits/documents/kit.php:417
 msgid "Paragraph Spacing"
 msgstr "Espacement de paragraphe"
 
-#: core/kits/documents/kit.php:373
+#: core/kits/documents/kit.php:389
 msgid "Body"
 msgstr "Corps"
 
-#: core/kits/documents/kit.php:192
+#: core/kits/documents/kit.php:198
 msgid "Buttons"
 msgstr "Boutons"
 
@@ -560,7 +564,7 @@ msgstr "Article"
 msgid "File Path: %s"
 msgstr "Chemin du fichier : %s"
 
-#: includes/editor-templates/panel.php:174 core/kits/views/panel.php:12
+#: core/kits/views/panel.php:12 includes/editor-templates/panel.php:174
 msgid "Need Help"
 msgstr "Besoin d’aide"
 
@@ -711,7 +715,7 @@ msgstr "Le fichier %s téléversé n’est pas pris en charge. Veuillez téléve
 msgid "Don't Show Again"
 msgstr "Ne plus afficher"
 
-#: includes/admin-templates/beta-tester.php:36 core/admin/admin.php:700
+#: core/admin/admin.php:700 includes/admin-templates/beta-tester.php:36
 msgid "Sign Up"
 msgstr "S’inscrire"
 
@@ -735,8 +739,8 @@ msgstr "Téléverser"
 msgid "My Libraries"
 msgstr "Mes bibliothèques"
 
-#: includes/controls/icons.php:89 includes/controls/icons.php:123
-#: includes/controls/icons.php:127 core/editor/editor.php:743
+#: core/editor/editor.php:743 includes/controls/icons.php:89
+#: includes/controls/icons.php:123 includes/controls/icons.php:127
 msgid "Icon Library"
 msgstr "Bibliothèque d’icônes"
 
@@ -768,7 +772,7 @@ msgstr "Nouvelle bibliothèque d’icônes Elementor"
 msgid "Before you enable SVG upload, note that SVG files include a security risk. Elementor does run a process to remove possible malicious code, but there is still risk involved when using such files."
 msgstr "Avant d’activer le téléversement de SVG, notez que les fichiers SVG comportent un risque de sécurité. Elementor exécute un processus pour supprimer les éventuels codes malveillants, mais il y a toujours un risque à utiliser ces fichiers."
 
-#: includes/settings/settings.php:623 core/editor/editor.php:624
+#: core/editor/editor.php:624 includes/settings/settings.php:623
 msgid "Enable SVG Uploads"
 msgstr "Activer les téléversements de SVG"
 
@@ -865,11 +869,11 @@ msgstr "Espace autour"
 msgid "Vertical Align"
 msgstr "Alignement vertical"
 
-#: modules/safe-mode/module.php:339
+#: modules/safe-mode/module.php:360
 msgid "Having problems loading Elementor? Please enable Safe Mode to troubleshoot."
 msgstr "Des problèmes au chargement d’Elementor ? Veuillez activer le mode sans échec pour résoudre le problème."
 
-#: modules/safe-mode/module.php:266
+#: modules/safe-mode/module.php:286
 msgid "The issue was probably caused by one of your plugins or theme."
 msgstr "Le problème a certainement été causé par un de vos thèmes ou extensions."
 
@@ -989,47 +993,47 @@ msgstr "Constructeur de thème"
 msgid "Theme Templates"
 msgstr "Modèles de thème"
 
-#: modules/safe-mode/module.php:335
+#: modules/safe-mode/module.php:356
 msgid "Enable Safe Mode"
 msgstr "Activer le mode sans échec"
 
-#: modules/safe-mode/module.php:333
+#: modules/safe-mode/module.php:354 modules/safe-mode/module.php:366
 msgid "Can't Edit?"
 msgstr "Impossible de modifier ?"
 
-#: modules/safe-mode/module.php:277
+#: modules/safe-mode/module.php:297
 msgid "Please note! We couldn't deactivate all of your plugins on Safe Mode. Please <a href=\"%s\" target=\"_blank\">read more</a> about this issue."
 msgstr "Veuillez noter ! Nous n'avons pas pu désactiver toutes vos extensions en mode sans échec. Veuillez <a href=\"%s\" target=\"_blank\">lire plus</a> à propos de ce problème."
 
-#: modules/safe-mode/module.php:266 modules/safe-mode/module.php:270
+#: modules/safe-mode/module.php:286 modules/safe-mode/module.php:290
 msgid "<a href=\"%s\" target=\"_blank\">Click here</a> to troubleshoot"
 msgstr "<a href=\"%s\" target=\"_blank\">Cliquez ici</a> pour résoudre les problèmes"
 
-#: modules/safe-mode/module.php:269
+#: modules/safe-mode/module.php:289
 msgid "Still experiencing issues?"
 msgstr "Vous avez toujours des problèmes ?"
 
-#: modules/safe-mode/module.php:265
+#: modules/safe-mode/module.php:285
 msgid "Editor successfully loaded?"
 msgstr "Éditeur bien chargé ?"
 
-#: modules/safe-mode/module.php:258 modules/safe-mode/module.php:444
+#: modules/safe-mode/module.php:278 modules/safe-mode/module.php:475
 msgid "Disable Safe Mode"
 msgstr "Désactiver le mode sans échec"
 
-#: modules/safe-mode/module.php:256
+#: modules/safe-mode/module.php:276
 msgid "Safe Mode ON"
 msgstr "Mode sans échec actif"
 
-#: modules/safe-mode/module.php:89
+#: modules/safe-mode/module.php:94
 msgid "Cannot enable Safe Mode"
 msgstr "Impossible d'activer le mode sans échec"
 
-#: modules/safe-mode/module.php:49
+#: modules/safe-mode/module.php:50
 msgid "Safe Mode allows you to troubleshoot issues by only loading the editor, without loading the theme or any other plugin."
 msgstr "Le mode sans échec vous permet de résoudre les problèmes en chargeant uniquement l'éditeur, sans charger le thème ni aucune autre extension."
 
-#: modules/safe-mode/module.php:40
+#: modules/safe-mode/module.php:41
 msgid "Safe Mode"
 msgstr "Mode sans échec"
 
@@ -1131,7 +1135,7 @@ msgstr "Légende du fichier joint"
 msgid "Quit"
 msgstr "Quitter"
 
-#: includes/editor-templates/hotkeys.php:144 core/editor/editor.php:733
+#: core/editor/editor.php:733 includes/editor-templates/hotkeys.php:144
 msgid "Keyboard Shortcuts"
 msgstr "Raccourcis clavier"
 
@@ -1155,8 +1159,8 @@ msgstr "Défaire"
 msgid "Type to find anything in Elementor"
 msgstr "Saisissez pour trouver dans Elementor"
 
-#: includes/editor-templates/hotkeys.php:92
 #: core/common/modules/finder/module.php:115
+#: includes/editor-templates/hotkeys.php:92
 msgid "Finder"
 msgstr "Finder"
 
@@ -1215,11 +1219,11 @@ msgstr "Chargement différé"
 msgid "Enter your URL"
 msgstr "Saisissez votre URL"
 
+#: includes/widgets/tabs.php:128 includes/widgets/tabs.php:132
+#: includes/widgets/icon-box.php:159 includes/widgets/text-editor.php:113
+#: includes/widgets/testimonial.php:100 includes/widgets/image-box.php:136
 #: includes/widgets/toggle.php:126 includes/widgets/toggle.php:130
 #: includes/widgets/accordion.php:125 includes/widgets/accordion.php:129
-#: includes/widgets/text-editor.php:113 includes/widgets/testimonial.php:100
-#: includes/widgets/tabs.php:128 includes/widgets/tabs.php:132
-#: includes/widgets/icon-box.php:159 includes/widgets/image-box.php:136
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
 msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
 
@@ -1277,10 +1281,10 @@ msgstr "La navigation facile est ici !"
 msgid "Empty"
 msgstr "Vide"
 
-#: includes/editor-templates/navigator.php:12
+#: core/editor/editor.php:726 includes/editor-templates/hotkeys.php:126
 #: includes/editor-templates/panel.php:64
 #: includes/editor-templates/panel.php:66
-#: includes/editor-templates/hotkeys.php:126 core/editor/editor.php:726
+#: includes/editor-templates/navigator.php:12
 msgid "Navigator"
 msgstr "Navigateur"
 
@@ -1318,7 +1322,7 @@ msgstr "Vous avez créé plus de 10 pages avec Elementor. Bon travail ! Si vous
 msgid "Congrats!"
 msgstr "Félicitations !"
 
-#: includes/widgets/google-maps.php:128 core/settings/general/model.php:156
+#: core/settings/general/model.php:156 includes/widgets/google-maps.php:128
 msgid "Zoom"
 msgstr "Zoom"
 
@@ -1394,8 +1398,8 @@ msgstr "Point de rupture tablette"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: includes/managers/elements.php:283
 #: core/common/modules/finder/categories/site.php:26
+#: includes/managers/elements.php:283
 msgid "Site"
 msgstr "Site"
 
@@ -1436,7 +1440,7 @@ msgstr "Réinitialiser le style"
 msgid "Copy Style"
 msgstr "Copier le style"
 
-#: includes/editor-templates/hotkeys.php:35 core/editor/editor.php:716
+#: core/editor/editor.php:716 includes/editor-templates/hotkeys.php:35
 msgid "Copy"
 msgstr "Copier"
 
@@ -1511,10 +1515,10 @@ msgstr "Retour à l’éditeur WordPress"
 msgid "Elementor %s"
 msgstr "Elementor %s"
 
-#. translators: %s: Template type label.
 #. translators: %s the title of the post type
-#: includes/template-library/sources/local.php:1272
+#. translators: %s: Template type label.
 #: core/common/modules/finder/categories/create.php:62
+#: includes/template-library/sources/local.php:1272
 msgid "Add New %s"
 msgstr "Ajouter un·e %s"
 
@@ -1535,16 +1539,16 @@ msgctxt "Page Template"
 msgid "Elementor Canvas"
 msgstr "Elementor canevas"
 
-#: includes/widgets/image.php:340 includes/widgets/image.php:374
+#: core/kits/documents/kit.php:735 core/kits/documents/kit.php:806
 #: includes/widgets/image-box.php:299 includes/widgets/image-box.php:353
+#: includes/widgets/image.php:340 includes/widgets/image.php:374
 #: includes/elements/column.php:349 includes/elements/column.php:420
 #: includes/elements/section.php:615 includes/elements/section.php:686
-#: core/kits/documents/kit.php:714 core/kits/documents/kit.php:780
 msgid "Opacity"
 msgstr "Opacité"
 
-#: includes/plugin.php:443 includes/plugin.php:456 core/base/module.php:124
-#: core/base/module.php:137
+#: core/base/module.php:124 core/base/module.php:137 includes/plugin.php:443
+#: includes/plugin.php:456
 msgid "Something went wrong."
 msgstr "Quelque chose s’est mal passé."
 
@@ -1604,7 +1608,7 @@ msgstr "Courant"
 msgid "Play Video"
 msgstr "Lire la vidéo"
 
-#: includes/widgets/common.php:384 includes/widgets/icon-list.php:103
+#: includes/widgets/icon-list.php:103 includes/widgets/common.php:384
 msgid "Inline"
 msgstr "En ligne"
 
@@ -1700,8 +1704,8 @@ msgid "Groove"
 msgstr "Rainure"
 
 #. translators: %s: Document title
-#: includes/editor-templates/panel.php:62 core/base/document.php:848
-#: core/settings/page/model.php:126
+#: core/base/document.php:848 core/settings/page/model.php:126
+#: includes/editor-templates/panel.php:62
 msgid "%s Settings"
 msgstr "Réglages de %s"
 
@@ -1838,7 +1842,7 @@ msgstr "Ajoutez votre titre ici"
 msgid "Dismiss alert"
 msgstr "Rejeter l’alerte"
 
-#: includes/widgets/alert.php:127 includes/widgets/icon-box.php:160
+#: includes/widgets/icon-box.php:160 includes/widgets/alert.php:127
 #: includes/widgets/image-box.php:137
 msgid "Enter your description"
 msgstr "Saisissez votre description"
@@ -1899,7 +1903,7 @@ msgstr "Soumettre"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: core/kits/documents/kit.php:84 core/editor/editor.php:695
+#: core/editor/editor.php:695 core/kits/documents/kit.php:84
 msgid "Published"
 msgstr "Publié"
 
@@ -2009,13 +2013,13 @@ msgstr "Nouveauté"
 msgid "Import Template"
 msgstr "Importer un modèle"
 
-#: includes/controls/icons.php:83 includes/controls/media.php:139
+#: includes/controls/media.php:139 includes/controls/icons.php:83
 #: includes/editor-templates/repeater.php:27
 msgid "Remove"
 msgstr "Retirer"
 
+#: core/editor/editor.php:715 includes/editor-templates/hotkeys.php:67
 #: includes/editor-templates/repeater.php:21
-#: includes/editor-templates/hotkeys.php:67 core/editor/editor.php:715
 msgid "Duplicate"
 msgstr "Dupliquer"
 
@@ -2023,12 +2027,12 @@ msgstr "Dupliquer"
 msgid "Drag & Drop"
 msgstr "Glisser & déposer"
 
-#: includes/editor-templates/panel.php:144
-#: includes/editor-templates/panel.php:145 core/editor/editor.php:633
+#: core/editor/editor.php:633 includes/editor-templates/panel.php:144
+#: includes/editor-templates/panel.php:145
 msgid "Hide Panel"
 msgstr "Masquer le panneau"
 
-#: includes/editor-templates/panel.php:134 core/editor/editor.php:722
+#: core/editor/editor.php:722 includes/editor-templates/panel.php:134
 msgid "Save as Template"
 msgstr "Enregistrer comme modèle"
 
@@ -2041,7 +2045,7 @@ msgstr "Enregistrer le brouillon"
 msgid "Save Options"
 msgstr "Enregistrer les options"
 
-#: includes/editor-templates/panel.php:110 core/editor/editor.php:696
+#: core/editor/editor.php:696 includes/editor-templates/panel.php:110
 msgid "Publish"
 msgstr "Publier"
 
@@ -2124,10 +2128,10 @@ msgstr "Mettre à jour Elementor maintenant"
 msgid "Excerpt"
 msgstr "Extrait"
 
+#: modules/history/revisions-manager.php:247
 #: includes/template-library/sources/local.php:447
 #: includes/template-library/sources/local.php:526
 #: includes/template-library/sources/local.php:664
-#: modules/history/revisions-manager.php:247
 msgid "Access denied."
 msgstr "Accès refusé."
 
@@ -2167,8 +2171,8 @@ msgstr "Expiration"
 msgid "We're sorry, but something went wrong. Click on 'Learn more' and follow each of the steps to quickly solve it."
 msgstr "Nous sommes désolés, mais quelque chose s’est mal passé. Cliquer sur « En apprendre plus » et suivez chacune des étapes pour rapidement résoudre cela."
 
-#: core/debug/classes/inspection-base.php:25
 #: core/debug/loading-inspection-manager.php:37
+#: core/debug/classes/inspection-base.php:25
 msgid "The preview could not be loaded"
 msgstr "La prévisualisation n’a pas pu être chargée"
 
@@ -2209,9 +2213,9 @@ msgstr "Basculer sur l’onglet Révisions pour les anciennes versions"
 msgid "Revisions"
 msgstr "Révisions"
 
-#: includes/editor-templates/templates.php:124
-#: includes/editor-templates/hotkeys.php:14
 #: modules/history/views/history-panel-template.php:9
+#: includes/editor-templates/hotkeys.php:14
+#: includes/editor-templates/templates.php:124
 msgid "Actions"
 msgstr "Actions"
 
@@ -2227,17 +2231,17 @@ msgstr "Ajouté"
 msgid "Documentation"
 msgstr "Documentation"
 
+#: modules/history/module.php:52 includes/editor-templates/hotkeys.php:117
 #: includes/editor-templates/panel.php:68
 #: includes/editor-templates/panel.php:70
-#: includes/editor-templates/hotkeys.php:117 modules/history/module.php:52
 msgid "History"
 msgstr "Historique"
 
-#: includes/widgets/video.php:714 core/settings/general/model.php:208
+#: core/settings/general/model.php:208 includes/widgets/video.php:714
 msgid "UI Hover Color"
 msgstr "Couleur au survol de l’UI"
 
-#: includes/widgets/video.php:703 core/settings/general/model.php:201
+#: core/settings/general/model.php:201 includes/widgets/video.php:703
 msgid "UI Color"
 msgstr "Couleur d’UI"
 
@@ -2272,11 +2276,11 @@ msgctxt "Text Shadow Control"
 msgid "Text Shadow"
 msgstr "Ombre du texte"
 
-#: includes/settings/settings.php:582 core/settings/general/model.php:140
+#: core/settings/general/model.php:140 includes/settings/settings.php:582
 msgid "Open all image links in a lightbox popup window. The lightbox will automatically work on any link that leads to an image file."
 msgstr "Ouvrir tous les liens image dans une visionneuse. La visionneuse fonctionnera automatiquement sur tout lien qui mène à un fichier image."
 
-#: includes/settings/settings.php:577 core/settings/general/model.php:137
+#: core/settings/general/model.php:137 includes/settings/settings.php:577
 msgid "Image Lightbox"
 msgstr "Visionneuse d’image"
 
@@ -2313,8 +2317,8 @@ msgstr "Rétrograder de version"
 msgid "Experiencing an issue with Elementor version %s? Rollback to a previous version before the issue appeared."
 msgstr "Vous avez un problème avec la  version %s d’Elementor ?  Revenez à une version antérieure à l’apparition du problème."
 
-#: includes/settings/tools.php:265
 #: core/common/modules/finder/categories/tools.php:58
+#: includes/settings/tools.php:265
 msgid "Version Control"
 msgstr "Contrôle de version"
 
@@ -2326,7 +2330,7 @@ msgstr "Permuter de méthode de chargeur d’éditeur"
 msgid "Integrations"
 msgstr "Intégrations"
 
-#: includes/settings/settings.php:521 core/settings/general/model.php:109
+#: core/settings/general/model.php:109 includes/settings/settings.php:521
 msgid "Sets the default space between widgets (Default: 20)"
 msgstr "Définit l’espace par défaut entre les widgets (par défaut : 20)"
 
@@ -2334,8 +2338,8 @@ msgstr "Définit l’espace par défaut entre les widgets (par défaut : 20)"
 msgid "Space Between Widgets"
 msgstr "Espace entre les widgets"
 
-#: includes/rollback.php:165 includes/settings/tools.php:120
-#: includes/settings/tools.php:268 core/admin/admin.php:694
+#: core/admin/admin.php:694 includes/rollback.php:165
+#: includes/settings/tools.php:120 includes/settings/tools.php:268
 msgid "Rollback to Previous Version"
 msgstr "Rétrograder à la version précédente"
 
@@ -2349,18 +2353,18 @@ msgstr "Délai d’animation"
 msgid "Z-Index"
 msgstr "Index-Z"
 
+#: core/kits/documents/kit.php:640 core/kits/documents/kit.php:843
 #: includes/widgets/common.php:239 includes/widgets/common.php:346
-#: includes/widgets/google-maps.php:214 includes/widgets/image.php:400
-#: includes/widgets/image-box.php:317
+#: includes/widgets/image-box.php:317 includes/widgets/image.php:400
+#: includes/widgets/google-maps.php:214
 #: includes/controls/groups/background.php:672 includes/elements/column.php:295
 #: includes/elements/column.php:451 includes/elements/column.php:558
 #: includes/elements/section.php:564 includes/elements/section.php:717
-#: includes/elements/section.php:823 core/kits/documents/kit.php:624
-#: core/kits/documents/kit.php:817
+#: includes/elements/section.php:823
 msgid "Transition Duration"
 msgstr "Durée de transition"
 
-#: includes/elements/column.php:208 core/settings/general/model.php:105
+#: core/settings/general/model.php:105 includes/elements/column.php:208
 msgid "Widgets Space"
 msgstr "Espace des widgets"
 
@@ -2442,15 +2446,15 @@ msgstr "Méthode d’impression CSS"
 msgid "For troubleshooting server configuration conflicts."
 msgstr "Pour la résolution de conflits de configuration serveur."
 
+#: modules/safe-mode/module.php:47 core/editor/editor.php:700
+#: core/debug/inspector.php:55 includes/settings/tools.php:312
 #: includes/settings/settings.php:617 includes/settings/settings.php:629
-#: includes/settings/tools.php:312 modules/safe-mode/module.php:46
-#: core/debug/inspector.php:55 core/editor/editor.php:700
 msgid "Enable"
 msgstr "Activer"
 
-#: includes/settings/settings.php:616 includes/settings/settings.php:628
-#: includes/settings/tools.php:311 modules/safe-mode/module.php:45
-#: core/debug/inspector.php:54
+#: modules/safe-mode/module.php:46 core/debug/inspector.php:54
+#: includes/settings/tools.php:311 includes/settings/settings.php:616
+#: includes/settings/settings.php:628
 msgid "Disable"
 msgstr "Désactiver"
 
@@ -2458,7 +2462,7 @@ msgstr "Désactiver"
 msgid "Status"
 msgstr "État"
 
-#: includes/widgets/spacer.php:108 includes/widgets/text-editor.php:321
+#: includes/widgets/text-editor.php:321 includes/widgets/spacer.php:108
 msgid "Space"
 msgstr "Espace"
 
@@ -2466,20 +2470,20 @@ msgstr "Espace"
 msgid "Drop Cap"
 msgstr "Lettrine"
 
-#: includes/settings/settings.php:543 core/settings/general/model.php:126
+#: core/settings/general/model.php:126 includes/settings/settings.php:543
 msgid "Elementor lets you hide the page title. This works for themes that have \"h1.entry-title\" selector. If your theme's selector is different, please enter it above."
 msgstr "Elementor vous permet de masquer le titre de la page. Cela fonctionne pour les thèmes qui ont un sélecteur « h1.entry-title ». Si le sélecteur de votre thème est différent, saisissez-le ci-dessus."
 
-#: includes/settings/settings.php:536 core/settings/general/model.php:123
+#: core/settings/general/model.php:123 includes/settings/settings.php:536
 msgid "Page Title Selector"
 msgstr "Sélecteur de titre de page"
 
-#: includes/admin-templates/new-template.php:61
 #: includes/settings/controls.php:156
+#: includes/admin-templates/new-template.php:61
 msgid "Select"
 msgstr "Sélectionner"
 
-#: includes/editor-templates/hotkeys.php:51 core/editor/editor.php:719
+#: core/editor/editor.php:719 includes/editor-templates/hotkeys.php:51
 msgid "Paste Style"
 msgstr "Coller le style"
 
@@ -2549,8 +2553,8 @@ msgstr "Maintenance"
 msgid "Coming Soon"
 msgstr "Arrive bientôt"
 
-#: includes/maintenance-mode.php:203 modules/history/module.php:64
-#: core/kits/documents/kit.php:83
+#: modules/history/module.php:64 core/kits/documents/kit.php:83
+#: includes/maintenance-mode.php:203
 msgid "Disabled"
 msgstr "Désactivé"
 
@@ -2562,8 +2566,8 @@ msgstr "Sélectionner le mode"
 msgid "Set your entire website as MAINTENANCE MODE, meaning the site is offline temporarily for maintenance, or set it as COMING SOON mode, meaning the site is offline until it is ready to be launched."
 msgstr "Définissez la totalité de votre site en mode Maintenance qui signifie que le site est temporairement hors ligne pour maintenance, ou définissez le mode Arrive bientôt qui signifie que le site est hors ligne jusqu’à ce qu’il soit prêt à être lancé."
 
-#: includes/maintenance-mode.php:190 includes/maintenance-mode.php:194
 #: core/common/modules/finder/categories/tools.php:64
+#: includes/maintenance-mode.php:190 includes/maintenance-mode.php:194
 msgid "Maintenance Mode"
 msgstr "Mode maintenance"
 
@@ -2571,14 +2575,14 @@ msgstr "Mode maintenance"
 msgid "Bring to Front"
 msgstr "Envoyer à l’avant-plan"
 
-#: includes/widgets/image-gallery.php:143 includes/widgets/video.php:558
-#: includes/widgets/video.php:679 includes/widgets/image.php:218
-#: includes/widgets/image-carousel.php:204
 #: core/settings/general/manager.php:208 core/settings/general/model.php:134
+#: includes/widgets/video.php:558 includes/widgets/video.php:679
+#: includes/widgets/image-gallery.php:143
+#: includes/widgets/image-carousel.php:204 includes/widgets/image.php:218
 msgid "Lightbox"
 msgstr "Visionneuse"
 
-#: includes/widgets/toggle.php:266 includes/widgets/icon-list.php:201
+#: includes/widgets/icon-list.php:201 includes/widgets/toggle.php:266
 #: includes/elements/column.php:167 includes/elements/column.php:195
 #: includes/elements/section.php:431
 msgid "Space Between"
@@ -2694,16 +2698,16 @@ msgstr "Forme de séparation"
 msgid "Navigation Width"
 msgstr "Largeur de navigation"
 
-#: includes/widgets/common.php:224 includes/widgets/common.php:311
-#: includes/widgets/button.php:334 includes/widgets/google-maps.php:199
-#: includes/widgets/icon-list.php:398 includes/widgets/icon-list.php:483
-#: includes/widgets/image.php:367 includes/widgets/icon.php:249
-#: includes/widgets/icon-box.php:302 includes/widgets/image-box.php:338
-#: includes/elements/column.php:280 includes/elements/column.php:405
-#: includes/elements/column.php:523 includes/elements/section.php:549
-#: includes/elements/section.php:671 includes/elements/section.php:788
-#: core/kits/documents/kit.php:282 core/kits/documents/kit.php:480
-#: core/kits/documents/kit.php:753
+#: core/kits/documents/kit.php:293 core/kits/documents/kit.php:496
+#: core/kits/documents/kit.php:774 includes/widgets/icon-list.php:398
+#: includes/widgets/icon-list.php:483 includes/widgets/common.php:224
+#: includes/widgets/common.php:311 includes/widgets/icon-box.php:302
+#: includes/widgets/icon.php:249 includes/widgets/image-box.php:338
+#: includes/widgets/button.php:334 includes/widgets/image.php:367
+#: includes/widgets/google-maps.php:199 includes/elements/column.php:280
+#: includes/elements/column.php:405 includes/elements/column.php:523
+#: includes/elements/section.php:549 includes/elements/section.php:671
+#: includes/elements/section.php:788
 msgid "Hover"
 msgstr "Au survol"
 
@@ -2798,9 +2802,9 @@ msgstr "Mettre à jour l’adresse du site (URL)"
 msgid "<strong>Important:</strong> It is strongly recommended that you <a target=\"_blank\" href=\"%s\">backup your database</a> before using Replace URL."
 msgstr "<strong>Important :</strong> il est fortement recommandé de <a target=\"_blank\" href=\"%s\">sauvegarder votre base de données</a> avant d’utiliser le remplacement d’URL."
 
+#: core/common/modules/finder/categories/tools.php:52
 #: includes/settings/tools.php:237 includes/settings/tools.php:248
 #: includes/settings/tools.php:256
-#: core/common/modules/finder/categories/tools.php:52
 msgid "Replace URL"
 msgstr "Remplacer l’URL"
 
@@ -2885,14 +2889,14 @@ msgstr "Avec cette fonctionnalité, vous pouvez enregistrer un widget comme glob
 msgid "Meet Our Global Widget"
 msgstr "Découvrez notre widget global"
 
-#: includes/settings/settings.php:153 includes/settings/settings.php:290
-#: includes/settings/settings.php:311 includes/settings/settings.php:332
-#: includes/settings/settings.php:353 includes/managers/controls.php:930
+#: core/editor/editor.php:747 core/role-manager/role-manager.php:168
+#: core/admin/admin.php:275 core/admin/admin.php:487
+#: includes/managers/controls.php:930 includes/settings/settings.php:153
+#: includes/settings/settings.php:290 includes/settings/settings.php:311
+#: includes/settings/settings.php:332 includes/settings/settings.php:353
 #: includes/editor-templates/templates.php:204
 #: includes/editor-templates/panel-elements.php:23
-#: includes/editor-templates/panel-elements.php:57 core/editor/editor.php:747
-#: core/admin/admin.php:275 core/admin/admin.php:487
-#: core/role-manager/role-manager.php:168
+#: includes/editor-templates/panel-elements.php:57
 msgid "Go Pro"
 msgstr "Passer à la version Pro"
 
@@ -2904,13 +2908,13 @@ msgstr "Obtenez plus avec Elementor Pro"
 msgid "Global"
 msgstr "Global"
 
-#: includes/widgets/video.php:561 includes/widgets/text-editor.php:121
-#: includes/widgets/icon-list.php:247
+#: includes/widgets/video.php:561 includes/widgets/icon-list.php:247
+#: includes/widgets/text-editor.php:121
 msgid "Off"
 msgstr "Arrêt"
 
-#: includes/widgets/video.php:562 includes/widgets/text-editor.php:122
-#: includes/widgets/icon-list.php:248
+#: includes/widgets/video.php:562 includes/widgets/icon-list.php:248
+#: includes/widgets/text-editor.php:122
 msgid "On"
 msgstr "Marche"
 
@@ -2974,15 +2978,15 @@ msgstr "Mettre à jour les modifications apportées à la page"
 msgid "No thanks"
 msgstr "Non merci"
 
-#: includes/settings/settings.php:532 core/settings/general/model.php:118
+#: core/settings/general/model.php:118 includes/settings/settings.php:532
 msgid "Enter parent element selector to which stretched sections will fit to (e.g. #primary / .wrapper / main etc). Leave blank to fit to page width."
 msgstr "Saisissez le sélecteur de l’élément parent auquel s’étendront les sections (ex: #primary/.wrapper /main etc.). Laissez vide pour adapter à la largeur de la page."
 
-#: includes/settings/settings.php:525 core/settings/general/model.php:115
+#: core/settings/general/model.php:115 includes/settings/settings.php:525
 msgid "Stretched Section Fit To"
 msgstr "Section étirée ajustée à"
 
-#: includes/settings/settings.php:509 core/settings/general/model.php:99
+#: core/settings/general/model.php:99 includes/settings/settings.php:509
 msgid "Sets the default width of the content area (Default: 1140)"
 msgstr "Définit la largeur par défaut de la zone de contenu (par défaut : 1140)"
 
@@ -2994,8 +2998,8 @@ msgstr "Étire la section en pleine largeur en utilisant JS."
 msgid "Stretch Section"
 msgstr "Étirer la section"
 
-#: includes/settings/settings.php:477 includes/elements/section.php:253
-#: core/admin/admin-notices.php:221
+#: core/admin/admin-notices.php:221 includes/settings/settings.php:477
+#: includes/elements/section.php:253
 msgid "Learn more."
 msgstr "En savoir plus."
 
@@ -3108,10 +3112,10 @@ msgstr "La bibliothèque Elementor se met à jour automatiquement chaque jour. V
 msgid "Sync Library"
 msgstr "Synchroniser la librairie"
 
-#: includes/settings/tools.php:36 includes/settings/tools.php:37
-#: includes/settings/tools.php:335
 #: core/common/modules/finder/categories/tools.php:28
 #: core/common/modules/finder/categories/tools.php:46
+#: includes/settings/tools.php:36 includes/settings/tools.php:37
+#: includes/settings/tools.php:335
 msgid "Tools"
 msgstr "Outils"
 
@@ -3137,7 +3141,7 @@ msgstr "Enregistrez votre %s dans la bibliothèque"
 msgid "The following error(s) occurred while processing the request:"
 msgstr "Les erreurs suivantes sont apparues durant le traitement de la requête :"
 
-#: includes/utils.php:240 core/editor/editor.php:639
+#: core/editor/editor.php:639 includes/utils.php:240
 msgid "An error occurred"
 msgstr "Une erreur est apparue"
 
@@ -3183,9 +3187,9 @@ msgstr "Mes modèles"
 msgid "Library"
 msgstr "Bibliothèque"
 
+#: core/kits/manager.php:66 includes/editor-templates/library-layout.php:15
+#: includes/editor-templates/library-layout.php:16
 #: includes/editor-templates/global.php:22
-#: includes/editor-templates/library-layout.php:15
-#: includes/editor-templates/library-layout.php:16 core/kits/manager.php:66
 msgid "Close"
 msgstr "Fermer"
 
@@ -3212,17 +3216,18 @@ msgctxt "System Info"
 msgid "If you want to modify the source code of your theme, we recommend using a <a href=\"%s\">child theme</a>."
 msgstr "Pour modifier le code source de votre thème, nous vous recommandons d’utiliser un <a href=\"%s\">thème enfant</a>."
 
-#: modules/safe-mode/mu-plugin/elementor-safe-mode.php:92
-#: modules/safe-mode/module.php:340 core/editor/editor.php:629
-#: core/editor/editor.php:671 core/admin/admin-notices.php:309
-#: core/admin/admin-notices.php:353 core/admin/admin-notices.php:397
-#: core/admin/admin-notices.php:441 core/admin/admin-notices.php:486
+#: modules/safe-mode/module.php:361 modules/safe-mode/module.php:370
+#: modules/safe-mode/mu-plugin/elementor-safe-mode.php:103
+#: core/editor/editor.php:629 core/editor/editor.php:671
+#: core/admin/admin-notices.php:309 core/admin/admin-notices.php:353
+#: core/admin/admin-notices.php:397 core/admin/admin-notices.php:441
+#: core/admin/admin-notices.php:486
 msgid "Learn More"
 msgstr "En savoir plus"
 
+#: includes/widgets/icon-box.php:338 includes/widgets/social-icons.php:498
+#: includes/widgets/icon.php:287 includes/widgets/image-box.php:275
 #: includes/widgets/button.php:378 includes/widgets/image.php:417
-#: includes/widgets/social-icons.php:498 includes/widgets/icon.php:287
-#: includes/widgets/icon-box.php:338 includes/widgets/image-box.php:275
 msgid "Hover Animation"
 msgstr "Animation de survol"
 
@@ -3257,7 +3262,7 @@ msgstr "Polices par défaut"
 msgid "Color Palettes"
 msgstr "Palettes de couleurs"
 
-#: includes/widgets/common.php:152 includes/widgets/video.php:764
+#: includes/widgets/video.php:764 includes/widgets/common.php:152
 #: includes/elements/column.php:819 includes/elements/section.php:1222
 msgid "Entrance Animation"
 msgstr "Animation d’entrée"
@@ -3277,13 +3282,13 @@ msgctxt "Box Shadow Control"
 msgid "Box Shadow"
 msgstr "Ombre de boîte"
 
-#: includes/widgets/tabs.php:156 includes/controls/box-shadow.php:73
-#: includes/controls/text-shadow.php:76
+#: includes/widgets/tabs.php:156 includes/controls/text-shadow.php:76
+#: includes/controls/box-shadow.php:73
 msgid "Vertical"
 msgstr "Vertical"
 
-#: includes/widgets/tabs.php:155 includes/controls/box-shadow.php:68
-#: includes/controls/text-shadow.php:71
+#: includes/widgets/tabs.php:155 includes/controls/text-shadow.php:71
+#: includes/controls/box-shadow.php:68
 msgid "Horizontal"
 msgstr "Horizontal"
 
@@ -3291,7 +3296,7 @@ msgstr "Horizontal"
 msgid "Spread"
 msgstr "Diffuser"
 
-#: includes/controls/box-shadow.php:78 includes/controls/text-shadow.php:66
+#: includes/controls/text-shadow.php:66 includes/controls/box-shadow.php:78
 msgid "Blur"
 msgstr "Flou"
 
@@ -3419,18 +3424,18 @@ msgstr "Voir les détails de la version %s d’Elementor"
 msgid "There is a new version of Elementor Page Builder available. <a href=\"%1$s\" class=\"thickbox open-plugin-details-modal\" aria-label=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s\" class=\"update-link\" aria-label=\"%5$s\">update now</a>."
 msgstr "Une nouvelle version d’Elementor Page Builder est disponible. <a href=\"%1$s\" class=\"thickbox open-plugin-details-modal\" aria-label=\"%2$s\">Voir les détails de la version %3$s</a> ou <a href=\"%4$s\" class=\"update-link\" aria-label=\"%5$s\">mettre à jour maintenant</a>."
 
-#: includes/widgets/image.php:194 includes/widgets/image-carousel.php:183
+#: includes/widgets/image-carousel.php:183 includes/widgets/image.php:194
 msgid "Custom URL"
 msgstr "URL personnalisée"
 
-#: includes/editor-templates/hotkeys.php:43 core/editor/editor.php:717
+#: core/editor/editor.php:717 includes/editor-templates/hotkeys.php:43
 msgid "Paste"
 msgstr "Coller"
 
-#: includes/widgets/common.php:197 includes/widgets/toggle.php:301
-#: includes/widgets/toggle.php:448 includes/widgets/accordion.php:277
-#: includes/widgets/accordion.php:424 includes/elements/column.php:247
-#: includes/elements/section.php:517 core/kits/documents/kit.php:142
+#: core/kits/documents/kit.php:142 includes/widgets/common.php:197
+#: includes/widgets/toggle.php:301 includes/widgets/toggle.php:448
+#: includes/widgets/accordion.php:277 includes/widgets/accordion.php:424
+#: includes/elements/column.php:247 includes/elements/section.php:517
 msgid "Background"
 msgstr "Arrière-plan"
 
@@ -3438,9 +3443,10 @@ msgstr "Arrière-plan"
 msgid "Wider"
 msgstr "Plus large"
 
-#: includes/settings/settings.php:430 includes/settings/tools.php:212
-#: includes/managers/elements.php:279 core/role-manager/role-manager.php:57
+#: core/role-manager/role-manager.php:57
 #: core/common/modules/finder/categories/general.php:28
+#: includes/managers/elements.php:279 includes/settings/tools.php:212
+#: includes/settings/settings.php:430
 msgid "General"
 msgstr "Général"
 
@@ -3448,13 +3454,13 @@ msgstr "Général"
 msgid "Intro Byline"
 msgstr "Intro par ligne"
 
-#: includes/widgets/divider.php:734 includes/widgets/divider.php:875
-#: includes/widgets/star-rating.php:281 includes/widgets/toggle.php:420
-#: includes/widgets/accordion.php:396 includes/widgets/image-gallery.php:192
-#: includes/widgets/image.php:548 includes/widgets/social-icons.php:404
 #: includes/widgets/icon-box.php:350 includes/widgets/icon-box.php:517
+#: includes/widgets/image-gallery.php:192 includes/widgets/social-icons.php:404
 #: includes/widgets/image-box.php:224 includes/widgets/image-box.php:438
-#: includes/widgets/image-carousel.php:547
+#: includes/widgets/toggle.php:420 includes/widgets/accordion.php:396
+#: includes/widgets/divider.php:734 includes/widgets/divider.php:875
+#: includes/widgets/star-rating.php:281 includes/widgets/image-carousel.php:547
+#: includes/widgets/image.php:548
 msgid "Spacing"
 msgstr "Espacement"
 
@@ -3640,8 +3646,8 @@ msgctxt "Typography Control"
 msgid "None"
 msgstr "Aucun"
 
-#: includes/widgets/toggle.php:207 includes/widgets/accordion.php:206
 #: includes/widgets/icon-box.php:218 includes/widgets/image-box.php:185
+#: includes/widgets/toggle.php:207 includes/widgets/accordion.php:206
 msgid "Title HTML Tag"
 msgstr "Balise HTML de titre"
 
@@ -3654,11 +3660,11 @@ msgstr "Ceci est le titre"
 msgid "Add your custom class WITHOUT the dot. e.g: my-class"
 msgstr "Ajoutez votre classe personnalisée sans le point. Ex : ma-classe"
 
-#: includes/settings/settings.php:496 core/settings/general/model.php:92
+#: core/settings/general/model.php:92 includes/settings/settings.php:496
 msgid "The list of fonts used if the chosen font is not available."
 msgstr "La liste des polices utilisées si la police choisie n’est pas disponible."
 
-#: includes/settings/settings.php:491 core/settings/general/model.php:89
+#: core/settings/general/model.php:89 includes/settings/settings.php:491
 msgid "Default Generic Fonts"
 msgstr "Polices génériques par défaut"
 
@@ -3675,8 +3681,8 @@ msgctxt "System Info"
 msgid "We recommend to use php 5.4 or higher"
 msgstr "Nous recommandons d’utiliser php 5.4 ou supérieur"
 
-#: includes/editor-templates/panel-elements.php:10
 #: modules/history/module.php:66
+#: includes/editor-templates/panel-elements.php:10
 msgid "Elements"
 msgstr "Éléments"
 
@@ -3684,11 +3690,11 @@ msgstr "Éléments"
 msgid "The most advanced frontend drag & drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design."
 msgstr "Le constructeur de page par glisser-déposer le plus avancé. Créez des sites web haut de gamme aux pixels parfaits à la vitesse de l’éclair. N’importe quel thème, n’importe quelle page, n’importe quelle conception."
 
-#: includes/settings/settings.php:393 includes/managers/controls.php:304
-#: includes/editor-templates/panel.php:60 core/editor/editor.php:607
-#: core/admin/admin.php:271
+#: core/editor/editor.php:607
 #: core/common/modules/finder/categories/settings.php:28
-#: core/dynamic-tags/base-tag.php:171
+#: core/admin/admin.php:271 core/dynamic-tags/base-tag.php:171
+#: includes/managers/controls.php:304 includes/settings/settings.php:393
+#: includes/editor-templates/panel.php:60
 msgid "Settings"
 msgstr "Réglages"
 
@@ -3905,56 +3911,56 @@ msgstr "Boîte d’image"
 msgid "Icon Hover"
 msgstr "Survol de l’icône"
 
-#: includes/widgets/divider.php:914 includes/widgets/toggle.php:236
-#: includes/widgets/accordion.php:235 includes/widgets/text-editor.php:360
-#: includes/widgets/icon.php:358 includes/widgets/tabs.php:199
-#: includes/widgets/icon-box.php:425
+#: includes/widgets/tabs.php:199 includes/widgets/icon-box.php:425
+#: includes/widgets/text-editor.php:360 includes/widgets/icon.php:358
+#: includes/widgets/toggle.php:236 includes/widgets/accordion.php:235
+#: includes/widgets/divider.php:914
 msgid "Border Width"
 msgstr "Largeur de la bordure"
 
-#: includes/widgets/divider.php:892 includes/widgets/icon.php:336
-#: includes/widgets/icon-box.php:410
+#: includes/widgets/icon-box.php:410 includes/widgets/icon.php:336
+#: includes/widgets/divider.php:892
 msgid "Rotate"
 msgstr "Rotation"
 
-#: includes/widgets/divider.php:834 includes/widgets/text-editor.php:284
-#: includes/widgets/social-icons.php:212 includes/widgets/social-icons.php:344
-#: includes/widgets/social-icons.php:467 includes/widgets/icon.php:230
-#: includes/widgets/icon.php:270 includes/widgets/icon-box.php:284
-#: includes/widgets/icon-box.php:322
+#: includes/widgets/icon-box.php:284 includes/widgets/icon-box.php:322
+#: includes/widgets/text-editor.php:284 includes/widgets/social-icons.php:212
+#: includes/widgets/social-icons.php:344 includes/widgets/social-icons.php:467
+#: includes/widgets/icon.php:230 includes/widgets/icon.php:270
+#: includes/widgets/divider.php:834
 msgid "Secondary Color"
 msgstr "Couleur secondaire"
 
-#: includes/widgets/divider.php:816 includes/widgets/text-editor.php:268
-#: includes/widgets/social-icons.php:198 includes/widgets/social-icons.php:330
-#: includes/widgets/social-icons.php:452 includes/widgets/icon.php:212
-#: includes/widgets/icon.php:256 includes/widgets/icon-box.php:267
-#: includes/widgets/icon-box.php:309
+#: includes/widgets/icon-box.php:267 includes/widgets/icon-box.php:309
+#: includes/widgets/text-editor.php:268 includes/widgets/social-icons.php:198
+#: includes/widgets/social-icons.php:330 includes/widgets/social-icons.php:452
+#: includes/widgets/icon.php:212 includes/widgets/icon.php:256
+#: includes/widgets/divider.php:816
 msgid "Primary Color"
 msgstr "Couleur principale"
 
-#: includes/widgets/social-icons.php:262 includes/widgets/icon.php:142
-#: includes/widgets/icon-box.php:126
+#: includes/widgets/icon-box.php:126 includes/widgets/social-icons.php:262
+#: includes/widgets/icon.php:142
 msgid "Square"
 msgstr "Carré"
 
-#: includes/widgets/social-icons.php:263 includes/widgets/icon.php:141
-#: includes/widgets/icon-box.php:125
+#: includes/widgets/icon-box.php:125 includes/widgets/social-icons.php:263
+#: includes/widgets/icon.php:141
 msgid "Circle"
 msgstr "Cercle"
 
-#: includes/widgets/social-icons.php:257 includes/widgets/icon.php:138
-#: includes/widgets/icon-box.php:122
+#: includes/widgets/icon-box.php:122 includes/widgets/social-icons.php:257
+#: includes/widgets/icon.php:138
 msgid "Shape"
 msgstr "Forme"
 
-#: includes/widgets/divider.php:769 includes/widgets/text-editor.php:258
-#: includes/widgets/icon.php:128 includes/widgets/icon-box.php:112
+#: includes/widgets/icon-box.php:112 includes/widgets/text-editor.php:258
+#: includes/widgets/icon.php:128 includes/widgets/divider.php:769
 msgid "Framed"
 msgstr "Encadré"
 
-#: includes/widgets/divider.php:768 includes/widgets/text-editor.php:257
-#: includes/widgets/icon.php:127 includes/widgets/icon-box.php:111
+#: includes/widgets/icon-box.php:111 includes/widgets/text-editor.php:257
+#: includes/widgets/icon.php:127 includes/widgets/divider.php:768
 msgid "Stacked"
 msgstr "Rempli"
 
@@ -3982,11 +3988,11 @@ msgstr "Élément de liste #1"
 msgid "Icon List"
 msgstr "Liste d’icône"
 
-#: includes/widgets/button.php:153 includes/widgets/icon-list.php:151
-#: includes/widgets/image.php:207 includes/widgets/social-icons.php:178
-#: includes/widgets/icon.php:160 includes/widgets/testimonial.php:159
-#: includes/widgets/icon-box.php:175 includes/widgets/image-box.php:152
-#: includes/widgets/image-carousel.php:193
+#: includes/widgets/icon-list.php:151 includes/widgets/icon-box.php:175
+#: includes/widgets/testimonial.php:159 includes/widgets/social-icons.php:178
+#: includes/widgets/icon.php:160 includes/widgets/image-box.php:152
+#: includes/widgets/button.php:153 includes/widgets/image-carousel.php:193
+#: includes/widgets/image.php:207
 msgid "https://your-link.com"
 msgstr "https://your-link.com"
 
@@ -4006,27 +4012,27 @@ msgstr "Code HTML"
 msgid "HTML"
 msgstr "HTML"
 
-#: core/kits/documents/kit.php:515
+#: core/kits/documents/kit.php:531
 msgid "H6"
 msgstr "H6"
 
-#: core/kits/documents/kit.php:514
+#: core/kits/documents/kit.php:530
 msgid "H5"
 msgstr "H5"
 
-#: core/kits/documents/kit.php:513
+#: core/kits/documents/kit.php:529
 msgid "H4"
 msgstr "H4"
 
-#: core/kits/documents/kit.php:512
+#: core/kits/documents/kit.php:528
 msgid "H3"
 msgstr "H3"
 
-#: core/kits/documents/kit.php:511
+#: core/kits/documents/kit.php:527
 msgid "H2"
 msgstr "H2"
 
-#: core/kits/documents/kit.php:510
+#: core/kits/documents/kit.php:526
 msgid "H1"
 msgstr "H1"
 
@@ -4035,8 +4041,8 @@ msgstr "H1"
 msgid "HTML Tag"
 msgstr "Balise HTML"
 
-#: includes/widgets/heading.php:115 includes/widgets/alert.php:113
-#: includes/widgets/progress.php:99 includes/widgets/icon-box.php:146
+#: includes/widgets/heading.php:115 includes/widgets/progress.php:99
+#: includes/widgets/icon-box.php:146 includes/widgets/alert.php:113
 #: includes/widgets/image-box.php:123
 msgid "Enter your title"
 msgstr "Saisissez votre titre"
@@ -4057,15 +4063,16 @@ msgstr "Carte"
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: includes/widgets/image-gallery.php:256 includes/widgets/image.php:158
-#: includes/widgets/image.php:463 includes/widgets/image-carousel.php:221
+#: core/settings/general/model.php:173 core/settings/general/model.php:186
+#: includes/widgets/image-gallery.php:256
+#: includes/widgets/image-carousel.php:221
 #: includes/widgets/image-carousel.php:227
-#: includes/widgets/image-carousel.php:609 core/settings/general/model.php:173
-#: core/settings/general/model.php:186
+#: includes/widgets/image-carousel.php:609 includes/widgets/image.php:158
+#: includes/widgets/image.php:463
 msgid "Caption"
 msgstr "Légende"
 
-#: includes/widgets/image-gallery.php:184 core/kits/documents/kit.php:675
+#: core/kits/documents/kit.php:691 includes/widgets/image-gallery.php:184
 msgid "Images"
 msgstr "Images"
 
@@ -4073,8 +4080,8 @@ msgstr "Images"
 msgid "Random"
 msgstr "Aléatoire"
 
-#: includes/widgets/image-gallery.php:133 includes/widgets/image.php:193
-#: includes/widgets/image-carousel.php:182
+#: includes/widgets/image-gallery.php:133
+#: includes/widgets/image-carousel.php:182 includes/widgets/image.php:193
 msgid "Media File"
 msgstr "Fichier média"
 
@@ -4095,26 +4102,26 @@ msgstr "Galerie d’images"
 msgid "Gap"
 msgstr "Écart"
 
-#: includes/widgets/divider.php:550 includes/widgets/divider.php:686
-#: includes/widgets/star-rating.php:299 includes/widgets/toggle.php:312
+#: core/kits/documents/kit.php:101 core/kits/documents/kit.php:473
+#: core/kits/documents/kit.php:503 core/kits/documents/kit.php:579
+#: includes/widgets/video.php:624 includes/widgets/tabs.php:251
+#: includes/widgets/tabs.php:299 includes/widgets/icon-list.php:352
+#: includes/widgets/icon-list.php:381 includes/widgets/progress.php:182
+#: includes/widgets/progress.php:240 includes/widgets/icon-box.php:534
+#: includes/widgets/icon-box.php:568 includes/widgets/social-icons.php:185
+#: includes/widgets/social-icons.php:317 includes/widgets/image-box.php:455
+#: includes/widgets/image-box.php:489 includes/widgets/toggle.php:312
 #: includes/widgets/toggle.php:396 includes/widgets/toggle.php:459
 #: includes/widgets/accordion.php:288 includes/widgets/accordion.php:372
-#: includes/widgets/accordion.php:435 includes/widgets/video.php:624
-#: includes/widgets/icon-list.php:352 includes/widgets/icon-list.php:381
-#: includes/widgets/social-icons.php:185 includes/widgets/social-icons.php:317
-#: includes/widgets/tabs.php:251 includes/widgets/tabs.php:299
-#: includes/widgets/progress.php:182 includes/widgets/progress.php:240
-#: includes/widgets/icon-box.php:534 includes/widgets/icon-box.php:568
-#: includes/widgets/image-box.php:455 includes/widgets/image-box.php:489
+#: includes/widgets/accordion.php:435 includes/widgets/divider.php:550
+#: includes/widgets/divider.php:686 includes/widgets/star-rating.php:299
 #: includes/widgets/image-carousel.php:432
-#: includes/widgets/image-carousel.php:495 includes/controls/box-shadow.php:104
-#: includes/controls/text-shadow.php:97 includes/elements/section.php:909
-#: core/kits/documents/kit.php:101 core/kits/documents/kit.php:457
-#: core/kits/documents/kit.php:487 core/kits/documents/kit.php:563
+#: includes/widgets/image-carousel.php:495 includes/controls/text-shadow.php:97
+#: includes/controls/box-shadow.php:104 includes/elements/section.php:909
 msgid "Color"
 msgstr "Couleur"
 
-#: includes/widgets/divider.php:567 includes/widgets/icon-list.php:281
+#: includes/widgets/icon-list.php:281 includes/widgets/divider.php:567
 msgid "Weight"
 msgstr "Graisse"
 
@@ -4122,9 +4129,9 @@ msgstr "Graisse"
 msgid "Spacer"
 msgstr "Espaceur"
 
-#: includes/widgets/divider.php:45 includes/widgets/divider.php:355
-#: includes/widgets/divider.php:512 includes/widgets/divider.php:539
-#: includes/widgets/icon-list.php:245
+#: includes/widgets/icon-list.php:245 includes/widgets/divider.php:45
+#: includes/widgets/divider.php:355 includes/widgets/divider.php:512
+#: includes/widgets/divider.php:539
 msgid "Divider"
 msgstr "Séparateur"
 
@@ -4156,8 +4163,8 @@ msgstr "Nombre de fin"
 msgid "Starting Number"
 msgstr "Nombre de départ"
 
-#: includes/widgets/counter.php:44 includes/widgets/counter.php:101
-#: core/settings/general/model.php:144
+#: core/settings/general/model.php:144 includes/widgets/counter.php:44
+#: includes/widgets/counter.php:101
 msgid "Counter"
 msgstr "Compteur"
 
@@ -4174,15 +4181,15 @@ msgstr "Diapositives à faire défiler"
 msgid "Slides to Show"
 msgstr "Diapositives à afficher"
 
-#: includes/widgets/video.php:504 includes/widgets/image.php:110
-#: includes/widgets/testimonial.php:107 includes/widgets/image-box.php:94
+#: includes/widgets/video.php:504 includes/widgets/testimonial.php:107
+#: includes/widgets/image-box.php:94 includes/widgets/image.php:110
 #: includes/controls/media.php:151
 msgid "Choose Image"
 msgstr "Choisissez une image"
 
-#: includes/widgets/image.php:44 includes/widgets/image.php:103
-#: includes/widgets/image.php:246 includes/widgets/testimonial.php:256
-#: includes/widgets/image-box.php:216 includes/widgets/image-carousel.php:511
+#: includes/widgets/testimonial.php:256 includes/widgets/image-box.php:216
+#: includes/widgets/image-carousel.php:511 includes/widgets/image.php:44
+#: includes/widgets/image.php:103 includes/widgets/image.php:246
 msgid "Image"
 msgstr "Image"
 
@@ -4191,58 +4198,58 @@ msgstr "Image"
 msgid "Border"
 msgstr "Bordure"
 
-#: includes/widgets/button.php:216 core/dynamic-tags/tag.php:102
+#: core/dynamic-tags/tag.php:102 includes/widgets/button.php:216
 msgid "After"
 msgstr "Après"
 
-#: includes/widgets/button.php:215 core/dynamic-tags/tag.php:95
+#: core/dynamic-tags/tag.php:95 includes/widgets/button.php:215
 msgid "Before"
 msgstr "Avant"
 
-#: includes/widgets/button.php:211 includes/widgets/icon-box.php:183
+#: includes/widgets/icon-box.php:183 includes/widgets/button.php:211
 msgid "Icon Position"
 msgstr "Position de l’icône"
 
-#: includes/widgets/divider.php:485 includes/widgets/divider.php:522
-#: includes/widgets/divider.php:753 includes/widgets/star-rating.php:122
+#: includes/widgets/icon-list.php:133 includes/widgets/icon-list.php:373
+#: includes/widgets/icon-box.php:94 includes/widgets/icon-box.php:240
+#: includes/widgets/social-icons.php:94 includes/widgets/social-icons.php:309
+#: includes/widgets/icon.php:44 includes/widgets/icon.php:103
+#: includes/widgets/icon.php:110 includes/widgets/icon.php:195
 #: includes/widgets/toggle.php:149 includes/widgets/toggle.php:365
 #: includes/widgets/accordion.php:148 includes/widgets/accordion.php:341
-#: includes/widgets/button.php:202 includes/widgets/icon-list.php:133
-#: includes/widgets/icon-list.php:373 includes/widgets/social-icons.php:94
-#: includes/widgets/social-icons.php:309 includes/widgets/icon.php:44
-#: includes/widgets/icon.php:103 includes/widgets/icon.php:110
-#: includes/widgets/icon.php:195 includes/widgets/icon-box.php:94
-#: includes/widgets/icon-box.php:240
+#: includes/widgets/divider.php:485 includes/widgets/divider.php:522
+#: includes/widgets/divider.php:753 includes/widgets/star-rating.php:122
+#: includes/widgets/button.php:202
 msgid "Icon"
 msgstr "Icône"
 
-#: includes/widgets/divider.php:592 includes/widgets/divider.php:779
-#: includes/widgets/star-rating.php:264 includes/widgets/heading.php:138
-#: includes/widgets/video.php:639 includes/widgets/button.php:191
-#: includes/widgets/text-editor.php:299 includes/widgets/icon-list.php:411
-#: includes/widgets/social-icons.php:359 includes/widgets/icon.php:299
-#: includes/widgets/icon-box.php:373 includes/widgets/image-carousel.php:412
+#: includes/widgets/heading.php:138 includes/widgets/video.php:639
+#: includes/widgets/icon-list.php:411 includes/widgets/icon-box.php:373
+#: includes/widgets/text-editor.php:299 includes/widgets/social-icons.php:359
+#: includes/widgets/icon.php:299 includes/widgets/divider.php:592
+#: includes/widgets/divider.php:779 includes/widgets/star-rating.php:264
+#: includes/widgets/button.php:191 includes/widgets/image-carousel.php:412
 #: includes/widgets/image-carousel.php:475
 msgid "Size"
 msgstr "Taille"
 
-#: includes/widgets/star-rating.php:185 includes/widgets/image-gallery.php:296
-#: includes/widgets/heading.php:191 includes/widgets/button.php:179
-#: includes/widgets/text-editor.php:157 includes/widgets/image.php:490
-#: includes/widgets/icon-box.php:480 includes/widgets/image-box.php:401
-#: includes/widgets/image-carousel.php:636
+#: includes/widgets/heading.php:191 includes/widgets/icon-box.php:480
+#: includes/widgets/image-gallery.php:296 includes/widgets/text-editor.php:157
+#: includes/widgets/image-box.php:401 includes/widgets/star-rating.php:185
+#: includes/widgets/button.php:179 includes/widgets/image-carousel.php:636
+#: includes/widgets/image.php:490
 msgid "Justified"
 msgstr "Justifié"
 
-#: includes/widgets/divider.php:447 includes/widgets/star-rating.php:169
+#: includes/widgets/heading.php:175 includes/widgets/icon-list.php:222
+#: includes/widgets/icon-list.php:431 includes/widgets/icon-box.php:464
+#: includes/widgets/image-gallery.php:280 includes/widgets/text-editor.php:141
+#: includes/widgets/testimonial.php:184 includes/widgets/social-icons.php:272
+#: includes/widgets/icon.php:167 includes/widgets/image-box.php:385
 #: includes/widgets/toggle.php:376 includes/widgets/accordion.php:352
-#: includes/widgets/image-gallery.php:280 includes/widgets/heading.php:175
-#: includes/widgets/button.php:163 includes/widgets/text-editor.php:141
-#: includes/widgets/icon-list.php:222 includes/widgets/icon-list.php:431
+#: includes/widgets/divider.php:447 includes/widgets/star-rating.php:169
+#: includes/widgets/button.php:163 includes/widgets/image-carousel.php:620
 #: includes/widgets/image.php:133 includes/widgets/image.php:474
-#: includes/widgets/social-icons.php:272 includes/widgets/icon.php:167
-#: includes/widgets/testimonial.php:184 includes/widgets/icon-box.php:464
-#: includes/widgets/image-box.php:385 includes/widgets/image-carousel.php:620
 msgid "Alignment"
 msgstr "Alignement"
 
@@ -4271,8 +4278,8 @@ msgstr "Petit"
 msgid "Button"
 msgstr "Bouton"
 
-#: includes/controls/popover-toggle.php:69 core/editor/editor.php:579
-#: core/common/modules/finder/categories/edit.php:30
+#: core/editor/editor.php:579 core/common/modules/finder/categories/edit.php:30
+#: includes/controls/popover-toggle.php:69
 msgid "Edit"
 msgstr "Modifier"
 
@@ -4291,76 +4298,76 @@ msgstr "Masquer sur tablette"
 msgid "Hide On Desktop"
 msgstr "Masquer sur ordinateur"
 
-#: includes/widgets/common.php:289 includes/widgets/common.php:326
-#: includes/widgets/divider.php:928 includes/widgets/image-gallery.php:242
-#: includes/widgets/button.php:399 includes/widgets/text-editor.php:341
-#: includes/widgets/image.php:438 includes/widgets/social-icons.php:430
-#: includes/widgets/icon.php:372 includes/widgets/testimonial.php:294
-#: includes/widgets/progress.php:219 includes/widgets/icon-box.php:439
-#: includes/widgets/image-carousel.php:595 includes/elements/column.php:501
-#: includes/elements/column.php:538 includes/elements/section.php:767
-#: includes/elements/section.php:803 core/kits/documents/kit.php:268
-#: core/kits/documents/kit.php:329 core/kits/documents/kit.php:702
-#: core/kits/documents/kit.php:768 core/kits/documents/kit.php:882
+#: core/kits/documents/kit.php:279 core/kits/documents/kit.php:345
+#: core/kits/documents/kit.php:723 core/kits/documents/kit.php:794
+#: core/kits/documents/kit.php:913 includes/widgets/common.php:289
+#: includes/widgets/common.php:326 includes/widgets/progress.php:219
+#: includes/widgets/icon-box.php:439 includes/widgets/image-gallery.php:242
+#: includes/widgets/text-editor.php:341 includes/widgets/testimonial.php:294
+#: includes/widgets/social-icons.php:430 includes/widgets/icon.php:372
+#: includes/widgets/divider.php:928 includes/widgets/button.php:399
+#: includes/widgets/image-carousel.php:595 includes/widgets/image.php:438
+#: includes/elements/column.php:501 includes/elements/column.php:538
+#: includes/elements/section.php:767 includes/elements/section.php:803
 msgid "Border Radius"
 msgstr "Rayon de bordure"
 
-#: includes/widgets/alert.php:243 includes/widgets/icon-box.php:559
-#: includes/widgets/image-box.php:480 includes/widgets/image-carousel.php:228
-#: includes/compatibility.php:178 core/settings/general/model.php:175
-#: core/settings/general/model.php:181 core/settings/general/model.php:188
+#: core/settings/general/model.php:175 core/settings/general/model.php:181
+#: core/settings/general/model.php:188 includes/widgets/icon-box.php:559
+#: includes/widgets/alert.php:243 includes/widgets/image-box.php:480
+#: includes/widgets/image-carousel.php:228 includes/compatibility.php:178
 msgid "Description"
 msgstr "Description"
 
-#: includes/widgets/common.php:67 includes/widgets/star-rating.php:157
-#: includes/widgets/star-rating.php:201 includes/widgets/counter.php:196
-#: includes/widgets/counter.php:255 includes/widgets/toggle.php:293
-#: includes/widgets/accordion.php:269 includes/widgets/heading.php:103
-#: includes/widgets/heading.php:110 includes/widgets/heading.php:216
-#: includes/widgets/alert.php:213 includes/widgets/testimonial.php:142
-#: includes/widgets/testimonial.php:345 includes/widgets/tabs.php:242
-#: includes/widgets/progress.php:94 includes/widgets/icon-box.php:508
-#: includes/widgets/image-box.php:429 includes/widgets/image-carousel.php:226
-#: includes/elements/column.php:122 includes/elements/section.php:238
 #: core/base/document.php:1195 core/settings/general/model.php:168
 #: core/settings/general/model.php:172 core/settings/general/model.php:185
+#: includes/widgets/heading.php:103 includes/widgets/heading.php:110
+#: includes/widgets/heading.php:216 includes/widgets/tabs.php:242
+#: includes/widgets/common.php:67 includes/widgets/progress.php:94
+#: includes/widgets/icon-box.php:508 includes/widgets/testimonial.php:142
+#: includes/widgets/testimonial.php:345 includes/widgets/alert.php:213
+#: includes/widgets/image-box.php:429 includes/widgets/toggle.php:293
+#: includes/widgets/accordion.php:269 includes/widgets/star-rating.php:157
+#: includes/widgets/star-rating.php:201 includes/widgets/image-carousel.php:226
+#: includes/widgets/counter.php:196 includes/widgets/counter.php:255
+#: includes/elements/column.php:122 includes/elements/section.php:238
 msgid "Title"
 msgstr "Titre"
 
-#: includes/widgets/video.php:692 includes/widgets/alert.php:172
+#: core/kits/documents/kit.php:246 core/kits/documents/kit.php:312
+#: core/kits/documents/kit.php:880 core/settings/general/model.php:194
+#: includes/widgets/video.php:692 includes/widgets/tabs.php:230
+#: includes/widgets/progress.php:197 includes/widgets/alert.php:172
 #: includes/widgets/button.php:317 includes/widgets/button.php:353
-#: includes/widgets/image.php:520 includes/widgets/tabs.php:230
-#: includes/widgets/progress.php:197 core/kits/documents/kit.php:240
-#: core/kits/documents/kit.php:301 core/kits/documents/kit.php:854
-#: core/settings/general/model.php:194
+#: includes/widgets/image.php:520
 msgid "Background Color"
 msgstr "Couleur de l’arrière-plan"
 
-#: includes/widgets/counter.php:173 includes/widgets/image-gallery.php:269
 #: includes/widgets/video.php:317 includes/widgets/video.php:331
 #: includes/widgets/video.php:357 includes/widgets/video.php:412
 #: includes/widgets/video.php:426 includes/widgets/video.php:440
 #: includes/widgets/video.php:454 includes/widgets/video.php:496
+#: includes/widgets/progress.php:142 includes/widgets/image-gallery.php:269
 #: includes/widgets/alert.php:145 includes/widgets/audio.php:154
 #: includes/widgets/audio.php:165 includes/widgets/audio.php:176
 #: includes/widgets/audio.php:187 includes/widgets/audio.php:201
 #: includes/widgets/audio.php:212 includes/widgets/audio.php:223
-#: includes/widgets/audio.php:234 includes/widgets/progress.php:142
+#: includes/widgets/audio.php:234 includes/widgets/counter.php:173
 #: includes/elements/section.php:1320 includes/elements/section.php:1333
 #: includes/elements/section.php:1346
 msgid "Hide"
 msgstr "Masquer"
 
-#: includes/widgets/counter.php:172 includes/widgets/image-gallery.php:268
 #: includes/widgets/video.php:318 includes/widgets/video.php:332
 #: includes/widgets/video.php:358 includes/widgets/video.php:413
 #: includes/widgets/video.php:427 includes/widgets/video.php:441
 #: includes/widgets/video.php:455 includes/widgets/video.php:497
+#: includes/widgets/progress.php:141 includes/widgets/image-gallery.php:268
 #: includes/widgets/alert.php:144 includes/widgets/audio.php:155
 #: includes/widgets/audio.php:166 includes/widgets/audio.php:177
 #: includes/widgets/audio.php:188 includes/widgets/audio.php:202
 #: includes/widgets/audio.php:213 includes/widgets/audio.php:224
-#: includes/widgets/audio.php:235 includes/widgets/progress.php:141
+#: includes/widgets/audio.php:235 includes/widgets/counter.php:172
 #: includes/elements/section.php:1321 includes/elements/section.php:1334
 #: includes/elements/section.php:1347
 msgid "Show"
@@ -4374,35 +4381,35 @@ msgstr "Bouton annuler"
 msgid "I am a description. Click the edit button to change this text."
 msgstr "Je suis une description. Cliquez sur le bouton modifier pour changer ce texte."
 
+#: includes/widgets/tabs.php:97 includes/widgets/icon-box.php:140
+#: includes/widgets/alert.php:111 includes/widgets/image-box.php:117
 #: includes/widgets/toggle.php:97 includes/widgets/accordion.php:96
-#: includes/widgets/alert.php:111 includes/widgets/tabs.php:97
-#: includes/widgets/icon-box.php:140 includes/widgets/image-box.php:117
 msgid "Title & Description"
 msgstr "Titre & description"
 
-#: includes/widgets/alert.php:102 includes/widgets/button.php:126
-#: includes/widgets/progress.php:116
+#: includes/widgets/progress.php:116 includes/widgets/alert.php:102
+#: includes/widgets/button.php:126
 msgid "Danger"
 msgstr "Danger"
 
-#: includes/widgets/alert.php:101 includes/widgets/button.php:125
-#: includes/widgets/progress.php:115
+#: includes/widgets/progress.php:115 includes/widgets/alert.php:101
+#: includes/widgets/button.php:125
 msgid "Warning"
 msgstr "Avertissement"
 
-#: includes/widgets/alert.php:100 includes/widgets/button.php:124
-#: includes/widgets/progress.php:114
+#: includes/widgets/progress.php:114 includes/widgets/alert.php:100
+#: includes/widgets/button.php:124
 msgid "Success"
 msgstr "Succès"
 
-#: includes/widgets/alert.php:99 includes/widgets/button.php:123
-#: includes/widgets/progress.php:113
+#: includes/widgets/progress.php:113 includes/widgets/alert.php:99
+#: includes/widgets/button.php:123
 msgid "Info"
 msgstr "Info"
 
-#: includes/template-library/sources/local.php:1567
-#: includes/widgets/alert.php:95 includes/widgets/button.php:118
 #: includes/widgets/tabs.php:151 includes/widgets/progress.php:108
+#: includes/widgets/alert.php:95 includes/widgets/button.php:118
+#: includes/template-library/sources/local.php:1567
 #: includes/editor-templates/templates.php:113
 #: includes/elements/section.php:898
 msgid "Type"
@@ -4413,30 +4420,30 @@ msgstr "Type"
 msgid "Alert"
 msgstr "Alerte"
 
-#: includes/widgets/toggle.php:327 includes/widgets/toggle.php:408
-#: includes/widgets/accordion.php:303 includes/widgets/accordion.php:384
-#: includes/widgets/tabs.php:266
+#: includes/widgets/tabs.php:266 includes/widgets/toggle.php:327
+#: includes/widgets/toggle.php:408 includes/widgets/accordion.php:303
+#: includes/widgets/accordion.php:384
 msgid "Active Color"
 msgstr "Couleur active"
 
-#: includes/widgets/toggle.php:254 includes/widgets/accordion.php:254
-#: includes/widgets/alert.php:183 includes/widgets/button.php:364
-#: includes/widgets/social-icons.php:483 includes/widgets/tabs.php:219
+#: includes/widgets/tabs.php:219 includes/widgets/social-icons.php:483
+#: includes/widgets/alert.php:183 includes/widgets/toggle.php:254
+#: includes/widgets/accordion.php:254 includes/widgets/button.php:364
 msgid "Border Color"
 msgstr "Couleur de bordure"
 
-#: includes/widgets/divider.php:498 includes/widgets/divider.php:764
-#: includes/widgets/counter.php:210 includes/widgets/toggle.php:140
-#: includes/widgets/accordion.php:139 includes/widgets/image-gallery.php:173
 #: includes/widgets/heading.php:205 includes/widgets/video.php:476
-#: includes/widgets/alert.php:153 includes/widgets/button.php:244
-#: includes/widgets/spacer.php:133 includes/widgets/text-editor.php:253
-#: includes/widgets/audio.php:251 includes/widgets/google-maps.php:163
-#: includes/widgets/image.php:235 includes/widgets/social-icons.php:298
-#: includes/widgets/icon.php:123 includes/widgets/testimonial.php:208
 #: includes/widgets/tabs.php:142 includes/widgets/progress.php:163
-#: includes/widgets/icon-box.php:107 includes/widgets/image-box.php:205
-#: includes/widgets/image-carousel.php:236
+#: includes/widgets/icon-box.php:107 includes/widgets/image-gallery.php:173
+#: includes/widgets/text-editor.php:253 includes/widgets/testimonial.php:208
+#: includes/widgets/social-icons.php:298 includes/widgets/icon.php:123
+#: includes/widgets/alert.php:153 includes/widgets/image-box.php:205
+#: includes/widgets/toggle.php:140 includes/widgets/accordion.php:139
+#: includes/widgets/divider.php:498 includes/widgets/divider.php:764
+#: includes/widgets/button.php:244 includes/widgets/audio.php:251
+#: includes/widgets/image-carousel.php:236 includes/widgets/image.php:235
+#: includes/widgets/counter.php:210 includes/widgets/google-maps.php:163
+#: includes/widgets/spacer.php:133
 msgid "View"
 msgstr "Vue"
 
@@ -4503,25 +4510,27 @@ msgstr "Nom"
 msgid "Themes"
 msgstr "Thèmes"
 
+#: core/editor/editor.php:647 includes/managers/icons.php:338
 #: includes/widgets/image-gallery.php:149 includes/widgets/audio.php:127
-#: includes/widgets/image.php:224 includes/widgets/image-carousel.php:152
+#: includes/widgets/image-carousel.php:152
 #: includes/widgets/image-carousel.php:210
 #: includes/widgets/image-carousel.php:259
 #: includes/widgets/image-carousel.php:273
 #: includes/widgets/image-carousel.php:290
-#: includes/widgets/image-carousel.php:320 includes/managers/icons.php:338
-#: includes/controls/switcher.php:74 core/editor/editor.php:647
+#: includes/widgets/image-carousel.php:320 includes/widgets/image.php:224
+#: includes/controls/switcher.php:74
 msgid "No"
 msgstr "Non"
 
+#: core/editor/editor.php:660 includes/managers/icons.php:339
 #: includes/widgets/image-gallery.php:148 includes/widgets/audio.php:126
-#: includes/widgets/image.php:223 includes/widgets/image-carousel.php:153
+#: includes/widgets/image-carousel.php:153
 #: includes/widgets/image-carousel.php:209
 #: includes/widgets/image-carousel.php:258
 #: includes/widgets/image-carousel.php:272
 #: includes/widgets/image-carousel.php:289
-#: includes/widgets/image-carousel.php:319 includes/managers/icons.php:339
-#: includes/controls/switcher.php:75 core/editor/editor.php:660
+#: includes/widgets/image-carousel.php:319 includes/widgets/image.php:223
+#: includes/controls/switcher.php:75
 msgid "Yes"
 msgstr "Oui"
 
@@ -4558,10 +4567,10 @@ msgstr "Titres principaux"
 msgid "Accent"
 msgstr "Accentué"
 
-#: includes/widgets/divider.php:481 includes/widgets/divider.php:507
-#: includes/widgets/divider.php:675 includes/widgets/button.php:135
-#: includes/widgets/icon-list.php:119 includes/widgets/icon-list.php:459
-#: core/schemes/color.php:95
+#: core/schemes/color.php:95 includes/widgets/icon-list.php:119
+#: includes/widgets/icon-list.php:459 includes/widgets/divider.php:481
+#: includes/widgets/divider.php:507 includes/widgets/divider.php:675
+#: includes/widgets/button.php:135
 msgid "Text"
 msgstr "Texte"
 
@@ -4620,10 +4629,10 @@ msgstr "Hauteur min."
 msgid "Fit To Screen"
 msgstr "Adapté à l’écran"
 
-#: includes/widgets/google-maps.php:146 includes/widgets/icon-list.php:323
-#: includes/widgets/progress.php:208 includes/controls/image-dimensions.php:102
-#: includes/elements/section.php:315 includes/elements/section.php:365
-#: includes/elements/section.php:952
+#: includes/widgets/icon-list.php:323 includes/widgets/progress.php:208
+#: includes/widgets/google-maps.php:146
+#: includes/controls/image-dimensions.php:102 includes/elements/section.php:315
+#: includes/elements/section.php:365 includes/elements/section.php:952
 msgid "Height"
 msgstr "Hauteur"
 
@@ -4643,9 +4652,9 @@ msgstr "Aucun écart"
 msgid "Columns Gap"
 msgstr "Écart de colonnes"
 
-#: includes/settings/settings.php:500 includes/widgets/video.php:726
-#: includes/elements/section.php:262 includes/elements/section.php:276
-#: core/settings/general/model.php:96
+#: core/settings/general/model.php:96 includes/widgets/video.php:726
+#: includes/settings/settings.php:500 includes/elements/section.php:262
+#: includes/elements/section.php:276
 msgid "Content Width"
 msgstr "Largeur du contenu"
 
@@ -4657,14 +4666,14 @@ msgstr "Pleine largeur"
 msgid "Boxed"
 msgstr "Encadré"
 
-#: includes/widgets/common.php:378 includes/widgets/divider.php:420
-#: includes/widgets/icon-list.php:305 includes/widgets/image.php:254
-#: includes/widgets/image-box.php:247 includes/controls/image-dimensions.php:96
+#: includes/widgets/icon-list.php:305 includes/widgets/common.php:378
+#: includes/widgets/image-box.php:247 includes/widgets/divider.php:420
+#: includes/widgets/image.php:254 includes/controls/image-dimensions.php:96
 #: includes/elements/section.php:923
 msgid "Width"
 msgstr "Largeur"
 
-#: includes/widgets/icon-list.php:94 includes/managers/controls.php:303
+#: includes/managers/controls.php:303 includes/widgets/icon-list.php:94
 #: includes/elements/column.php:113 includes/elements/section.php:229
 msgid "Layout"
 msgstr "Mise en page"
@@ -4682,14 +4691,14 @@ msgstr "Largeur de colonne"
 msgid "CSS Classes"
 msgstr "Classes CSS"
 
-#: includes/widgets/common.php:88 includes/widgets/divider.php:796
-#: includes/widgets/toggle.php:351 includes/widgets/toggle.php:483
-#: includes/widgets/accordion.php:327 includes/widgets/accordion.php:459
-#: includes/widgets/button.php:419 includes/widgets/social-icons.php:376
-#: includes/widgets/icon.php:316 includes/widgets/icon-box.php:390
-#: includes/elements/column.php:735 includes/elements/section.php:1158
-#: core/kits/documents/kit.php:345 core/kits/documents/kit.php:645
-#: core/document-types/page-base.php:146
+#: core/kits/documents/kit.php:361 core/kits/documents/kit.php:661
+#: core/document-types/page-base.php:146 includes/widgets/common.php:88
+#: includes/widgets/icon-box.php:390 includes/widgets/social-icons.php:376
+#: includes/widgets/icon.php:316 includes/widgets/toggle.php:351
+#: includes/widgets/toggle.php:483 includes/widgets/accordion.php:327
+#: includes/widgets/accordion.php:459 includes/widgets/divider.php:796
+#: includes/widgets/button.php:419 includes/elements/column.php:735
+#: includes/elements/section.php:1158
 msgid "Padding"
 msgstr "Marge interne"
 
@@ -4698,17 +4707,17 @@ msgstr "Marge interne"
 msgid "Margin"
 msgstr "Marge"
 
-#: includes/widgets/common.php:445 includes/widgets/divider.php:455
-#: includes/widgets/divider.php:718 includes/widgets/divider.php:859
-#: includes/widgets/star-rating.php:177 includes/widgets/image-gallery.php:288
 #: includes/widgets/heading.php:183 includes/widgets/video.php:749
-#: includes/widgets/button.php:171 includes/widgets/text-editor.php:149
 #: includes/widgets/icon-list.php:230 includes/widgets/icon-list.php:439
-#: includes/widgets/image.php:141 includes/widgets/image.php:482
-#: includes/widgets/social-icons.php:280 includes/widgets/icon.php:175
-#: includes/widgets/testimonial.php:193 includes/widgets/icon-box.php:472
-#: includes/widgets/image-box.php:393 includes/widgets/image-carousel.php:527
-#: includes/widgets/image-carousel.php:628 includes/elements/column.php:193
+#: includes/widgets/common.php:445 includes/widgets/icon-box.php:472
+#: includes/widgets/image-gallery.php:288 includes/widgets/text-editor.php:149
+#: includes/widgets/testimonial.php:193 includes/widgets/social-icons.php:280
+#: includes/widgets/icon.php:175 includes/widgets/image-box.php:393
+#: includes/widgets/divider.php:455 includes/widgets/divider.php:718
+#: includes/widgets/divider.php:859 includes/widgets/star-rating.php:177
+#: includes/widgets/button.php:171 includes/widgets/image-carousel.php:527
+#: includes/widgets/image-carousel.php:628 includes/widgets/image.php:141
+#: includes/widgets/image.php:482 includes/elements/column.php:193
 #: includes/elements/column.php:691 includes/elements/section.php:1108
 msgid "Center"
 msgstr "Centré"
@@ -4729,27 +4738,27 @@ msgstr "Couleur du lien"
 msgid "Heading Color"
 msgstr "Couleur du titre"
 
-#: includes/widgets/star-rating.php:212 includes/widgets/counter.php:229
-#: includes/widgets/counter.php:263 includes/widgets/image-gallery.php:313
-#: includes/widgets/heading.php:224 includes/widgets/alert.php:221
-#: includes/widgets/alert.php:251 includes/widgets/button.php:305
-#: includes/widgets/button.php:341 includes/widgets/text-editor.php:170
-#: includes/widgets/icon-list.php:467 includes/widgets/image.php:504
+#: core/kits/documents/kit.php:234 core/kits/documents/kit.php:300
+#: core/kits/documents/kit.php:396 core/kits/documents/kit.php:868
+#: core/settings/general/model.php:215 includes/widgets/heading.php:224
+#: includes/widgets/icon-list.php:467 includes/widgets/progress.php:272
+#: includes/widgets/image-gallery.php:313 includes/widgets/text-editor.php:170
 #: includes/widgets/testimonial.php:228 includes/widgets/testimonial.php:317
-#: includes/widgets/testimonial.php:353 includes/widgets/progress.php:272
-#: includes/widgets/image-carousel.php:650 includes/elements/column.php:638
-#: includes/elements/section.php:1055 core/kits/documents/kit.php:228
-#: core/kits/documents/kit.php:289 core/kits/documents/kit.php:380
-#: core/kits/documents/kit.php:842 core/settings/general/model.php:215
+#: includes/widgets/testimonial.php:353 includes/widgets/alert.php:221
+#: includes/widgets/alert.php:251 includes/widgets/star-rating.php:212
+#: includes/widgets/button.php:305 includes/widgets/button.php:341
+#: includes/widgets/image-carousel.php:650 includes/widgets/image.php:504
+#: includes/widgets/counter.php:229 includes/widgets/counter.php:263
+#: includes/elements/column.php:638 includes/elements/section.php:1055
 msgid "Text Color"
 msgstr "Couleur du texte"
 
-#: includes/elements/column.php:602 includes/elements/section.php:1020
-#: core/kits/documents/kit.php:113 core/kits/documents/kit.php:202
-#: core/kits/documents/kit.php:362 core/kits/documents/kit.php:392
-#: core/kits/documents/kit.php:469 core/kits/documents/kit.php:499
-#: core/kits/documents/kit.php:575 core/kits/documents/kit.php:593
-#: core/schemes/typography.php:64
+#: core/kits/documents/kit.php:113 core/kits/documents/kit.php:208
+#: core/kits/documents/kit.php:378 core/kits/documents/kit.php:408
+#: core/kits/documents/kit.php:485 core/kits/documents/kit.php:515
+#: core/kits/documents/kit.php:591 core/kits/documents/kit.php:609
+#: core/schemes/typography.php:64 includes/elements/column.php:602
+#: includes/elements/section.php:1020
 msgid "Typography"
 msgstr "Typographie"
 
@@ -4761,8 +4770,8 @@ msgstr "Retiré"
 msgid "Column"
 msgstr "Colonne"
 
-#: includes/elements/section.php:80 modules/library/documents/section.php:52
-#: core/editor/editor.php:652
+#: modules/library/documents/section.php:52 core/editor/editor.php:652
+#: includes/elements/section.php:80
 msgid "Section"
 msgstr "Section"
 
@@ -4770,33 +4779,32 @@ msgstr "Section"
 msgid "Structure"
 msgstr "Structure"
 
-#: includes/widgets/common.php:703 includes/managers/controls.php:302
+#: includes/managers/controls.php:302 includes/widgets/common.php:703
 #: includes/elements/column.php:864 includes/elements/section.php:1268
 msgid "Responsive"
 msgstr "Responsive"
 
-#: includes/settings/settings.php:595 includes/widgets/common.php:58
-#: includes/managers/controls.php:301 includes/elements/column.php:714
-#: includes/elements/section.php:1131
 #: core/common/modules/finder/categories/settings.php:56
-#: core/dynamic-tags/tag.php:88
+#: core/dynamic-tags/tag.php:88 includes/managers/controls.php:301
+#: includes/widgets/common.php:58 includes/settings/settings.php:595
+#: includes/elements/column.php:714 includes/elements/section.php:1131
 msgid "Advanced"
 msgstr "Avancé"
 
-#: includes/settings/settings.php:486 includes/widgets/divider.php:362
-#: includes/widgets/icon-list.php:259 includes/managers/controls.php:300
-#: core/settings/general/model.php:86
 #: core/common/modules/finder/categories/settings.php:51
+#: core/settings/general/model.php:86 includes/managers/controls.php:300
+#: includes/widgets/icon-list.php:259 includes/widgets/divider.php:362
+#: includes/settings/settings.php:486
 msgid "Style"
 msgstr "Style"
 
-#: includes/widgets/toggle.php:110 includes/widgets/toggle.php:440
-#: includes/widgets/accordion.php:109 includes/widgets/accordion.php:416
-#: includes/widgets/alert.php:125 includes/widgets/testimonial.php:94
-#: includes/widgets/testimonial.php:220 includes/widgets/tabs.php:108
+#: includes/managers/controls.php:299 includes/widgets/tabs.php:108
 #: includes/widgets/tabs.php:290 includes/widgets/icon-box.php:456
-#: includes/widgets/image-box.php:131 includes/widgets/image-box.php:377
-#: includes/managers/controls.php:299
+#: includes/widgets/testimonial.php:94 includes/widgets/testimonial.php:220
+#: includes/widgets/alert.php:125 includes/widgets/image-box.php:131
+#: includes/widgets/image-box.php:377 includes/widgets/toggle.php:110
+#: includes/widgets/toggle.php:440 includes/widgets/accordion.php:109
+#: includes/widgets/accordion.php:416
 msgid "Content"
 msgstr "Contenu"
 
@@ -4858,10 +4866,9 @@ msgstr "Plus de palettes"
 msgid "Color Palette"
 msgstr "Palette de couleur"
 
-#: includes/controls/image-dimensions.php:104
-#: includes/editor-templates/panel.php:166
 #: modules/history/views/revisions-panel-template.php:18
-#: core/schemes/base-ui.php:119
+#: core/schemes/base-ui.php:119 includes/controls/image-dimensions.php:104
+#: includes/editor-templates/panel.php:166
 msgid "Apply"
 msgstr "Appliquer"
 
@@ -4870,7 +4877,7 @@ msgstr "Appliquer"
 msgid "Discard"
 msgstr "Jeter"
 
-#: includes/controls/structure.php:66 core/schemes/base-ui.php:109
+#: core/schemes/base-ui.php:109 includes/controls/structure.php:66
 msgid "Reset"
 msgstr "Réinitialiser"
 
@@ -4878,11 +4885,11 @@ msgstr "Réinitialiser"
 msgid "Preview"
 msgstr "Aperçu"
 
+#: core/editor/editor.php:697 includes/editor-templates/hotkeys.php:75
 #: includes/editor-templates/templates.php:18
 #: includes/editor-templates/templates.php:19
 #: includes/editor-templates/templates.php:211
 #: includes/editor-templates/templates.php:222
-#: includes/editor-templates/hotkeys.php:75 core/editor/editor.php:697
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -4898,9 +4905,9 @@ msgstr "Tablette"
 msgid "Desktop"
 msgstr "Ordinateur"
 
+#: includes/editor-templates/hotkeys.php:108
 #: includes/editor-templates/panel.php:73
 #: includes/editor-templates/panel.php:75
-#: includes/editor-templates/hotkeys.php:108
 msgid "Responsive Mode"
 msgstr "Mode responsive"
 
@@ -4926,19 +4933,19 @@ msgstr "Rechercher un widget…"
 msgid "Add New Section"
 msgstr "Ajouter une nouvelle section"
 
+#: modules/gutenberg/module.php:115 core/admin/admin.php:174
 #: includes/editor-templates/templates.php:50
 #: includes/editor-templates/editor-wrapper.php:50
-#: modules/gutenberg/module.php:115 core/admin/admin.php:174
 msgid "Loading"
 msgstr "Chargement"
 
 #. Plugin Name of the plugin
-#: includes/settings/settings.php:74 includes/settings/settings.php:75
-#: includes/settings/settings.php:652 includes/plugin.php:673
-#: includes/editor-templates/editor-wrapper.php:30 core/editor/editor.php:578
+#: core/editor/editor.php:578 core/documents-manager.php:355
 #: core/upgrade/manager.php:34 core/admin/admin.php:222
 #: core/admin/admin.php:332 core/admin/admin.php:400
-#: core/documents-manager.php:355
+#: includes/settings/settings.php:74 includes/settings/settings.php:75
+#: includes/settings/settings.php:652 includes/plugin.php:673
+#: includes/editor-templates/editor-wrapper.php:30
 msgid "Elementor"
 msgstr "Elementor"
 
@@ -4946,8 +4953,8 @@ msgstr "Elementor"
 msgid "Add Item"
 msgstr "Ajouter un élément"
 
+#: core/editor/editor.php:580 includes/editor-templates/hotkeys.php:60
 #: includes/editor-templates/templates.php:182
-#: includes/editor-templates/hotkeys.php:60 core/editor/editor.php:580
 msgid "Delete"
 msgstr "Effacer"
 
@@ -4955,10 +4962,9 @@ msgstr "Effacer"
 msgid "Select Icon"
 msgstr "Sélectionnez une icône"
 
-#: includes/maintenance-mode.php:226 includes/widgets/common.php:385
-#: includes/widgets/image-gallery.php:196 includes/widgets/social-icons.php:190
-#: includes/widgets/social-icons.php:322
-#: includes/widgets/image-carousel.php:551
+#: includes/widgets/common.php:385 includes/widgets/image-gallery.php:196
+#: includes/widgets/social-icons.php:190 includes/widgets/social-icons.php:322
+#: includes/widgets/image-carousel.php:551 includes/maintenance-mode.php:226
 msgid "Custom"
 msgstr "Personnalisé"
 
@@ -4977,18 +4983,18 @@ msgctxt "Typography Control"
 msgid "Line-Height"
 msgstr "Hauteur de ligne"
 
-#: includes/widgets/common.php:166 includes/widgets/common.php:207
-#: includes/widgets/common.php:274 includes/widgets/heading.php:259
-#: includes/widgets/button.php:298 includes/widgets/google-maps.php:183
-#: includes/widgets/image.php:333 includes/widgets/icon.php:205
-#: includes/widgets/icon-box.php:260 includes/widgets/image-box.php:284
+#: core/kits/documents/kit.php:227 core/kits/documents/kit.php:466
+#: core/kits/documents/kit.php:620 core/kits/documents/kit.php:703
+#: includes/widgets/heading.php:259 includes/widgets/common.php:166
+#: includes/widgets/common.php:207 includes/widgets/common.php:274
+#: includes/widgets/icon-box.php:260 includes/widgets/icon.php:205
+#: includes/widgets/image-box.php:284 includes/widgets/button.php:298
+#: includes/widgets/image.php:333 includes/widgets/google-maps.php:183
 #: includes/elements/column.php:257 includes/elements/column.php:334
 #: includes/elements/column.php:383 includes/elements/column.php:486
 #: includes/elements/column.php:833 includes/elements/section.php:527
 #: includes/elements/section.php:600 includes/elements/section.php:649
 #: includes/elements/section.php:753 includes/elements/section.php:1236
-#: core/kits/documents/kit.php:221 core/kits/documents/kit.php:450
-#: core/kits/documents/kit.php:604 core/kits/documents/kit.php:687
 msgid "Normal"
 msgstr "Normal"
 
@@ -5027,32 +5033,32 @@ msgctxt "Border Control"
 msgid "Width"
 msgstr "Largeur"
 
-#: includes/widgets/divider.php:322 includes/widgets/icon-list.php:265
+#: includes/widgets/icon-list.php:265 includes/widgets/divider.php:322
 msgid "Dashed"
 msgstr "Tirets"
 
-#: includes/widgets/divider.php:321 includes/widgets/icon-list.php:264
+#: includes/widgets/icon-list.php:264 includes/widgets/divider.php:321
 msgid "Dotted"
 msgstr "Pointillés"
 
-#: includes/widgets/divider.php:320 includes/widgets/icon-list.php:263
+#: includes/widgets/icon-list.php:263 includes/widgets/divider.php:320
 msgid "Double"
 msgstr "Double"
 
-#: includes/widgets/divider.php:319 includes/widgets/star-rating.php:142
-#: includes/widgets/icon-list.php:262
+#: includes/widgets/icon-list.php:262 includes/widgets/divider.php:319
+#: includes/widgets/star-rating.php:142
 msgid "Solid"
 msgstr "Solide"
 
-#: includes/widgets/divider.php:477 includes/widgets/image-gallery.php:135
-#: includes/widgets/image.php:161 includes/widgets/image.php:192
+#: core/settings/general/model.php:171 core/settings/general/model.php:184
+#: includes/widgets/image-gallery.php:135 includes/widgets/divider.php:477
 #: includes/widgets/image-carousel.php:168
 #: includes/widgets/image-carousel.php:181
-#: includes/widgets/image-carousel.php:225 includes/controls/icons.php:110
-#: includes/controls/icons.php:112 includes/controls/animation.php:147
+#: includes/widgets/image-carousel.php:225 includes/widgets/image.php:161
+#: includes/widgets/image.php:192 includes/controls/animation.php:147
+#: includes/controls/icons.php:110 includes/controls/icons.php:112
 #: includes/controls/groups/border.php:63
 #: includes/controls/hover-animation.php:119 includes/elements/section.php:875
-#: core/settings/general/model.php:171 core/settings/general/model.php:184
 msgid "None"
 msgstr "Aucun"
 
@@ -5234,30 +5240,31 @@ msgstr "Google"
 msgid "System"
 msgstr "Système"
 
-#: includes/widgets/image-gallery.php:129 includes/widgets/heading.php:123
+#: core/kits/documents/kit.php:456 includes/widgets/heading.php:123
 #: includes/widgets/video.php:125 includes/widgets/video.php:146
-#: includes/widgets/video.php:167 includes/widgets/button.php:148
-#: includes/widgets/audio.php:103 includes/widgets/icon-list.php:146
-#: includes/widgets/image.php:188 includes/widgets/image.php:202
-#: includes/widgets/social-icons.php:170 includes/widgets/icon.php:155
-#: includes/widgets/testimonial.php:154 includes/widgets/icon-box.php:170
-#: includes/widgets/image-box.php:147 includes/widgets/image-carousel.php:177
-#: includes/widgets/image-carousel.php:191 core/kits/documents/kit.php:440
+#: includes/widgets/video.php:167 includes/widgets/icon-list.php:146
+#: includes/widgets/icon-box.php:170 includes/widgets/image-gallery.php:129
+#: includes/widgets/testimonial.php:154 includes/widgets/social-icons.php:170
+#: includes/widgets/icon.php:155 includes/widgets/image-box.php:147
+#: includes/widgets/button.php:148 includes/widgets/audio.php:103
+#: includes/widgets/image-carousel.php:177
+#: includes/widgets/image-carousel.php:191 includes/widgets/image.php:188
+#: includes/widgets/image.php:202
 msgid "Link"
 msgstr "Lien"
 
-#: includes/widgets/common.php:492 includes/widgets/common.php:493
+#: includes/widgets/heading.php:179 includes/widgets/icon-list.php:226
+#: includes/widgets/icon-list.php:435 includes/widgets/common.php:492
+#: includes/widgets/common.php:493 includes/widgets/icon-box.php:188
+#: includes/widgets/icon-box.php:468 includes/widgets/image-gallery.php:284
+#: includes/widgets/text-editor.php:145 includes/widgets/testimonial.php:189
+#: includes/widgets/social-icons.php:276 includes/widgets/icon.php:171
+#: includes/widgets/image-box.php:165 includes/widgets/image-box.php:389
 #: includes/widgets/divider.php:451 includes/widgets/divider.php:714
 #: includes/widgets/divider.php:855 includes/widgets/star-rating.php:173
-#: includes/widgets/image-gallery.php:284 includes/widgets/heading.php:179
-#: includes/widgets/button.php:167 includes/widgets/text-editor.php:145
-#: includes/widgets/icon-list.php:226 includes/widgets/icon-list.php:435
-#: includes/widgets/image.php:137 includes/widgets/image.php:478
-#: includes/widgets/social-icons.php:276 includes/widgets/icon.php:171
-#: includes/widgets/testimonial.php:189 includes/widgets/icon-box.php:188
-#: includes/widgets/icon-box.php:468 includes/widgets/image-box.php:165
-#: includes/widgets/image-box.php:389 includes/widgets/image-carousel.php:360
-#: includes/widgets/image-carousel.php:624 includes/controls/dimensions.php:91
+#: includes/widgets/button.php:167 includes/widgets/image-carousel.php:360
+#: includes/widgets/image-carousel.php:624 includes/widgets/image.php:137
+#: includes/widgets/image.php:478 includes/controls/dimensions.php:91
 #: includes/elements/column.php:687 includes/elements/section.php:1104
 msgid "Left"
 msgstr "Gauche"
@@ -5269,56 +5276,56 @@ msgstr "Gauche"
 msgid "Bottom"
 msgstr "Bas"
 
-#: includes/widgets/common.php:492 includes/widgets/common.php:493
+#: includes/widgets/heading.php:187 includes/widgets/icon-list.php:234
+#: includes/widgets/icon-list.php:443 includes/widgets/common.php:492
+#: includes/widgets/common.php:493 includes/widgets/icon-box.php:196
+#: includes/widgets/icon-box.php:476 includes/widgets/image-gallery.php:292
+#: includes/widgets/text-editor.php:153 includes/widgets/testimonial.php:197
+#: includes/widgets/social-icons.php:284 includes/widgets/icon.php:179
+#: includes/widgets/image-box.php:173 includes/widgets/image-box.php:397
 #: includes/widgets/divider.php:459 includes/widgets/divider.php:722
 #: includes/widgets/divider.php:863 includes/widgets/star-rating.php:181
-#: includes/widgets/image-gallery.php:292 includes/widgets/heading.php:187
-#: includes/widgets/button.php:175 includes/widgets/text-editor.php:153
-#: includes/widgets/icon-list.php:234 includes/widgets/icon-list.php:443
-#: includes/widgets/image.php:145 includes/widgets/image.php:486
-#: includes/widgets/social-icons.php:284 includes/widgets/icon.php:179
-#: includes/widgets/testimonial.php:197 includes/widgets/icon-box.php:196
-#: includes/widgets/icon-box.php:476 includes/widgets/image-box.php:173
-#: includes/widgets/image-box.php:397 includes/widgets/image-carousel.php:361
-#: includes/widgets/image-carousel.php:632 includes/controls/dimensions.php:89
+#: includes/widgets/button.php:175 includes/widgets/image-carousel.php:361
+#: includes/widgets/image-carousel.php:632 includes/widgets/image.php:145
+#: includes/widgets/image.php:486 includes/controls/dimensions.php:89
 #: includes/elements/column.php:695 includes/elements/section.php:1112
 msgid "Right"
 msgstr "Droite"
 
-#: includes/widgets/common.php:607 includes/widgets/video.php:750
-#: includes/widgets/testimonial.php:171 includes/widgets/icon-box.php:192
-#: includes/widgets/icon-box.php:496 includes/widgets/image-box.php:169
+#: includes/widgets/video.php:750 includes/widgets/common.php:607
+#: includes/widgets/icon-box.php:192 includes/widgets/icon-box.php:496
+#: includes/widgets/testimonial.php:171 includes/widgets/image-box.php:169
 #: includes/widgets/image-box.php:417 includes/controls/dimensions.php:88
 #: includes/elements/column.php:164 includes/elements/section.php:409
 #: includes/elements/section.php:428 includes/elements/section.php:883
 msgid "Top"
 msgstr "Haut"
 
-#: includes/base/widget-base.php:243 includes/widgets/common.php:382
-#: includes/widgets/common.php:483 includes/widgets/divider.php:767
+#: modules/page-templates/module.php:259 includes/base/widget-base.php:243
+#: includes/widgets/heading.php:142 includes/widgets/icon-list.php:99
+#: includes/widgets/common.php:382 includes/widgets/common.php:483
+#: includes/widgets/progress.php:112 includes/widgets/icon-box.php:110
 #: includes/widgets/image-gallery.php:147
 #: includes/widgets/image-gallery.php:163
-#: includes/widgets/image-gallery.php:195 includes/widgets/heading.php:142
-#: includes/widgets/button.php:122 includes/widgets/text-editor.php:193
-#: includes/widgets/text-editor.php:256 includes/widgets/icon-list.php:99
-#: includes/widgets/image.php:222 includes/widgets/icon.php:126
-#: includes/widgets/progress.php:112 includes/widgets/icon-box.php:110
+#: includes/widgets/image-gallery.php:195 includes/widgets/text-editor.php:193
+#: includes/widgets/text-editor.php:256 includes/widgets/icon.php:126
+#: includes/widgets/divider.php:767 includes/widgets/button.php:122
 #: includes/widgets/image-carousel.php:123
 #: includes/widgets/image-carousel.php:136
 #: includes/widgets/image-carousel.php:208
-#: includes/widgets/image-carousel.php:550 includes/controls/animation.php:146
-#: includes/controls/font.php:67 includes/controls/groups/typography.php:124
+#: includes/widgets/image-carousel.php:550 includes/widgets/image.php:222
+#: includes/controls/animation.php:146
+#: includes/controls/groups/typography.php:124
 #: includes/controls/groups/typography.php:143
 #: includes/controls/groups/typography.php:156
 #: includes/controls/groups/typography.php:168
 #: includes/controls/groups/background.php:687
-#: includes/controls/groups/background.php:706
+#: includes/controls/groups/background.php:706 includes/controls/font.php:67
 #: includes/editor-templates/panel.php:221 includes/elements/column.php:163
 #: includes/elements/column.php:191 includes/elements/column.php:229
 #: includes/elements/section.php:302 includes/elements/section.php:319
 #: includes/elements/section.php:369 includes/elements/section.php:427
 #: includes/elements/section.php:455 includes/elements/section.php:476
-#: modules/page-templates/module.php:259
 msgid "Default"
 msgstr "Par défaut"
 
@@ -5326,9 +5333,9 @@ msgstr "Par défaut"
 msgid "Clear"
 msgstr "Effacer"
 
-#: includes/frontend.php:974 modules/gutenberg/module.php:94
-#: modules/gutenberg/module.php:104 core/base/document.php:414
-#: core/admin/admin.php:155 core/admin/admin.php:163
+#: modules/gutenberg/module.php:94 modules/gutenberg/module.php:104
+#: core/base/document.php:414 core/admin/admin.php:155 core/admin/admin.php:163
+#: includes/frontend.php:974
 msgid "Edit with Elementor"
 msgstr "Modifier avec Elementor"
 

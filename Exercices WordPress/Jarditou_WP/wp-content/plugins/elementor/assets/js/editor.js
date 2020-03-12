@@ -1,4 +1,4 @@
-/*! elementor - v2.9.5 - 09-03-2020 */
+/*! elementor - v2.9.6 - 12-03-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -29911,7 +29911,9 @@ WidgetView = BaseElementView.extend({
     });
   },
   onClickEdit: function onClickEdit() {
-    this.model.trigger('request:edit');
+    if (this.container.isEditable()) {
+      this.model.trigger('request:edit');
+    }
   }
 });
 module.exports = WidgetView;
