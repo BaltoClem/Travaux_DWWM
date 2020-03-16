@@ -2554,4 +2554,50 @@ wfWAFRuleComparisonSubject::create($this, array (
 ), array (
 )))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'currentUserIsNot', 'administrator', array(wfWAFRuleComparisonSubject::create($this, 'server.empty', array (
 ))))));
+$this->rules[203] = wfWAFRule::create($this, 203, NULL, 'auth-bypass', '100', 'Brizy < 1.0.114 Unauthenticated Options Update', 0, 'block', new wfWAFRuleComparisonGroup(new wfWAFRuleComparison($this, 'match', '#\\/brizy\\/admin\\/site\\-settings\\.php$#i', array(wfWAFRuleComparisonSubject::create($this, 'server.script_filename', array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'currentUserIsNot', 'administrator', array(wfWAFRuleComparisonSubject::create($this, 'server.empty', array (
+))))));
+$this->rules[204] = wfWAFRule::create($this, 204, NULL, 'auth-bypass', '100', 'WAF-RULE-204', 0, 'block', new wfWAFRuleComparisonGroup(new wfWAFRuleComparisonGroup(new wfWAFRuleComparison($this, 'lengthGreaterThan', '0', array(wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.md5Body',
+  1 => 'a6339676151ddbacf872e49bdf3e8ad2',
+), array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'notMatch', '/^(subscriber|customer|contributor)$/i', array(wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.md5Body',
+  1 => 'a6339676151ddbacf872e49bdf3e8ad2',
+), array (
+))))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'currentUserIsNot', 'administrator', array(wfWAFRuleComparisonSubject::create($this, 'server.empty', array (
+))))));
+$this->rules[205] = wfWAFRule::create($this, 205, NULL, 'auth-bypass', '100', 'wpCentral < 1.4.8 - Privilege Escalation', 0, 'block', new wfWAFRuleComparisonGroup(new wfWAFRuleComparison($this, 'match', '#/wp\\-admin/admin\\-ajax\\.php$#i', array(wfWAFRuleComparisonSubject::create($this, 'server.script_filename', array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'equals', 'my_wpc_fetch_authkey', array(wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.queryString',
+  1 => 'action',
+), array (
+)),
+wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.body',
+  1 => 'action',
+), array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'currentUserIsNot', 'administrator', array(wfWAFRuleComparisonSubject::create($this, 'server.empty', array (
+))))));
+$this->rules[206] = wfWAFRule::create($this, 206, NULL, 'privesc', '100', 'wpCentral <= 1.5.0 - Privilege Escalation', 0, 'block', new wfWAFRuleComparisonGroup(new wfWAFRuleComparison($this, 'match', '#/wp\\-admin/admin\\-ajax\\.php$#i', array(wfWAFRuleComparisonSubject::create($this, 'server.script_filename', array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'match', '#^my_wpc_#', array(wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.queryString',
+  1 => 'action',
+), array (
+)),
+wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.body',
+  1 => 'action',
+), array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'lengthGreaterThan', '0', array(wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.body',
+  1 => 'auth_key',
+), array (
+)),
+wfWAFRuleComparisonSubject::create($this, array (
+  0 => 'request.queryString',
+  1 => 'auth_key',
+), array (
+)))), new wfWAFRuleLogicalOperator('AND'), new wfWAFRuleComparison($this, 'notEquals', '192.200.108.100', array(wfWAFRuleComparisonSubject::create($this, 'request.ip', array (
+))))));
 ?>
