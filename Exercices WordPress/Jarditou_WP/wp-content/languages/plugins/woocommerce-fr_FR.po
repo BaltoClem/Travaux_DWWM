@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-03-22 19:43:21+0000\n"
+"PO-Revision-Date: 2020-03-25 00:54:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+
+#: packages/woocommerce-admin/dist/app/index.js:27
+msgid "Get in front of new customers on Google and secure $150 in ads credit with Kliken’s integration."
+msgstr "Accédez à de nouveaux clients sur Google et bénéficiez de 150 $ de crédit de publicités avec l’intégration de Kliken."
 
 #: packages/woocommerce-admin/dist/app/index.js:27
 msgid "Check at least two categories below to compare"
@@ -30,6 +34,19 @@ msgstr "Cochez au moins deux éléments ci-dessous pour les comparer"
 #: packages/woocommerce-admin/dist/app/index.js:27
 msgid "Google Shopping"
 msgstr "Google Shopping"
+
+#: packages/woocommerce-admin/dist/app/index.js:27
+msgid "Drive sales with Google Shopping"
+msgstr "Boostez vos ventes avec Google Shopping"
+
+#: packages/action-scheduler/classes/ActionScheduler_ListTable.php:341
+msgid "It appears one or more database tables were missing. Attempting to re-create the missing table(s)."
+msgstr "Il semble qu’une ou plusieurs tables de la base de données étaient manquantes. Tentative de recréation des tables manquantes."
+
+#. translators: %s: Link to settings page.
+#: includes/admin/views/html-notice-redirect-only-download.php:18
+msgid "Your store is configured to serve digital products using \"Redirect only\" method. This method is deprecated, <a href=\"%s\">please switch to  a different method instead.</a><br><em>If you use a remote server for downloadable files (such as Google Drive, Dropbox, Amazon S3), the right method will automatically be used, so select any of the other options to make this notice go away.</em>"
+msgstr "Votre boutique est configurée pour prendre en charge les produits numériques en mode « Rediriger uniquement ». Ce mode est obsolète, <a href=\"%s\">veuillez en choisir un autre.</a><br><em>Si vous utilisez un serveur distant pour les fichiers téléchargeables (par exemple Google Drive, Dropbox ou Amazon S3), la bonne méthode sera automatiquement appliquée. Sélectionnez donc l’une des autres options pour faire disparaître cet avis.</em>"
 
 #: packages/woocommerce-admin/dist/app/index.js:27
 msgid "There was an error activating %s. Please try again."
@@ -4606,6 +4623,11 @@ msgstr "%s inactif"
 #: includes/admin/settings/class-wc-settings-products.php:235
 msgid "If you are using X-Accel-Redirect download method along with NGINX server, make sure that you have applied settings as described in <a href='%s'>Digital/Downloadable Product Handling</a> guide."
 msgstr "Si vous utilisez la méthode de téléchargement X-Accel-Redirect avec le serveur NGINX, assurez-vous que vous avez appliqué les réglages décrits dans le guide <a href='%s'>Gestion des produits numériques/téléchargeables</a>."
+
+#. translators: Link to WooCommerce Docs.
+#: includes/admin/settings/class-wc-settings-products.php:275
+msgid "Not required if your download directory is protected. <a href='%s'>See this guide</a> for more details. Files already uploaded will not be affected."
+msgstr "Non requis si votre répertoire de téléchargement est protégé. <a href='%s'>Consultez ce guide</a> pour en savoir plus. Les fichiers déjà chargés ne seront pas affectés."
 
 #: includes/admin/notes/class-wc-notes-run-db-update.php:209
 msgid "WooCommerce database update done"

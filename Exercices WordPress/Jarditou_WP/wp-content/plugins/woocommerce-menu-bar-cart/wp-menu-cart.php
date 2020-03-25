@@ -3,13 +3,13 @@
  * Plugin Name: WooCommerce Menu Cart
  * Plugin URI: www.wpovernight.com/plugins
  * Description: Extension for your e-commerce plugin (WooCommerce, WP-Ecommerce, Easy Digital Downloads, Eshop or Jigoshop) that places a cart icon with number of items and total cost in the menu bar. Activate the plugin, set your options and you're ready to go! Will automatically conform to your theme styles.
- * Version: 2.7.7
+ * Version: 2.7.8.1
  * Author: Jeremiah Prummer, Ewout Fernhout
  * Author URI: www.wpovernight.com/
  * License: GPL2
  * Text Domain: wp-menu-cart
  * WC requires at least: 2.0.0
- * WC tested up to: 3.9.0
+ * WC tested up to: 4.0.0
  */
 
 class WpMenuCart {	 
@@ -238,19 +238,22 @@ class WpMenuCart {
 	 * Load translations.
 	 */
 	public function languages() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-menu-cart' );
-		$dir    = trailingslashit( WP_LANG_DIR );
+		if ( function_exists( 'determine_locale' ) ) { // WP5.0+
+			$locale = determine_locale();
+		} else {
+			$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
+		}
+		$locale = apply_filters( 'plugin_locale', $locale, 'wp-menu-cart' );
 
 		/**
 		 * Frontend/global Locale. Looks in:
 		 *
 		 * 		- WP_LANG_DIR/wp-menu-cart/wp-menu-cart-LOCALE.mo
-		 * 	 	- WP_LANG_DIR/plugins/wp-menu-cart-LOCALE.mo
 		 * 	 	- wp-menu-cart/languages/wp-menu-cart-LOCALE.mo (which if not found falls back to:)
 		 * 	 	- WP_LANG_DIR/plugins/wp-menu-cart-LOCALE.mo
 		 */
-		load_textdomain( 'wp-menu-cart', $dir . 'wp-menu-cart/wp-menu-cart-' . $locale . '.mo' );
-		load_textdomain( 'wp-menu-cart', $dir . 'plugins/wp-menu-cart-' . $locale . '.mo' );
+		unload_textdomain( 'wp-menu-cart');
+		load_textdomain( 'wp-menu-cart', WP_LANG_DIR . '/wp-menu-cart/wp-menu-cart-' . $locale . '.mo' );
 		load_plugin_textdomain( 'wp-menu-cart', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
@@ -266,7 +269,29 @@ class WpMenuCart {
 		if ( $textdomain === $main_domain ) {
 			$wc_mofile = str_replace( "{$textdomain}-", "{$wc_domain}-", $mofile ); // with trailing dash to target file and not folder
 			if ( file_exists( $wc_mofile ) ) {
-				// we have a wc override - use it
+				if (!is_callable('copy')) {
+					$copy = false;
+				} elseif ( !file_exists( $mofile ) ) {
+					$copy = true;
+				} else { // can copy but file already exists
+					$wc_file_date   = filemtime($wc_mofile);
+					$main_file_date = filemtime($mofile);
+					// check if wc file is newer
+					if ( $wc_file_date && $main_file_date && ( $wc_file_date > $main_file_date ) ) {
+						$copy = true;
+					} else {
+						$copy = false;
+					}
+				}
+				// we have a wc override - copy and use it
+				if ( $copy && $success = copy( $wc_mofile, $mofile ) ) {
+					// copy .po too if available
+					$wc_pofile = substr_replace($wc_mofile,".po",-3);
+					if (file_exists($wc_pofile)) {
+						copy($wc_pofile,substr_replace($mofile,".po",-3));
+					}
+					return $mofile;
+				}
 				return $wc_mofile;
 			}
 		}
@@ -296,7 +321,7 @@ class WpMenuCart {
 			'wpmenucart',
 			plugins_url( '/javascript/wpmenucart.js' , __FILE__ ),
 			array( 'jquery' ),
-			'2.7.7',
+			'2.7.8.1',
 			true
 		);
 
@@ -326,7 +351,7 @@ class WpMenuCart {
 			'wpmenucart-edd-ajax',
 			plugins_url( '/javascript/wpmenucart-edd-ajax.js', __FILE__ ),
 			array( 'jquery' ),
-			'2.7.7'
+			'2.7.8.1'
 		);
 
 		wp_localize_script(
