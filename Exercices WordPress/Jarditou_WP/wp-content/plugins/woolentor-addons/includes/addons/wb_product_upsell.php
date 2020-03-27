@@ -158,7 +158,11 @@ class WL_Product_Upsell_Element extends Widget_Base {
         if ( ! empty( $settings['order'] ) ) {
             $order = $settings['order'];
         }
-        woocommerce_upsell_display( $product_per_page, $columns, $orderby, $order );
+        if( Plugin::instance()->editor->is_edit_mode() ){
+            echo '<div class="upsell product">'.__( 'Upsell Product default Layout','woolentor-pro' ).'</div>';
+        }else{
+            woocommerce_upsell_display( $product_per_page, $columns, $orderby, $order );
+        }
 
     }
 

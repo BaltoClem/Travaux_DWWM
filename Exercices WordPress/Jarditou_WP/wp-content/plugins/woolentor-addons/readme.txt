@@ -3,7 +3,7 @@ Contributors: hasthemes, htplugins, devitemsllc
 Tags: Elementor, WooCommerce, WooCommerce Elementor, WooCommerce Builder, WooCommerce Product
 Requires at least: 4.7
 Tested up to: 5.3.2
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,9 @@ There are many special days like Black Friday, Chrismas Day, Haloween day. Disco
 [youtube https://youtu.be/_MOgvsZJ6uA]
 [youtube https://youtu.be/MKjhBO2xQzg]
 
+== Build Custom My Account Page (Pro Feature) ==
+[youtube https://youtu.be/b7tbEU1NUO8]
+
 == <a href="https://hasthemes.com/blog-category/woolentor/">More Video</a> ==
 * [Stock Progress bar for WooCommerce Product using WooLentor](https://hasthemes.com/stock-progress-bar-for-woocommerce-product-using-woolentor/)
 * [How to build a custom product template using WooLentor Plugin](https://hasthemes.com/how-to-build-a-custom-product-template-using-woolentor-plugin/)
@@ -96,6 +99,10 @@ Feel free to [Contact us](https://hasthemes.com/contact-us/)
 Elementor Pro is not required. But you can use wooLentor with Elementor free & Pro.
 
 == Changelog ==
+
+= Version: 1.5.4 - Date: 2020-03-26 =
+* Bug Fixing.
+* Capability With latest WooCommerce Version.
 
 = Version: 1.5.3 - Date: 2020-02-17 =
 * WooCommerce Brand Plugins Compatibility

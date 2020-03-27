@@ -2117,6 +2117,10 @@ span.wlvideo-button {
   margin-right: 10px !important;
   background-color: #ff4136 !important;
 }
+.woolentor-sticky-btn-area .stock.in-stock {
+  margin: 0;
+  margin-right: 10px;
+}
 
 
 /* Normal  :1366px. */

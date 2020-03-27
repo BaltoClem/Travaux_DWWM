@@ -127,6 +127,7 @@ class Woolentor_Admin_Settings {
                     'max'               => 100,
                     'step'              => '1',
                     'type'              => 'number',
+                    'std'               => '10',
                     'sanitize_callback' => 'floatval'
                 ),
 
@@ -413,8 +414,32 @@ class Woolentor_Admin_Settings {
                 ),
 
                 array(
+                    'name'  => 'wl_cartempty_messagep',
+                    'label'  => __( 'Empty Cart Mes..<span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'checkbox',
+                    'default' => 'off',
+                    'class'=>'woolentor_table_row pro',
+                ),
+
+                array(
+                    'name'  => 'wl_cartempty_shopredirectp',
+                    'label'  => __( 'Empty Cart Re.. Button <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'checkbox',
+                    'default' => 'off',
+                    'class'=>'woolentor_table_row pro',
+                ),
+
+                array(
                     'name'  => 'wl_cross_sellp',
                     'label'  => __( 'Product Cross Sell <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'checkbox',
+                    'default' => 'off',
+                    'class'=>'woolentor_table_row pro',
+                ),
+
+                array(
+                    'name'  => 'wl_cross_sell_customp',
+                    'label'  => __( 'Cross Sell ..( Custom ) <span>( Pro )</span>', 'woolentor' ),
                     'type'  => 'checkbox',
                     'default' => 'off',
                     'class'=>'woolentor_table_row pro',
@@ -447,6 +472,22 @@ class Woolentor_Admin_Settings {
                 array(
                     'name'  => 'wl_checkout_paymentp',
                     'label'  => __( 'Checkout Payment <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'checkbox',
+                    'default' => 'off',
+                    'class'=>'woolentor_table_row pro',
+                ),
+
+                array(
+                    'name'  => 'wl_checkout_coupon_formp',
+                    'label'  => __( 'Checkout Co.. Form <span>( Pro )</span>', 'woolentor-pro' ),
+                    'type'  => 'checkbox',
+                    'default' => 'off',
+                    'class'=>'woolentor_table_row pro',
+                ),
+
+                array(
+                    'name'  => 'wl_checkout_login_formp',
+                    'label'  => __( 'Checkout lo.. Form <span>( Pro )</span>', 'woolentor-pro' ),
                     'type'  => 'checkbox',
                     'default' => 'off',
                     'class'=>'woolentor_table_row pro',
@@ -588,16 +629,16 @@ class Woolentor_Admin_Settings {
                 ),
 
                 array(
-                    'name'  => 'wl_cartempty_messagep',
-                    'label'  => __( 'Empty Cart Message <span>( Pro )</span>', 'woolentor' ),
+                    'name'  => 'wl_related_productp',
+                    'label'  => __( 'Related Pro..( Custom ) <span>( Pro )</span>', 'woolentor' ),
                     'type'  => 'checkbox',
                     'default' => 'off',
                     'class'=>'woolentor_table_row pro',
                 ),
 
                 array(
-                    'name'  => 'wl_cartempty_shopredirectp',
-                    'label'  => __( 'Cart Redirect Button <span>( Pro )</span>', 'woolentor' ),
+                    'name'  => 'wl_product_upsell_customp',
+                    'label'  => __( 'Upsell Pro..( Custom ) <span>( Pro )</span>', 'woolentor' ),
                     'type'  => 'checkbox',
                     'default' => 'off',
                     'class'=>'woolentor_table_row pro',
@@ -774,7 +815,7 @@ class Woolentor_Admin_Settings {
                     'desc'        => __( 'You can change the Country field label. <span>( Pro )</span>', 'woolentor' ),
                     'type'        => 'text',
                     'placeholder' => __( 'Country', 'woolentor' ),
-                    'class'=>'proelement',
+                    'class'       => 'proelement',
                 ),
 
                 array(
@@ -783,7 +824,7 @@ class Woolentor_Admin_Settings {
                     'desc'        => __( 'You can change the Order notes field label. <span>( Pro )</span>', 'woolentor' ),
                     'type'        => 'text',
                     'placeholder' => __( 'Order notes', 'woolentor' ),
-                    'class'=>'proelement',
+                    'class'       => 'proelement',
                 ),
 
                 array(
@@ -792,7 +833,7 @@ class Woolentor_Admin_Settings {
                     'desc'        => __( 'You can change the Place order field label. <span>( Pro )</span>', 'woolentor' ),
                     'type'        => 'text',
                     'placeholder' => __( 'Place order', 'woolentor' ),
-                    'class'=>'proelement',
+                    'class'       => 'proelement',
                 ),
 
             ),
@@ -800,12 +841,12 @@ class Woolentor_Admin_Settings {
             'woolentor_sales_notification_tabs'=>array(
 
                 array(
-                    'name'  => 'enableresalenotification',
-                    'label'  => __( 'Enable / Disable Sales Notification', 'woolentor' ),
-                    'desc'  => __( 'Enable', 'woolentor' ),
-                    'type'  => 'checkbox',
-                    'default' => 'off',
-                    'class'=>'woolentor_table_row',
+                    'name'     => 'enableresalenotification',
+                    'label'    => __( 'Enable / Disable Sales Notification', 'woolentor' ),
+                    'desc'     => __( 'Enable', 'woolentor' ),
+                    'type'     => 'checkbox',
+                    'default'  => 'off',
+                    'class'    => 'woolentor_table_row',
                 ),
 
                 array(
@@ -828,7 +869,7 @@ class Woolentor_Admin_Settings {
                     'type'    => 'select',
                     'default' => 'bottomleft',
                     'options' => array(
-                        'bottomleft'    =>__( 'Bottom Left','woolentor' ),
+                        'bottomleft' =>__( 'Bottom Left','woolentor' ),
                     ),
                     'class'=>'proelement',
                 ),
@@ -840,9 +881,9 @@ class Woolentor_Admin_Settings {
                     'type'    => 'select',
                     'default' => 'imageleft',
                     'options' => array(
-                        'imageleft'       =>__( 'Image Left','woolentor' ),
+                        'imageleft' =>__( 'Image Left','woolentor' ),
                     ),
-                    'class'       => 'notification_real proelement'
+                    'class'         => 'notification_real proelement'
                 ),
 
                 array(
@@ -860,14 +901,14 @@ class Woolentor_Admin_Settings {
                         '7'       =>__( '7 seconds','woolentor' ),
                         '8'       =>__( '8 seconds','woolentor' ),
                         '9'       =>__( '9 seconds','woolentor' ),
-                        '10'       =>__( '10 seconds','woolentor' ),
-                        '20'       =>__( '20 seconds','woolentor' ),
-                        '30'       =>__( '30 seconds','woolentor' ),
-                        '40'       =>__( '40 seconds','woolentor' ),
-                        '50'       =>__( '50 seconds','woolentor' ),
-                        '60'       =>__( '1 minute','woolentor' ),
-                        '90'       =>__( '1.5 minutes','woolentor' ),
-                        '120'       =>__( '2 minutes','woolentor' ),
+                        '10'      =>__( '10 seconds','woolentor' ),
+                        '20'      =>__( '20 seconds','woolentor' ),
+                        '30'      =>__( '30 seconds','woolentor' ),
+                        '40'      =>__( '40 seconds','woolentor' ),
+                        '50'      =>__( '50 seconds','woolentor' ),
+                        '60'      =>__( '1 minute','woolentor' ),
+                        '90'      =>__( '1.5 minutes','woolentor' ),
+                        '120'     =>__( '2 minutes','woolentor' ),
                     ),
                 ),
 
@@ -885,14 +926,14 @@ class Woolentor_Admin_Settings {
                         '7'       =>__( '7 seconds','woolentor' ),
                         '8'       =>__( '8 seconds','woolentor' ),
                         '9'       =>__( '9 seconds','woolentor' ),
-                        '10'       =>__( '10 seconds','woolentor' ),
-                        '20'       =>__( '20 seconds','woolentor' ),
-                        '30'       =>__( '30 seconds','woolentor' ),
-                        '40'       =>__( '40 seconds','woolentor' ),
-                        '50'       =>__( '50 seconds','woolentor' ),
-                        '60'       =>__( '1 minute','woolentor' ),
-                        '90'       =>__( '1.5 minutes','woolentor' ),
-                        '120'       =>__( '2 minutes','woolentor' ),
+                        '10'      =>__( '10 seconds','woolentor' ),
+                        '20'      =>__( '20 seconds','woolentor' ),
+                        '30'      =>__( '30 seconds','woolentor' ),
+                        '40'      =>__( '40 seconds','woolentor' ),
+                        '50'      =>__( '50 seconds','woolentor' ),
+                        '60'      =>__( '1 minute','woolentor' ),
+                        '90'      =>__( '1.5 minutes','woolentor' ),
+                        '120'     =>__( '2 minutes','woolentor' ),
                     ),
                     'class' => 'proelement',
                 ),
@@ -907,7 +948,7 @@ class Woolentor_Admin_Settings {
                     'step'              => '1',
                     'type'              => 'number',
                     'sanitize_callback' => 'number',
-                    'class'       => 'notification_real',
+                    'class'             => 'notification_real',
                 ),
 
                 array(
@@ -919,7 +960,7 @@ class Woolentor_Admin_Settings {
                     'options' => array(
                         '7'   =>__( '1 week','woolentor' ),
                     ),
-                    'class'       => 'notification_real',
+                    'class'   => 'notification_real',
                 ),
 
                 array(
@@ -943,39 +984,39 @@ class Woolentor_Admin_Settings {
                     'options' => array(
                         'fadeOutRight'  =>__( 'fadeOutRight','woolentor' ),
                     ),
-                    'class' => 'proelement',
+                    'class'   => 'proelement',
                 ),
                 
                 array(
                     'name'  => 'background_colorp',
                     'label' => __( 'Background Color', 'woolentor' ),
-                    'desc' => wp_kses_post( 'Notification Background Color. <span>( Pro )</span>', 'woolentor' ),
-                    'type' => 'color',
-                    'class'       => 'notification_real proelement',
+                    'desc'  => wp_kses_post( 'Notification Background Color. <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'color',
+                    'class' => 'notification_real proelement',
                 ),
 
                 array(
                     'name'  => 'heading_colorp',
                     'label' => __( 'Heading Color', 'woolentor' ),
-                    'desc' => wp_kses_post( 'Notification Heading Color. <span>( Pro )</span>', 'woolentor' ),
-                    'type' => 'color',
-                    'class'       => 'notification_real proelement',
+                    'desc'  => wp_kses_post( 'Notification Heading Color. <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'color',
+                    'class' => 'notification_real proelement',
                 ),
 
                 array(
                     'name'  => 'content_colorp',
                     'label' => __( 'Content Color', 'woolentor' ),
-                    'desc' => wp_kses_post( 'Notification Content Color. <span>( Pro )</span>', 'woolentor' ),
-                    'type' => 'color',
-                    'class'       => 'notification_real proelement',
+                    'desc'  => wp_kses_post( 'Notification Content Color. <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'color',
+                    'class' => 'notification_real proelement',
                 ),
 
                 array(
                     'name'  => 'cross_colorp',
                     'label' => __( 'Cross Icon Color', 'woolentor' ),
-                    'desc' => wp_kses_post( 'Notification Cross Icon Color. <span>( Pro )</span>', 'woolentor' ),
-                    'type' => 'color',
-                    'class'       => 'proelement',
+                    'desc'  => wp_kses_post( 'Notification Cross Icon Color. <span>( Pro )</span>', 'woolentor' ),
+                    'type'  => 'color',
+                    'class' => 'proelement',
                 ),
 
             ),
@@ -985,38 +1026,38 @@ class Woolentor_Admin_Settings {
                 array(
                     'name'  => 'loadproductlimit',
                     'label' => __( 'Load Products in Elementor Addons', 'woolentor' ),
-                    'desc' => wp_kses_post( 'Load Products in Elementor Addons', 'woolentor' ),
+                    'desc'  => wp_kses_post( 'Load Products in Elementor Addons', 'woolentor' ),
                     'min'               => 1,
                     'max'               => 100,
                     'step'              => '1',
                     'type'              => 'number',
                     'default'           => '20',
                     'sanitize_callback' => 'floatval',
-                    'class'=>'woolentor_table_row',
+                    'class'             => 'woolentor_table_row',
                 ),
 
                 array(
-                    'name'  => 'ajaxsearch',
-                    'label'  => __( 'Ajax Search Widget', 'woolentor' ),
-                    'type'  => 'checkbox',
-                    'default' => 'off',
-                    'class'=>'woolentor_table_row',
+                    'name'      => 'ajaxsearch',
+                    'label'     => __( 'Ajax Search Widget', 'woolentor' ),
+                    'type'      => 'checkbox',
+                    'default'   => 'off',
+                    'class'     => 'woolentor_table_row',
                 ),
 
                 array(
-                    'name'  => 'ajaxcart_singleproduct',
-                    'label'  => __( 'Single Product Ajax Add To Cart', 'woolentor' ),
-                    'type'  => 'checkbox',
-                    'default' => 'off',
-                    'class'=>'woolentor_table_row',
+                    'name'      => 'ajaxcart_singleproduct',
+                    'label'     => __( 'Single Product Ajax Add To Cart', 'woolentor' ),
+                    'type'      => 'checkbox',
+                    'default'   => 'off',
+                    'class'     => 'woolentor_table_row',
                 ),
                 
                 array(
-                    'name'  => 'single_product_sticky_add_to_cartp',
-                    'label'  => __( 'Single Product Sticky Add To Cart <span>( Pro )</span>', 'woolentor' ),
-                    'type'  => 'checkbox',
-                    'default' => 'off',
-                    'class'   => 'woolentor_table_row pro',
+                    'name'      => 'single_product_sticky_add_to_cartp',
+                    'label'     => __( 'Single Product Sticky Add To Cart <span>( Pro )</span>', 'woolentor' ),
+                    'type'      => 'checkbox',
+                    'default'   => 'off',
+                    'class'     => 'woolentor_table_row pro',
                 ),
 
             ),
@@ -1032,7 +1073,7 @@ class Woolentor_Admin_Settings {
     function plugin_page() {
 
         echo '<div class="wrap">';
-            echo '<h2>'.esc_html__( 'Woolentor Settings','woolentor' ).'</h2>';
+            echo '<h2>'.esc_html__( 'WooLentor Settings','woolentor' ).'</h2>';
             $this->save_message();
             $this->settings_api->show_navigation();
             $this->settings_api->show_forms();
