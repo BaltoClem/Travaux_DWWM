@@ -245,7 +245,7 @@ if ($this->input->post()){
 
     $this->form_validation->set_rules('nom', 'Nom', 'regex_match[/^[a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+([-\'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+)?$/]|required',['regex_match' => 'Format incorrect']);
     $this->form_validation->set_rules('prenom', 'Prénom', 'regex_match[/^[a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+([-\'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêëàçîï]+)?$/]|required',['regex_match' => 'Format incorrect']);
-    $this->form_validation->set_rules('email', 'Email', 'valid_email|required',['valid_email' => 'Veuillez rentrer une adresse e-mail valide.']);
+    $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.mail]',['valid_email' => 'Veuillez rentrer une adresse e-mail valide.','is_unique' => 'Cette adresse email existe déjà']);
     $this->form_validation->set_rules('psswrd', 'Mot de passe', 'regex_match[/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/]|required',['regex_match' => 'Veuillez respecter la condition de création de mot de passe']);
     $this->form_validation->set_rules('psswrd2', 'Confirmation de mot de passe', 'matches[psswrd]|required',['matches' => 'Vos mots de passe doivent être identiques']);
     
